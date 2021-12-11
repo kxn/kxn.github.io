@@ -10,11 +10,11 @@
 <meta name=Keywords content>
 <meta name=description content="Posts">
 <meta name=author content="kxn">
-<meta property="og:url" content="https://blogtest.kangkang.org/post/">
+<meta property="og:url" content="https://blog.kangkang.org/post/">
 <link rel="shortcut icon" href=/favicon.ico type=image/x-icon>
 <link rel=stylesheet href=/css/normalize.css>
 <link rel=stylesheet href=/css/style.css>
-<link rel=alternate type=application/rss+xml href=https://blogtest.kangkang.org/post/index.xml title="Kxn's eXercise Notes">
+<link rel=alternate type=application/rss+xml href=https://blog.kangkang.org/post/index.xml title="Kxn's eXercise Notes">
 <script type=text/javascript src=//cdn.bootcdn.net/ajax/libs/jquery/3.4.1/jquery.min.js></script>
 <link rel=stylesheet href=/css/douban.css>
 <link rel=stylesheet href=/css/other.css>
@@ -24,16 +24,16 @@
 <div class=container>
 <div class=col-group>
 <div class=site-name>
-<a id=logo href=https://blogtest.kangkang.org>
+<a id=logo href=https://blog.kangkang.org>
 Kxn's eXercise Notes
 </a>
 <p class=description>Knowledge Sharing</p>
 </div>
 <div>
 <nav id=nav-menu class=clearfix>
-<a class=current href=https://blogtest.kangkang.org>首页</a>
-<a href=https://blogtest.kangkang.org/archives/ title=归档>归档</a>
-<a href=https://blogtest.kangkang.org/about-me/ title="About Me">About Me</a>
+<a class=current href=https://blog.kangkang.org>首页</a>
+<a href=https://blog.kangkang.org/archives/ title=归档>归档</a>
+<a href=https://blog.kangkang.org/about-me/ title="About Me">About Me</a>
 </nav>
 </div>
 </div>
@@ -47,7 +47,7 @@ Kxn's eXercise Notes
 <article class=post>
 <header>
 <h1 class=post-title>
-<a href=https://blogtest.kangkang.org/post/17.html title=从gcc静态链接开始的讨论，学了好几手>从gcc静态链接开始的讨论，学了好几手</a>
+<a href=https://blog.kangkang.org/post/17.html title=从gcc静态链接开始的讨论，学了好几手>从gcc静态链接开始的讨论，学了好几手</a>
 </h1>
 </header>
 <date class="post-meta meta-date">
@@ -61,12 +61,12 @@ Kxn's eXercise Notes
 <div class=post-content>
 昨天夜里某 bbs 上进行了一场关于 gcc 链接库的讨论，结果最后转移到了 Windows 下面 VC8 msvcr80.dll 的话题。。 事情的起因是这样的： 我想对某程序静态链接 libstdc++ ，但是动态链接 libc, 因为这个程序用到了 dlopen , 而 dlopen 是无法静态链接的。于是我问如何在 configure.in 里面找到 libstdc++.a 的具体路径，好加在 LDADD 里面 首先是 westline 师弟给出的解决方案 gcc -print-file-name=libstdc++.a , man 了一下，原来 gcc……
 </div>
-<p class=readmore><a href=https://blogtest.kangkang.org/post/17.html>阅读全文</a></p>
+<p class=readmore><a href=https://blog.kangkang.org/post/17.html>阅读全文</a></p>
 </article>
 <article class=post>
 <header>
 <h1 class=post-title>
-<a href=https://blogtest.kangkang.org/post/16.html title="崩溃了，icc 9.0 在 FC4 上面无法使用ipo的解决办法">崩溃了，icc 9.0 在 FC4 上面无法使用ipo的解决办法</a>
+<a href=https://blog.kangkang.org/post/16.html title="崩溃了，icc 9.0 在 FC4 上面无法使用ipo的解决办法">崩溃了，icc 9.0 在 FC4 上面无法使用ipo的解决办法</a>
 </h1>
 </header>
 <date class="post-meta meta-date">
@@ -79,12 +79,12 @@ Kxn's eXercise Notes
 <div class=post-content>
 在网上面看到的。实在让人崩溃。。。 发信人: zuxy (Come May, come what may), 信区: LinuxApp 标 题: icc 9.0 在 FC4 下不能启用 ipo 的解决办法 发信站: 水木社区 (Mon Dec 5 21:38:25 2005), 站内 网上找来的，笨得要死但却有效 $su #cd /usr/lib #echo null > ( #echo null > AS_NEEDED #exit $……
 </div>
-<p class=readmore><a href=https://blogtest.kangkang.org/post/16.html>阅读全文</a></p>
+<p class=readmore><a href=https://blog.kangkang.org/post/16.html>阅读全文</a></p>
 </article>
 <article class=post>
 <header>
 <h1 class=post-title>
-<a href=https://blogtest.kangkang.org/post/15.html title=用lighttpd的rewrite来做wordpress的permalink>用lighttpd的rewrite来做wordpress的permalink</a>
+<a href=https://blog.kangkang.org/post/15.html title=用lighttpd的rewrite来做wordpress的permalink>用lighttpd的rewrite来做wordpress的permalink</a>
 </h1>
 </header>
 <date class="post-meta meta-date">
@@ -98,12 +98,12 @@ Kxn's eXercise Notes
 <div class=post-content>
 WordPress 的 permallink 需要 apache 的支持，wordpress 会自动生成一个 .htaccess 文件来给 apache 加 rewrite 规则，但是 lighttpd 的 rewrite 规则格式和 apache 不一样，而且好像不支持 .htaccess. 需要手动转换一下。 WordPress 生成的 .htaccess 规则大概是 RewriteBase /wordpress/ RewriteRule ^.*$ index.php [S=47] RewriteRule ^feed/(feed|rdf|rss|rss2|atom)/?$ /wordpress/index.php?&feed=$1 [QSA,L] RewriteRule ^(feed|rdf|rss|rss2|atom)/?$ /wordpress/index.php?&feed=$1 [QSA,L] 这样的 lighttpd 需要的 rewrite 规则大概是 url.rewrite = ("^/wordpress/feed/(feed|rdf|rss|rss2|atom)/?$" => &ldquo;/wordpress/index.php?&feed=$1&rdquo;, &ldquo;^/wordpress/(feed|rdf|rss|rss2|atom)/?$&rdquo; => &ldquo;/wordpress/index.php?&feed=$1&rdquo;, &ldquo;^/wordpress/page/?([0-9]{1,})/?$&rdquo; => &ldquo;/wordpress/index.php?&paged=$1&rdquo; ) 这样的 内容和 Apache 的基本类似，就是把所有规则转换……
 </div>
-<p class=readmore><a href=https://blogtest.kangkang.org/post/15.html>阅读全文</a></p>
+<p class=readmore><a href=https://blog.kangkang.org/post/15.html>阅读全文</a></p>
 </article>
 <article class=post>
 <header>
 <h1 class=post-title>
-<a href=https://blogtest.kangkang.org/post/14.html title="This site is now running lighttpd + php(fcgi) + eaccelrator">This site is now running lighttpd + php(fcgi) + eaccelrator</a>
+<a href=https://blog.kangkang.org/post/14.html title="This site is now running lighttpd + php(fcgi) + eaccelrator">This site is now running lighttpd + php(fcgi) + eaccelrator</a>
 </h1>
 </header>
 <date class="post-meta meta-date">
@@ -117,12 +117,12 @@ WordPress 的 permallink 需要 apache 的支持，wordpress 会自动生成一�
 <div class=post-content>
 scaner 推荐的东西通常都是不错的，这次的 lighttpd 也不例外。 我的站点虽然在跑 php , 但是大多数时候，还是用来下载的比较多，这时候 php 也没啥用处，多占不少内存，lighttpd + phpfcgi 的速度看评测也不慢多少. 不过这东东一启动，就跑了 5 个 php 进程出来，然后每个 php 进程又 fork 一个, 看起来很乱，要是 fcgi 方式还支持 multithread 就好……
 </div>
-<p class=readmore><a href=https://blogtest.kangkang.org/post/14.html>阅读全文</a></p>
+<p class=readmore><a href=https://blog.kangkang.org/post/14.html>阅读全文</a></p>
 </article>
 <article class=post>
 <header>
 <h1 class=post-title>
-<a href=https://blogtest.kangkang.org/post/13.html title=11月第一贴>11月第一贴</a>
+<a href=https://blog.kangkang.org/post/13.html title=11月第一贴>11月第一贴</a>
 </h1>
 </header>
 <date class="post-meta meta-date">
@@ -135,12 +135,12 @@ scaner 推荐的东西通常都是不错的，这次的 lighttpd 也不例外。
 <div class=post-content>
 其实没有什么可以写的。一些事情发生了又过去了，已经记不住，想来也没有什么写的价值。It&rsquo;s just okay.……
 </div>
-<p class=readmore><a href=https://blogtest.kangkang.org/post/13.html>阅读全文</a></p>
+<p class=readmore><a href=https://blog.kangkang.org/post/13.html>阅读全文</a></p>
 </article>
 <article class=post>
 <header>
 <h1 class=post-title>
-<a href=https://blogtest.kangkang.org/post/12.html title=夜不能寐>夜不能寐</a>
+<a href=https://blog.kangkang.org/post/12.html title=夜不能寐>夜不能寐</a>
 </h1>
 </header>
 <date class="post-meta meta-date">
@@ -153,12 +153,12 @@ scaner 推荐的东西通常都是不错的，这次的 lighttpd 也不例外。
 <div class=post-content>
 躺了两小时,一点睡的意思都没有,倒是胡思乱想个没完.用手机连上来想随便写点东西,却不知该写些什么.这样下去真的要神经衰弱了.……
 </div>
-<p class=readmore><a href=https://blogtest.kangkang.org/post/12.html>阅读全文</a></p>
+<p class=readmore><a href=https://blog.kangkang.org/post/12.html>阅读全文</a></p>
 </article>
 <article class=post>
 <header>
 <h1 class=post-title>
-<a href=https://blogtest.kangkang.org/post/11.html title="Make things simple">Make things simple</a>
+<a href=https://blog.kangkang.org/post/11.html title="Make things simple">Make things simple</a>
 </h1>
 </header>
 <date class="post-meta meta-date">
@@ -171,12 +171,12 @@ scaner 推荐的东西通常都是不错的，这次的 lighttpd 也不例外。
 <div class=post-content>
 夜已经很深了，但是还是没有睡意，失望像含有尼古丁的烟雾，挥之不去。 世上本无事，庸人自扰之，想得太多往往注定着失败，简单，尽可能的简单。……
 </div>
-<p class=readmore><a href=https://blogtest.kangkang.org/post/11.html>阅读全文</a></p>
+<p class=readmore><a href=https://blog.kangkang.org/post/11.html>阅读全文</a></p>
 </article>
 <article class=post>
 <header>
 <h1 class=post-title>
-<a href=https://blogtest.kangkang.org/post/10.html title="GPRS 包月才看出来手机还是开放平台的好">GPRS 包月才看出来手机还是开放平台的好</a>
+<a href=https://blog.kangkang.org/post/10.html title="GPRS 包月才看出来手机还是开放平台的好">GPRS 包月才看出来手机还是开放平台的好</a>
 </h1>
 </header>
 <date class="post-meta meta-date">
@@ -189,12 +189,12 @@ scaner 推荐的东西通常都是不错的，这次的 lighttpd 也不例外。
 <div class=post-content>
 北京移动总算给全球通开通廉价 cmwap 包月了，还是比神州行贵一点，20 块一个月。马上开通了一个，下载了可以用于 cmwap 的 QQ 和 ucweb/ucmail 之类软件，用了一小会就觉得 K700c 这种非开放平台的手机还是太局限了，最不爽的就是他的 java 应用都是单任务的，同时只能有一个在运行，没法实现一边挂 QQ 一边看网页，除非用 ucweb 这样的集成软……
 </div>
-<p class=readmore><a href=https://blogtest.kangkang.org/post/10.html>阅读全文</a></p>
+<p class=readmore><a href=https://blog.kangkang.org/post/10.html>阅读全文</a></p>
 </article>
 <article class=post>
 <header>
 <h1 class=post-title>
-<a href=https://blogtest.kangkang.org/post/9.html title=终于把机器弄起来了，FC4在用非ext3的/boot时候会有问题-_->终于把机器弄起来了，FC4在用非ext3的/boot时候会有问题-_-</a>
+<a href=https://blog.kangkang.org/post/9.html title=终于把机器弄起来了，FC4在用非ext3的/boot时候会有问题-_->终于把机器弄起来了，FC4在用非ext3的/boot时候会有问题-_-</a>
 </h1>
 </header>
 <date class="post-meta meta-date">
@@ -208,12 +208,12 @@ scaner 推荐的东西通常都是不错的，这次的 lighttpd 也不例外。
 <div class=post-content>
 呃，距离上次发 blog 有一个月还多了。中间机器挂掉好长时间，一直没有时间去弄，今天总算弄好了，随便写两句。 挂掉的起因是因为在线升级了 FC3 到 FC4, 这本来是件挺美好的事儿，但是 FC4 就是不给面子，机器没有重启起来，本来以为是 openvpn 的事情，去了一看原来是 grub load kernel 的时候就死掉了。没办法，把系统拿回来重装吧。 没……
 </div>
-<p class=readmore><a href=https://blogtest.kangkang.org/post/9.html>阅读全文</a></p>
+<p class=readmore><a href=https://blog.kangkang.org/post/9.html>阅读全文</a></p>
 </article>
 <article class=post>
 <header>
 <h1 class=post-title>
-<a href=https://blogtest.kangkang.org/post/8.html title=让gcc检查变参函数的参数类型>让gcc检查变参函数的参数类型</a>
+<a href=https://blog.kangkang.org/post/8.html title=让gcc检查变参函数的参数类型>让gcc检查变参函数的参数类型</a>
 </h1>
 </header>
 <date class="post-meta meta-date">
@@ -227,38 +227,38 @@ scaner 推荐的东西通常都是不错的，这次的 lighttpd 也不例外。
 <div class=post-content>
 gcc 可以检查 printf 的参数，对于非基本类型的参数，会给个 warning, 但是自己实现的变参函数 gcc 不做检查，这个就需要利用 gcc 的扩展，加个 attribute, 类似下面的 void xlog(LFD *const lfd, const char *fmt, &mldr;) #ifdef __GNUC__ __attribute__ ((format (printf, 2, 3))) #endif……
 </div>
-<p class=readmore><a href=https://blogtest.kangkang.org/post/8.html>阅读全文</a></p>
+<p class=readmore><a href=https://blog.kangkang.org/post/8.html>阅读全文</a></p>
 </article>
 <ol class=page-navigator>
 <li class=prev>
-<a href=https://blogtest.kangkang.org/post/page/20/>上一页</a>
+<a href=https://blog.kangkang.org/post/page/20/>上一页</a>
 </li>
 <li>
-<a href=https://blogtest.kangkang.org/post/>1</a>
+<a href=https://blog.kangkang.org/post/>1</a>
 </li>
 <li>
 <span>...</span>
 </li>
 <li>
-<a href=https://blogtest.kangkang.org/post/page/19/>19</a>
+<a href=https://blog.kangkang.org/post/page/19/>19</a>
 </li>
 <li>
-<a href=https://blogtest.kangkang.org/post/page/20/>20</a>
+<a href=https://blog.kangkang.org/post/page/20/>20</a>
 </li>
 <li class=current>
-<a href=https://blogtest.kangkang.org/post/page/21/>21</a>
+<a href=https://blog.kangkang.org/post/page/21/>21</a>
 </li>
 <li>
-<a href=https://blogtest.kangkang.org/post/page/22/>22</a>
+<a href=https://blog.kangkang.org/post/page/22/>22</a>
 </li>
 <li class=next>
-<a href=https://blogtest.kangkang.org/post/page/22/>下一页</a>
+<a href=https://blog.kangkang.org/post/page/22/>下一页</a>
 </li>
 </ol>
 </div>
 <footer id=footer>
 <div>
-&copy; 2021 <a href=https://blogtest.kangkang.org>Kxn's eXercise Notes By kxn</a>
+&copy; 2021 <a href=https://blog.kangkang.org>Kxn's eXercise Notes By kxn</a>
 </div>
 <br>
 <div>
@@ -280,9 +280,9 @@ gcc 可以检查 printf 的参数，对于非基本类型的参数，会给个 w
 </div>
 <div id=secondary>
 <section class=widget>
-<form id=search action=https://blogtest.kangkang.org/search/ method=get accept-charset=utf-8 target=_blank _lpchecked=1>
+<form id=search action=https://blog.kangkang.org/search/ method=get accept-charset=utf-8 target=_blank _lpchecked=1>
 <input type=text name=q maxlength=20 placeholder=Search>
-<input type=hidden name=sitesearch value=https://blogtest.kangkang.org>
+<input type=hidden name=sitesearch value=https://blog.kangkang.org>
 <button type=submit class="submit icon-search"></button>
 </form>
 </section>
@@ -290,97 +290,97 @@ gcc 可以检查 printf 的参数，对于非基本类型的参数，会给个 w
 <h3 class=widget-title>最近文章</h3>
 <ul class=widget-list>
 <li>
-<a href=https://blogtest.kangkang.org/post/557.html title="MSI B550 暗黑版跑黑苹果">MSI B550 暗黑版跑黑苹果</a>
+<a href=https://blog.kangkang.org/post/557.html title="MSI B550 暗黑版跑黑苹果">MSI B550 暗黑版跑黑苹果</a>
 </li>
 <li>
-<a href=https://blogtest.kangkang.org/post/553.html title="最简单的打造一台能够 RenderDoc 的手机">最简单的打造一台能够 RenderDoc 的手机</a>
+<a href=https://blog.kangkang.org/post/553.html title="最简单的打造一台能够 RenderDoc 的手机">最简单的打造一台能够 RenderDoc 的手机</a>
 </li>
 <li>
-<a href=https://blogtest.kangkang.org/post/541.html title="编译 RenderDoc 的安卓 apk(带interceptor-lib)">编译 RenderDoc 的安卓 apk(带interceptor-lib)</a>
+<a href=https://blog.kangkang.org/post/541.html title="编译 RenderDoc 的安卓 apk(带interceptor-lib)">编译 RenderDoc 的安卓 apk(带interceptor-lib)</a>
 </li>
 <li>
-<a href=https://blogtest.kangkang.org/post/532.html title=Linux下解决同一硬盘因为连接设备不一样导致扇区大小不一致的问题>Linux下解决同一硬盘因为连接设备不一样导致扇区大小不一致的问题</a>
+<a href=https://blog.kangkang.org/post/532.html title=Linux下解决同一硬盘因为连接设备不一样导致扇区大小不一致的问题>Linux下解决同一硬盘因为连接设备不一样导致扇区大小不一致的问题</a>
 </li>
 <li>
-<a href=https://blogtest.kangkang.org/post/529.html title="RHEL/CentOS/OracleLinux 8  yum 能看到，安装却没有的情况">RHEL/CentOS/OracleLinux 8 yum 能看到，安装却没有的情况</a>
+<a href=https://blog.kangkang.org/post/529.html title="RHEL/CentOS/OracleLinux 8  yum 能看到，安装却没有的情况">RHEL/CentOS/OracleLinux 8 yum 能看到，安装却没有的情况</a>
 </li>
 <li>
-<a href=https://blogtest.kangkang.org/post/521.html title=让服务器响应整个网段中的请求>让服务器响应整个网段中的请求</a>
+<a href=https://blog.kangkang.org/post/521.html title=让服务器响应整个网段中的请求>让服务器响应整个网段中的请求</a>
 </li>
 <li>
-<a href=https://blogtest.kangkang.org/post/514.html title="不要买技嘉 X570 Gaming X 主板">不要买技嘉 X570 Gaming X 主板</a>
+<a href=https://blog.kangkang.org/post/514.html title="不要买技嘉 X570 Gaming X 主板">不要买技嘉 X570 Gaming X 主板</a>
 </li>
 <li>
-<a href=https://blogtest.kangkang.org/post/509.html title="Golang socket 里面奇怪的 pipe 使用">Golang socket 里面奇怪的 pipe 使用</a>
+<a href=https://blog.kangkang.org/post/509.html title="Golang socket 里面奇怪的 pipe 使用">Golang socket 里面奇怪的 pipe 使用</a>
 </li>
 <li>
-<a href=https://blogtest.kangkang.org/post/504.html title=用RenderDoc和安卓模拟器抓帧手游>用RenderDoc和安卓模拟器抓帧手游</a>
+<a href=https://blog.kangkang.org/post/504.html title=用RenderDoc和安卓模拟器抓帧手游>用RenderDoc和安卓模拟器抓帧手游</a>
 </li>
 <li>
-<a href=https://blogtest.kangkang.org/post/500.html title="解决 Mac 电脑原生 EFI 安装 Windows 启动很慢的问题">解决 Mac 电脑原生 EFI 安装 Windows 启动很慢的问题</a>
+<a href=https://blog.kangkang.org/post/500.html title="解决 Mac 电脑原生 EFI 安装 Windows 启动很慢的问题">解决 Mac 电脑原生 EFI 安装 Windows 启动很慢的问题</a>
 </li>
 </ul>
 </section>
 <section class=widget>
 <h3 class=widget-title><a href=/categories/>分类</a></h3>
 <ul class=widget-list>
-<li><a href=https://blogtest.kangkang.org/categories/Coding/>Coding (12)</a></li>
-<li><a href=https://blogtest.kangkang.org/categories/Entertainment/>Entertainment (5)</a></li>
-<li><a href=https://blogtest.kangkang.org/categories/Network/>Network (33)</a></li>
-<li><a href=https://blogtest.kangkang.org/categories/Pictures/>Pictures (2)</a></li>
-<li><a href=https://blogtest.kangkang.org/categories/Software/>Software (27)</a></li>
-<li><a href=https://blogtest.kangkang.org/categories/Tech-Notes/>Tech Notes (174)</a></li>
-<li><a href=https://blogtest.kangkang.org/categories/Uncategorized/>Uncategorized (30)</a></li>
+<li><a href=https://blog.kangkang.org/categories/Coding/>Coding (12)</a></li>
+<li><a href=https://blog.kangkang.org/categories/Entertainment/>Entertainment (5)</a></li>
+<li><a href=https://blog.kangkang.org/categories/Network/>Network (33)</a></li>
+<li><a href=https://blog.kangkang.org/categories/Pictures/>Pictures (2)</a></li>
+<li><a href=https://blog.kangkang.org/categories/Software/>Software (27)</a></li>
+<li><a href=https://blog.kangkang.org/categories/Tech-Notes/>Tech Notes (174)</a></li>
+<li><a href=https://blog.kangkang.org/categories/Uncategorized/>Uncategorized (30)</a></li>
 </ul>
 </section>
 <section class=widget>
 <h3 class=widget-title><a href=/tags/>标签</a></h3>
 <div class=tagcloud>
-<a href=https://blogtest.kangkang.org/tags/.xsession-errors/>.xsession-errors</a>
-<a href=https://blogtest.kangkang.org/tags/139/>139</a>
-<a href=https://blogtest.kangkang.org/tags/720/>720</a>
-<a href=https://blogtest.kangkang.org/tags/CentOS/>CentOS</a>
-<a href=https://blogtest.kangkang.org/tags/adsl/>adsl</a>
-<a href=https://blogtest.kangkang.org/tags/aliedit/>aliedit</a>
-<a href=https://blogtest.kangkang.org/tags/bad-design/>bad design</a>
-<a href=https://blogtest.kangkang.org/tags/buggy/>buggy</a>
-<a href=https://blogtest.kangkang.org/tags/chdk-a570-canon/>chdk a570 canon</a>
-<a href=https://blogtest.kangkang.org/tags/cname/>cname</a>
-<a href=https://blogtest.kangkang.org/tags/dns/>dns</a>
-<a href=https://blogtest.kangkang.org/tags/error/>error</a>
-<a href=https://blogtest.kangkang.org/tags/fail/>fail</a>
-<a href=https://blogtest.kangkang.org/tags/filesort/>filesort</a>
-<a href=https://blogtest.kangkang.org/tags/fragrance-hill/>fragrance hill</a>
-<a href=https://blogtest.kangkang.org/tags/google-chrome/>google chrome</a>
-<a href=https://blogtest.kangkang.org/tags/gps/>gps</a>
-<a href=https://blogtest.kangkang.org/tags/gzip/>gzip</a>
-<a href=https://blogtest.kangkang.org/tags/half-duplex/>half duplex</a>
-<a href=https://blogtest.kangkang.org/tags/ipv6-isatap-fedora/>ipv6 isatap fedora</a>
-<a href=https://blogtest.kangkang.org/tags/javascript/>javascript</a>
-<a href=https://blogtest.kangkang.org/tags/jtag-debrick-dell-2300-%E6%97%A0%E7%BA%BF%E8%B7%AF%E7%94%B1%E5%99%A8-%E4%BF%AE%E5%A4%8D-openwrt/>jtag debrick dell 2300 无线路由器 修复 openwrt</a>
-<a href=https://blogtest.kangkang.org/tags/mobile-trail-explorer/>mobile trail explorer</a>
-<a href=https://blogtest.kangkang.org/tags/mysql/>mysql</a>
-<a href=https://blogtest.kangkang.org/tags/mysql-replication/>mysql replication</a>
-<a href=https://blogtest.kangkang.org/tags/optimize/>optimize</a>
-<a href=https://blogtest.kangkang.org/tags/performance/>performance</a>
-<a href=https://blogtest.kangkang.org/tags/pushmail/>pushmail</a>
-<a href=https://blogtest.kangkang.org/tags/query-cache/>query cache</a>
-<a href=https://blogtest.kangkang.org/tags/qwerty/>qwerty</a>
-<a href=https://blogtest.kangkang.org/tags/remote-backup/>remote backup</a>
-<a href=https://blogtest.kangkang.org/tags/shortcut/>shortcut</a>
-<a href=https://blogtest.kangkang.org/tags/slow-machine/>slow machine</a>
-<a href=https://blogtest.kangkang.org/tags/sony-ericsson-m600i/>sony ericsson m600i</a>
-<a href=https://blogtest.kangkang.org/tags/ssl/>ssl</a>
-<a href=https://blogtest.kangkang.org/tags/trackback/>trackback</a>
-<a href=https://blogtest.kangkang.org/tags/ucweb-6.3/>ucweb 6.3</a>
-<a href=https://blogtest.kangkang.org/tags/unstable/>unstable</a>
-<a href=https://blogtest.kangkang.org/tags/wildcard/>wildcard</a>
-<a href=https://blogtest.kangkang.org/tags/xp/>xp</a>
-<a href=https://blogtest.kangkang.org/tags/%E4%B8%93%E4%B8%9A%E7%89%88/>专业版</a>
-<a href=https://blogtest.kangkang.org/tags/%E5%AE%89%E5%85%A8%E9%97%AE%E9%A2%98/>安全问题</a>
-<a href=https://blogtest.kangkang.org/tags/%E6%8B%9B%E8%A1%8C/>招行</a>
-<a href=https://blogtest.kangkang.org/tags/%E6%96%90%E8%AE%AFN1/>斐讯N1</a>
-<a href=https://blogtest.kangkang.org/tags/%E9%A9%B1%E5%8A%A8/>驱动</a>
+<a href=https://blog.kangkang.org/tags/.xsession-errors/>.xsession-errors</a>
+<a href=https://blog.kangkang.org/tags/139/>139</a>
+<a href=https://blog.kangkang.org/tags/720/>720</a>
+<a href=https://blog.kangkang.org/tags/CentOS/>CentOS</a>
+<a href=https://blog.kangkang.org/tags/adsl/>adsl</a>
+<a href=https://blog.kangkang.org/tags/aliedit/>aliedit</a>
+<a href=https://blog.kangkang.org/tags/bad-design/>bad design</a>
+<a href=https://blog.kangkang.org/tags/buggy/>buggy</a>
+<a href=https://blog.kangkang.org/tags/chdk-a570-canon/>chdk a570 canon</a>
+<a href=https://blog.kangkang.org/tags/cname/>cname</a>
+<a href=https://blog.kangkang.org/tags/dns/>dns</a>
+<a href=https://blog.kangkang.org/tags/error/>error</a>
+<a href=https://blog.kangkang.org/tags/fail/>fail</a>
+<a href=https://blog.kangkang.org/tags/filesort/>filesort</a>
+<a href=https://blog.kangkang.org/tags/fragrance-hill/>fragrance hill</a>
+<a href=https://blog.kangkang.org/tags/google-chrome/>google chrome</a>
+<a href=https://blog.kangkang.org/tags/gps/>gps</a>
+<a href=https://blog.kangkang.org/tags/gzip/>gzip</a>
+<a href=https://blog.kangkang.org/tags/half-duplex/>half duplex</a>
+<a href=https://blog.kangkang.org/tags/ipv6-isatap-fedora/>ipv6 isatap fedora</a>
+<a href=https://blog.kangkang.org/tags/javascript/>javascript</a>
+<a href=https://blog.kangkang.org/tags/jtag-debrick-dell-2300-%E6%97%A0%E7%BA%BF%E8%B7%AF%E7%94%B1%E5%99%A8-%E4%BF%AE%E5%A4%8D-openwrt/>jtag debrick dell 2300 无线路由器 修复 openwrt</a>
+<a href=https://blog.kangkang.org/tags/mobile-trail-explorer/>mobile trail explorer</a>
+<a href=https://blog.kangkang.org/tags/mysql/>mysql</a>
+<a href=https://blog.kangkang.org/tags/mysql-replication/>mysql replication</a>
+<a href=https://blog.kangkang.org/tags/optimize/>optimize</a>
+<a href=https://blog.kangkang.org/tags/performance/>performance</a>
+<a href=https://blog.kangkang.org/tags/pushmail/>pushmail</a>
+<a href=https://blog.kangkang.org/tags/query-cache/>query cache</a>
+<a href=https://blog.kangkang.org/tags/qwerty/>qwerty</a>
+<a href=https://blog.kangkang.org/tags/remote-backup/>remote backup</a>
+<a href=https://blog.kangkang.org/tags/shortcut/>shortcut</a>
+<a href=https://blog.kangkang.org/tags/slow-machine/>slow machine</a>
+<a href=https://blog.kangkang.org/tags/sony-ericsson-m600i/>sony ericsson m600i</a>
+<a href=https://blog.kangkang.org/tags/ssl/>ssl</a>
+<a href=https://blog.kangkang.org/tags/trackback/>trackback</a>
+<a href=https://blog.kangkang.org/tags/ucweb-6.3/>ucweb 6.3</a>
+<a href=https://blog.kangkang.org/tags/unstable/>unstable</a>
+<a href=https://blog.kangkang.org/tags/wildcard/>wildcard</a>
+<a href=https://blog.kangkang.org/tags/xp/>xp</a>
+<a href=https://blog.kangkang.org/tags/%E4%B8%93%E4%B8%9A%E7%89%88/>专业版</a>
+<a href=https://blog.kangkang.org/tags/%E5%AE%89%E5%85%A8%E9%97%AE%E9%A2%98/>安全问题</a>
+<a href=https://blog.kangkang.org/tags/%E6%8B%9B%E8%A1%8C/>招行</a>
+<a href=https://blog.kangkang.org/tags/%E6%96%90%E8%AE%AFN1/>斐讯N1</a>
+<a href=https://blog.kangkang.org/tags/%E9%A9%B1%E5%8A%A8/>驱动</a>
 </div>
 </section>
 <section class=widget>
@@ -394,7 +394,7 @@ gcc 可以检查 printf 的参数，对于非基本类型的参数，会给个 w
 <section class=widget>
 <h3 class=widget-title>其它</h3>
 <ul class=widget-list>
-<li><a href=https://blogtest.kangkang.org/index.xml>文章 RSS</a></li>
+<li><a href=https://blog.kangkang.org/index.xml>文章 RSS</a></li>
 </ul>
 </section>
 </div>
