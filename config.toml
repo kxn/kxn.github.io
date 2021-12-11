@@ -1,4 +1,4 @@
-baseURL = "https://kxn.github.io"
+baseURL = "https://blogtest.kangkang.org"
 languageCode = "zh-CN"
 title = "Kxn's eXercise Notes"
 theme = "maupassant"
