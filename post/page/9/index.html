@@ -47,6 +47,24 @@ Kxn's eXercise Notes
 <article class=post>
 <header>
 <h1 class=post-title>
+<a href=https://blog.kangkang.org/post/183.html title="用 JTAG 修复变砖的 DELL TrueMobile 2300 路由器">用 JTAG 修复变砖的 DELL TrueMobile 2300 路由器</a>
+</h1>
+</header>
+<date class="post-meta meta-date">
+2008年2月10日
+</date>
+<div class=post-meta>
+<span>|</span>
+<span class=meta-category><a href=/categories/Tech-Notes>Tech Notes</a></span>
+</div>
+<div class=post-content>
+[本来应该早写这篇 blog 的，后来忙于别的事情，就放下了，现在算是补交作业吧] [本文发布于 blog.kangkang.org，转载请勿删除] 前段时间自己的 Linksys WRT54G 电源坏掉，不得已在淘宝上面寻找替代品，最后找到了 Dell TrueMobile 2300 这个好东西，这个大概是满足 OpenWRT 最低要求(4M flash 16M ram) 的无线路由器里面最便宜的了……
+</div>
+<p class=readmore><a href=https://blog.kangkang.org/post/183.html>阅读全文</a></p>
+</article>
+<article class=post>
+<header>
+<h1 class=post-title>
 <a href=https://blog.kangkang.org/post/185.html title="2.6.25 里面看来要包括 ISATAP 支持了">2.6.25 里面看来要包括 ISATAP 支持了</a>
 </h1>
 </header>
@@ -213,28 +231,6 @@ Thanks fly to rossig (chdkuser AT fastmail DOT fm), atppp……
 </div>
 <p class=readmore><a href=https://blog.kangkang.org/post/173.html>阅读全文</a></p>
 </article>
-<article class=post>
-<header>
-<h1 class=post-title>
-<a href=https://blog.kangkang.org/post/172.html title="lighttpd 1.4.15 $HTTP[“url”] condition is broken">lighttpd 1.4.15 $HTTP[“url”] condition is broken</a>
-</h1>
-</header>
-<date class="post-meta meta-date">
-2007年5月28日
-</date>
-<div class=post-meta>
-<span>|</span>
-<span class=meta-category><a href=/categories/Tech-Notes>Tech Notes</a></span>
-</div>
-<div class=post-content>
-This has been happening on my blog for a long time, but it didn&rsquo;t draw my attention until someone bugged me about a download link on my server yesterday. It is an $HTTP[&ldquo;url&rdquo;] conditional dir-listing.activate statement , however it returned 404 instead of listing the directory content.
-After a short investigation, I found that in configfile-glue.c
-&lt;br /> 307: case COMP_HTTP_URL:&lt;br /> 308: l = con->uri.path;&lt;br /> 309: break;&lt;br />
-con->uri.path is always an empty string, thus $HTTP[&ldquo;url&rdquo;] condition is always false.
-I&rsquo;m not familiar with lighttpd architecture, therefore I simply changed uri.path to uri.path_raw and everything seemed to be fine. According to lighttpd trac, the uri.path statement has been there since 1.3.x, so there must be a logic change in lighttpd core code, resulting an empty uri.path at that time. I&rsquo;m curious why such a serious bug has not been reported since it was introduced.……
-</div>
-<p class=readmore><a href=https://blog.kangkang.org/post/172.html>阅读全文</a></p>
-</article>
 <ol class=page-navigator>
 <li class=prev>
 <a href=https://blog.kangkang.org/post/page/8/>上一页</a>
@@ -305,6 +301,9 @@ I&rsquo;m not familiar with lighttpd architecture, therefore I simply changed ur
 <h3 class=widget-title>最近文章</h3>
 <ul class=widget-list>
 <li>
+<a href=https://blog.kangkang.org/post/558.html title=迁移到hugo并且流窜到github>迁移到hugo并且流窜到github</a>
+</li>
+<li>
 <a href=https://blog.kangkang.org/post/557.html title="MSI B550 暗黑版跑黑苹果">MSI B550 暗黑版跑黑苹果</a>
 </li>
 <li>
@@ -331,9 +330,6 @@ I&rsquo;m not familiar with lighttpd architecture, therefore I simply changed ur
 <li>
 <a href=https://blog.kangkang.org/post/504.html title=用RenderDoc和安卓模拟器抓帧手游>用RenderDoc和安卓模拟器抓帧手游</a>
 </li>
-<li>
-<a href=https://blog.kangkang.org/post/500.html title="解决 Mac 电脑原生 EFI 安装 Windows 启动很慢的问题">解决 Mac 电脑原生 EFI 安装 Windows 启动很慢的问题</a>
-</li>
 </ul>
 </section>
 <section class=widget>
@@ -344,7 +340,7 @@ I&rsquo;m not familiar with lighttpd architecture, therefore I simply changed ur
 <li><a href=https://blog.kangkang.org/categories/Network/>Network (33)</a></li>
 <li><a href=https://blog.kangkang.org/categories/Pictures/>Pictures (2)</a></li>
 <li><a href=https://blog.kangkang.org/categories/Software/>Software (27)</a></li>
-<li><a href=https://blog.kangkang.org/categories/Tech-Notes/>Tech Notes (174)</a></li>
+<li><a href=https://blog.kangkang.org/categories/Tech-Notes/>Tech Notes (175)</a></li>
 <li><a href=https://blog.kangkang.org/categories/Uncategorized/>Uncategorized (30)</a></li>
 </ul>
 </section>

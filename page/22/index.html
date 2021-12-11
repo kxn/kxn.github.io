@@ -49,6 +49,25 @@ Kxn's eXercise Notes
 <article class=post>
 <header>
 <h1 class=post-title>
+<a href=https://blog.kangkang.org/post/8.html title=让gcc检查变参函数的参数类型>让gcc检查变参函数的参数类型</a>
+</h1>
+</header>
+<date class="post-meta meta-date">
+2005年9月1日
+</date>
+<div class=post-meta>
+<span>|</span>
+<span class=meta-category><a href=/categories/Coding>Coding</a></span>
+<span class=meta-category><a href=/categories/Tech-Notes>Tech Notes</a></span>
+</div>
+<div class=post-content>
+gcc 可以检查 printf 的参数，对于非基本类型的参数，会给个 warning, 但是自己实现的变参函数 gcc 不做检查，这个就需要利用 gcc 的扩展，加个 attribute, 类似下面的 void xlog(LFD *const lfd, const char *fmt, &mldr;) #ifdef __GNUC__ __attribute__ ((format (printf, 2, 3))) #endif……
+</div>
+<p class=readmore><a href=https://blog.kangkang.org/post/8.html>阅读全文</a></p>
+</article>
+<article class=post>
+<header>
+<h1 class=post-title>
 <a href=https://blog.kangkang.org/post/7.html title=离开了域控制器的机器千万不要随便离开域>离开了域控制器的机器千万不要随便离开域</a>
 </h1>
 </header>
@@ -194,6 +213,9 @@ MSN 的那个blog总的感觉上还是偏娱乐比较多，不是非常合适用
 <h3 class=widget-title>最近文章</h3>
 <ul class=widget-list>
 <li>
+<a href=https://blog.kangkang.org/post/558.html title=迁移到hugo并且流窜到github>迁移到hugo并且流窜到github</a>
+</li>
+<li>
 <a href=https://blog.kangkang.org/post/557.html title="MSI B550 暗黑版跑黑苹果">MSI B550 暗黑版跑黑苹果</a>
 </li>
 <li>
@@ -220,9 +242,6 @@ MSN 的那个blog总的感觉上还是偏娱乐比较多，不是非常合适用
 <li>
 <a href=https://blog.kangkang.org/post/504.html title=用RenderDoc和安卓模拟器抓帧手游>用RenderDoc和安卓模拟器抓帧手游</a>
 </li>
-<li>
-<a href=https://blog.kangkang.org/post/500.html title="解决 Mac 电脑原生 EFI 安装 Windows 启动很慢的问题">解决 Mac 电脑原生 EFI 安装 Windows 启动很慢的问题</a>
-</li>
 </ul>
 </section>
 <section class=widget>
@@ -233,7 +252,7 @@ MSN 的那个blog总的感觉上还是偏娱乐比较多，不是非常合适用
 <li><a href=https://blog.kangkang.org/categories/Network/>Network (33)</a></li>
 <li><a href=https://blog.kangkang.org/categories/Pictures/>Pictures (2)</a></li>
 <li><a href=https://blog.kangkang.org/categories/Software/>Software (27)</a></li>
-<li><a href=https://blog.kangkang.org/categories/Tech-Notes/>Tech Notes (174)</a></li>
+<li><a href=https://blog.kangkang.org/categories/Tech-Notes/>Tech Notes (175)</a></li>
 <li><a href=https://blog.kangkang.org/categories/Uncategorized/>Uncategorized (30)</a></li>
 </ul>
 </section>

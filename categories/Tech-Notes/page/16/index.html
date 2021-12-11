@@ -52,6 +52,25 @@ Kxn's eXercise Notes
 <article class=post>
 <header>
 <h1 class=post-title>
+<a href=https://blog.kangkang.org/post/49.html>不要使用 cp 替换正在使用中的Linux 动态库</a>
+</h1>
+</header>
+<date class="post-meta meta-date">
+2005年12月21日
+</date>
+<div class="post-meta meta-category">
+|
+<a href=/categories/Coding>Coding</a>
+<a href=/categories/Tech-Notes>Tech Notes</a>
+</div>
+<div class=post-content>
+记得以前如果一个.so 被 load 了，应该和程序本身一样，不能覆盖啊，强行覆盖也不会覆盖原来的 inode，而是创建新的 inode 并替换当前目录里面的 inode, 原来打开的文件还是正确的。 但是最近发现在 Linux i386 上面 load .so 以后覆盖 .so ，没有任何提示，正在运行的程序退出时侯则通常都会 segfault. 和 sparc 很像了。 难道我记错了吗？ 用 strace 看……
+<p class=readmore><a href=https://blog.kangkang.org/post/49.html>阅读全文</a></p>
+</div>
+</article>
+<article class=post>
+<header>
+<h1 class=post-title>
 <a href=https://blog.kangkang.org/post/44.html>mod_extract_forwarded for lighttpd</a>
 </h1>
 </header>
@@ -218,25 +237,6 @@ Kxn's eXercise Notes
 <p class=readmore><a href=https://blog.kangkang.org/post/29.html>阅读全文</a></p>
 </div>
 </article>
-<article class=post>
-<header>
-<h1 class=post-title>
-<a href=https://blog.kangkang.org/post/22.html>[历史备份]解决智能狂拼3输入i,u,v崩溃的bug</a>
-</h1>
-</header>
-<date class="post-meta meta-date">
-2005年12月9日
-</date>
-<div class="post-meta meta-category">
-|
-<a href=/categories/Coding>Coding</a>
-<a href=/categories/Tech-Notes>Tech Notes</a>
-</div>
-<div class=post-content>
-这个已经做完好久了，现在贴出来作为历史备份吧。 智能狂拼 3 是一个很不错的输入法，虽然是一种整句输入法，单词输入能力一样很棒，响应速度比 MSPY2003 更是好了无数倍。官方出了一个 30M 的版本可以免费使用，实在非常厚道。 但是他有一个很恶心的 bug, 就是在某些程序里面经常崩溃，fterm 之类挂接了默认 SEH 的还好……
-<p class=readmore><a href=https://blog.kangkang.org/post/22.html>阅读全文</a></p>
-</div>
-</article>
 <ol class=page-navigator>
 <li class=prev>
 <a href=https://blog.kangkang.org/categories/Tech-Notes/page/15/>上一页</a>
@@ -301,6 +301,9 @@ Kxn's eXercise Notes
 <h3 class=widget-title>最近文章</h3>
 <ul class=widget-list>
 <li>
+<a href=https://blog.kangkang.org/post/558.html title=迁移到hugo并且流窜到github>迁移到hugo并且流窜到github</a>
+</li>
+<li>
 <a href=https://blog.kangkang.org/post/557.html title="MSI B550 暗黑版跑黑苹果">MSI B550 暗黑版跑黑苹果</a>
 </li>
 <li>
@@ -327,9 +330,6 @@ Kxn's eXercise Notes
 <li>
 <a href=https://blog.kangkang.org/post/504.html title=用RenderDoc和安卓模拟器抓帧手游>用RenderDoc和安卓模拟器抓帧手游</a>
 </li>
-<li>
-<a href=https://blog.kangkang.org/post/500.html title="解决 Mac 电脑原生 EFI 安装 Windows 启动很慢的问题">解决 Mac 电脑原生 EFI 安装 Windows 启动很慢的问题</a>
-</li>
 </ul>
 </section>
 <section class=widget>
@@ -340,7 +340,7 @@ Kxn's eXercise Notes
 <li><a href=https://blog.kangkang.org/categories/Network/>Network (33)</a></li>
 <li><a href=https://blog.kangkang.org/categories/Pictures/>Pictures (2)</a></li>
 <li><a href=https://blog.kangkang.org/categories/Software/>Software (27)</a></li>
-<li><a href=https://blog.kangkang.org/categories/Tech-Notes/>Tech Notes (174)</a></li>
+<li><a href=https://blog.kangkang.org/categories/Tech-Notes/>Tech Notes (175)</a></li>
 <li><a href=https://blog.kangkang.org/categories/Uncategorized/>Uncategorized (30)</a></li>
 </ul>
 </section>

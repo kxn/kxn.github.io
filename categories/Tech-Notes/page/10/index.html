@@ -52,6 +52,25 @@ Kxn's eXercise Notes
 <article class=post>
 <header>
 <h1 class=post-title>
+<a href=https://blog.kangkang.org/post/145.html>谜底揭晓：只用一个root bash重启系统</a>
+</h1>
+</header>
+<date class="post-meta meta-date">
+2006年12月5日
+</date>
+<div class="post-meta meta-category">
+|
+<a href=/categories/Software>Software</a>
+<a href=/categories/Tech-Notes>Tech Notes</a>
+</div>
+<div class=post-content>
+因为我机器是 FC 默认 kernel，默认 kernel 编译时候带了 magic sysrq。这样就很简单了： echo 1 > /proc/sys/kernel/sysrq echo b > /proc/sysrq-trigger 具体原因请 google 以上两个文件名就知道了 另外以前还干过类似的事情，当时是因为 NFS server 断了，怕 reboot 起不来，于是决定恶性重起。 当时的做法是 echo 1 > /proc/sys/kernel/panic echo 1 > /proc/sys/kernel/panic_on_oops 然后想办法触发一个 kernel oops，就可以重启了。 让……
+<p class=readmore><a href=https://blog.kangkang.org/post/145.html>阅读全文</a></p>
+</div>
+</article>
+<article class=post>
+<header>
+<h1 class=post-title>
 <a href=https://blog.kangkang.org/post/144.html>提问:如何只用一个root bash重起Linux系统</a>
 </h1>
 </header>
@@ -215,24 +234,6 @@ Kxn's eXercise Notes
 <p class=readmore><a href=https://blog.kangkang.org/post/128.html>阅读全文</a></p>
 </div>
 </article>
-<article class=post>
-<header>
-<h1 class=post-title>
-<a href=https://blog.kangkang.org/post/127.html>被 SELinux 干死了</a>
-</h1>
-</header>
-<date class="post-meta meta-date">
-2006年5月26日
-</date>
-<div class="post-meta meta-category">
-|
-<a href=/categories/Tech-Notes>Tech Notes</a>
-</div>
-<div class=post-content>
-现在登不上 shell 了, faint! [kxn@pd820~]$ ssh root@comman root@comman&rsquo;s password: /bin/bash: Permission denied……
-<p class=readmore><a href=https://blog.kangkang.org/post/127.html>阅读全文</a></p>
-</div>
-</article>
 <ol class=page-navigator>
 <li class=prev>
 <a href=https://blog.kangkang.org/categories/Tech-Notes/page/9/>上一页</a>
@@ -303,6 +304,9 @@ Kxn's eXercise Notes
 <h3 class=widget-title>最近文章</h3>
 <ul class=widget-list>
 <li>
+<a href=https://blog.kangkang.org/post/558.html title=迁移到hugo并且流窜到github>迁移到hugo并且流窜到github</a>
+</li>
+<li>
 <a href=https://blog.kangkang.org/post/557.html title="MSI B550 暗黑版跑黑苹果">MSI B550 暗黑版跑黑苹果</a>
 </li>
 <li>
@@ -329,9 +333,6 @@ Kxn's eXercise Notes
 <li>
 <a href=https://blog.kangkang.org/post/504.html title=用RenderDoc和安卓模拟器抓帧手游>用RenderDoc和安卓模拟器抓帧手游</a>
 </li>
-<li>
-<a href=https://blog.kangkang.org/post/500.html title="解决 Mac 电脑原生 EFI 安装 Windows 启动很慢的问题">解决 Mac 电脑原生 EFI 安装 Windows 启动很慢的问题</a>
-</li>
 </ul>
 </section>
 <section class=widget>
@@ -342,7 +343,7 @@ Kxn's eXercise Notes
 <li><a href=https://blog.kangkang.org/categories/Network/>Network (33)</a></li>
 <li><a href=https://blog.kangkang.org/categories/Pictures/>Pictures (2)</a></li>
 <li><a href=https://blog.kangkang.org/categories/Software/>Software (27)</a></li>
-<li><a href=https://blog.kangkang.org/categories/Tech-Notes/>Tech Notes (174)</a></li>
+<li><a href=https://blog.kangkang.org/categories/Tech-Notes/>Tech Notes (175)</a></li>
 <li><a href=https://blog.kangkang.org/categories/Uncategorized/>Uncategorized (30)</a></li>
 </ul>
 </section>
