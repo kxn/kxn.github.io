@@ -1,0 +1,412 @@
+<!doctype html><html lang=zh-cn>
+<head>
+<meta name=generator content="Hugo 0.90.1">
+<meta charset=utf-8>
+<meta http-equiv=x-ua-compatible content="IE=edge">
+<meta name=viewport content="width=device-width,initial-scale=1">
+<meta name=referrer content="no-referrer-when-downgrade">
+<title>Kxn's eXercise Notes | Knowledge Sharing</title>
+<meta property="og:title" content="Kxn's eXercise Notes | Knowledge Sharing">
+<meta property="og:type" content="website">
+<meta name=Keywords content>
+<meta name=description content>
+<meta property="og:url" content="https://kxn.github.io/">
+<link rel="shortcut icon" href=/favicon.ico type=image/x-icon>
+<link rel=stylesheet href=/css/normalize.css>
+<link rel=stylesheet href=/css/style.css>
+<link rel=alternate type=application/rss+xml href=https://kxn.github.io/index.xml title="Kxn's eXercise Notes">
+<script type=text/javascript src=//cdn.bootcdn.net/ajax/libs/jquery/3.4.1/jquery.min.js></script>
+<link rel=stylesheet href=/css/douban.css>
+<link rel=stylesheet href=/css/other.css>
+</head>
+<body>
+<header id=header class=clearfix>
+<div class=container>
+<div class=col-group>
+<div class=site-name>
+<h1>
+<a id=logo href=https://kxn.github.io>
+Kxn's eXercise Notes
+</a>
+</h1>
+<p class=description>Knowledge Sharing</p>
+</div>
+<div>
+<nav id=nav-menu class=clearfix>
+<a class=current href=https://kxn.github.io>首页</a>
+<a href=https://kxn.github.io/archives/ title=归档>归档</a>
+<a href=https://kxn.github.io/about-me/ title="About Me">About Me</a>
+</nav>
+</div>
+</div>
+</div>
+</header>
+<div id=body>
+<div class=container>
+<div class=col-group>
+<div class=col-8 id=main>
+<div class=res-cons>
+<article class=post>
+<header>
+<h1 class=post-title>
+<a href=https://kxn.github.io/post/212.html title=郁闷，折腾了这么久，才发现居然是双工的问题>郁闷，折腾了这么久，才发现居然是双工的问题</a>
+</h1>
+</header>
+<date class="post-meta meta-date">
+2008年10月12日
+</date>
+<div class=post-meta>
+<span>|</span>
+<span class=meta-category><a href=/categories/Network>Network</a></span>
+<span class=meta-category><a href=/categories/Tech-Notes>Tech Notes</a></span>
+</div>
+<div class=post-content>
+这个机器最早刚拿到机房的时候，发现不知道为啥，启动时候总是协商成 10M 半双工，但是交换机和网卡显然都是 100M 的，于是只好在 rc.local 里面加了一条 mii-tool -F 100baseTx-FD eth0 ， 这么一直用了一年多也没有太大问题。后来因为一些原因，这个机器 down 了又有一年多，再起来以后就总觉得这个机器网络慢，在 shell 上面执行比较大输出的操作，都……
+</div>
+<p class=readmore><a href=https://kxn.github.io/post/212.html>阅读全文</a></p>
+</article>
+<article class=post>
+<header>
+<h1 class=post-title>
+<a href=https://kxn.github.io/post/211.html title=邪恶的泛域名>邪恶的泛域名</a>
+</h1>
+</header>
+<date class="post-meta meta-date">
+2008年10月11日
+</date>
+<div class=post-meta>
+<span>|</span>
+<span class=meta-category><a href=/categories/Tech-Notes>Tech Notes</a></span>
+</div>
+<div class=post-content>
+邪恶的泛域名 前段时候发现域名经常不好用，在很多机器上面很长时间解析不出来。今天有点时间，就研究了一下，发现原来是泛域名到 CNAME 导致的。 这个域名用了 CNAME 两次的方式来做双网分流，也就是 www.host.com 长时间 CNAME 到 www.a.host.com ，然后 www.a.host.com 会根据不同的来源 CNAME 到某个机器名，最后某个机器名对应到某个 A 记录。出问题的原因是，有 IPV6……
+</div>
+<p class=readmore><a href=https://kxn.github.io/post/211.html>阅读全文</a></p>
+</article>
+<article class=post>
+<header>
+<h1 class=post-title>
+<a href=https://kxn.github.io/post/210.html title=简单调整了一下>简单调整了一下</a>
+</h1>
+</header>
+<date class="post-meta meta-date">
+2008年9月12日
+</date>
+<div class=post-meta>
+<span>|</span>
+<span class=meta-category><a href=/categories/Tech-Notes>Tech Notes</a></span>
+</div>
+<div class=post-content>
+php 打开 zlib 压缩 lighttpd 打开静态文件压缩 theme 目录下面的图片和静态文件设了 7 天 expire……
+</div>
+<p class=readmore><a href=https://kxn.github.io/post/210.html>阅读全文</a></p>
+</article>
+<article class=post>
+<header>
+<h1 class=post-title>
+<a href=https://kxn.github.io/post/209.html title="似乎Trackback 坏了">似乎Trackback 坏了</a>
+</h1>
+</header>
+<date class="post-meta meta-date">
+2008年9月8日
+</date>
+<div class=post-meta>
+<span>|</span>
+<span class=meta-category><a href=/categories/Tech-Notes>Tech Notes</a></span>
+</div>
+<div class=post-content>
+log 里面看都是 500, 但是现在没太多时间修, 先备个忘好了.……
+</div>
+<p class=readmore><a href=https://kxn.github.io/post/209.html>阅读全文</a></p>
+</article>
+<article class=post>
+<header>
+<h1 class=post-title>
+<a href=https://kxn.github.io/post/208.html title=什么叫衰>什么叫衰</a>
+</h1>
+</header>
+<date class="post-meta meta-date">
+2008年9月7日
+</date>
+<div class=post-meta>
+<span>|</span>
+<span class=meta-category><a href=/categories/Tech-Notes>Tech Notes</a></span>
+</div>
+<div class=post-content>
+那就是今天刚发现，原来这机器 MySQL 的 query cache 一直都没有开开。。直接打开发现首页时间从 0.4s 变成 0.2s 了。。……
+</div>
+<p class=readmore><a href=https://kxn.github.io/post/208.html>阅读全文</a></p>
+</article>
+<article class=post>
+<header>
+<h1 class=post-title>
+<a href=https://kxn.github.io/post/207.html title=闲话招行的安全>闲话招行的安全</a>
+</h1>
+</header>
+<date class="post-meta meta-date">
+2008年9月4日
+</date>
+<div class=post-meta>
+<span>|</span>
+<span class=meta-category><a href=/categories/Tech-Notes>Tech Notes</a></span>
+</div>
+<div class=post-content>
+闲话招行的安全本文原发表于 http://blog.kangkang.org/wordpress/{#nhgl} 转载请保留老实说，在我写这篇东西的时候，曾经考虑过要不要用个比较新浪一些的题目，比如“警惕！招商银行专业版留在你电脑中的后门”，或者"招商银行七宗罪" 之类的。毕竟在互联网上，很黄很暴力的文章更加容易传播一点。但是看起来以前 delphij 同学和招……
+</div>
+<p class=readmore><a href=https://kxn.github.io/post/207.html>阅读全文</a></p>
+</article>
+<article class=post>
+<header>
+<h1 class=post-title>
+<a href=https://kxn.github.io/post/206.html title="当个备忘, javascript performance test">当个备忘, javascript performance test</a>
+</h1>
+</header>
+<date class="post-meta meta-date">
+2008年9月3日
+</date>
+<div class=post-meta>
+<span>|</span>
+<span class=meta-category><a href=/categories/Tech-Notes>Tech Notes</a></span>
+</div>
+<div class=post-content>
+http://wd-testnet.world-direct.at/mozilla/dhtml/funo/jsTimeTest.htm Google chrome 的测试结果好得一塌糊涂， 但是跑下面这个帖子八皇后表现就不太成。比 FF3 差不少 http://bbs.51js.com/viewthread.php?tid=75260 有时间的话 build 一个 nightly 的 FF3.1 看看 tracemonkey 的效果如何。……
+</div>
+<p class=readmore><a href=https://kxn.github.io/post/206.html>阅读全文</a></p>
+</article>
+<article class=post>
+<header>
+<h1 class=post-title>
+<a href=https://kxn.github.io/post/205.html title="MySQL 的 filesort 不是 stable 的">MySQL 的 filesort 不是 stable 的</a>
+</h1>
+</header>
+<date class="post-meta meta-date">
+2008年9月1日
+</date>
+<div class=post-meta>
+<span>|</span>
+<span class=meta-category><a href=/categories/Tech-Notes>Tech Notes</a></span>
+</div>
+<div class=post-content>
+呃，别会错意，我的意思不是说 MySQL 开始 filesort 就会不稳定，而是说他的排序算法不是 stable 的。 某表中有两个字段，一个是 log_time, DATETIME 类型， 一个是 user_id , BIGINT 类型。 SQL 是 SELECT XXX FROM xx_table WHERE user_id = 111 ORDER BY log_time DESC 。 一开始表上的索引建错了，建成了 user_id,log_time 的联合索引，于是上面的 SQL 用上这个索引以后，就做了 filesort ， 这时候发现所有 log_time 相同的列顺序是乱的，有……
+</div>
+<p class=readmore><a href=https://kxn.github.io/post/205.html>阅读全文</a></p>
+</article>
+<article class=post>
+<header>
+<h1 class=post-title>
+<a href=https://kxn.github.io/post/203.html title="庞大的 .xsession-errors 文件">庞大的 .xsession-errors 文件</a>
+</h1>
+</header>
+<date class="post-meta meta-date">
+2008年9月1日
+</date>
+<div class=post-meta>
+<span>|</span>
+<span class=meta-category><a href=/categories/Tech-Notes>Tech Notes</a></span>
+</div>
+<div class=post-content>
+台式机十多天没关机, 忽然发现 fcitx 异常的卡, 把各种应用程序搞死好几次. df 一下才发现是 home 居然满掉了. 仔细 ls -la 一看. 原来是一个 .xsession-errors 文件占了 11G 还多. 看看内容, 原来是所有 X 程序打到 console 上的信息都跑这个文件里面去了, 然后 KDE 程序经常会打印各种 Warning , 用不了多久这个文件就会变得暴大. 解决方法比较土, 直接 ln……
+</div>
+<p class=readmore><a href=https://kxn.github.io/post/203.html>阅读全文</a></p>
+</article>
+<article class=post>
+<header>
+<h1 class=post-title>
+<a href=https://kxn.github.io/post/202.html title=机器终于又重新起来了>机器终于又重新起来了</a>
+</h1>
+</header>
+<date class="post-meta meta-date">
+2008年8月30日
+</date>
+<div class=post-meta>
+<span>|</span>
+<span class=meta-category><a href=/categories/Tech-Notes>Tech Notes</a></span>
+</div>
+<div class=post-content>
+时隔一年多，我的破机器终于又起来了。可怜这个机器在现在 N 核电脑面前，实在是落伍了一点，php 执行 blog 首页都要 0.3 秒还多。比起之前在另外一个机器上面跑的虚拟机来也差得不是一点半点。唉。……
+</div>
+<p class=readmore><a href=https://kxn.github.io/post/202.html>阅读全文</a></p>
+</article>
+<ol class=page-navigator>
+<li class=prev>
+<a href=https://kxn.github.io/page/6/>上一页</a>
+</li>
+<li>
+<a href=https://kxn.github.io/>1</a>
+</li>
+<li>
+<span>...</span>
+</li>
+<li>
+<a href=https://kxn.github.io/page/5/>5</a>
+</li>
+<li>
+<a href=https://kxn.github.io/page/6/>6</a>
+</li>
+<li class=current>
+<a href=https://kxn.github.io/page/7/>7</a>
+</li>
+<li>
+<a href=https://kxn.github.io/page/8/>8</a>
+</li>
+<li>
+<a href=https://kxn.github.io/page/9/>9</a>
+</li>
+<li>
+<span>...</span>
+</li>
+<li>
+<a href=https://kxn.github.io/page/22/>22</a>
+</li>
+<li class=next>
+<a href=https://kxn.github.io/page/8/>下一页</a>
+</li>
+</ol>
+</div>
+<footer id=footer>
+<div>
+&copy; 2021 <a href=https://kxn.github.io>Kxn's eXercise Notes By kxn</a>
+</div>
+<br>
+<div>
+<div class=github-badge>
+<a href=https://gohugo.io/ target=_black rel=nofollow><span class=badge-subject>Powered by</span><span class="badge-value bg-blue">Hugo</span></a>
+</div>
+<div class=github-badge>
+<a href=https://www.flysnow.org/ target=_black><span class=badge-subject>Design by</span><span class="badge-value bg-brightgreen">飞雪无情</span></a>
+</div>
+<div class=github-badge>
+<a href=https://github.com/flysnow-org/maupassant-hugo target=_black><span class=badge-subject>Theme</span><span class="badge-value bg-yellowgreen">Maupassant</span></a>
+</div>
+</div>
+</footer>
+<a id=rocket href=#top></a>
+<script type=text/javascript src="/js/totop.js?v=0.0.0" async></script>
+<script type=text/javascript src=//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js async></script>
+<script src=/js/douban.js></script>
+</div>
+<div id=secondary>
+<section class=widget>
+<form id=search action=https://kxn.github.io/search/ method=get accept-charset=utf-8 target=_blank _lpchecked=1>
+<input type=text name=q maxlength=20 placeholder=Search>
+<input type=hidden name=sitesearch value=https://kxn.github.io>
+<button type=submit class="submit icon-search"></button>
+</form>
+</section>
+<section class=widget>
+<h3 class=widget-title>最近文章</h3>
+<ul class=widget-list>
+<li>
+<a href=https://kxn.github.io/post/557.html title="MSI B550 暗黑版跑黑苹果">MSI B550 暗黑版跑黑苹果</a>
+</li>
+<li>
+<a href=https://kxn.github.io/post/553.html title="最简单的打造一台能够 RenderDoc 的手机">最简单的打造一台能够 RenderDoc 的手机</a>
+</li>
+<li>
+<a href=https://kxn.github.io/post/541.html title="编译 RenderDoc 的安卓 apk(带interceptor-lib)">编译 RenderDoc 的安卓 apk(带interceptor-lib)</a>
+</li>
+<li>
+<a href=https://kxn.github.io/post/532.html title=Linux下解决同一硬盘因为连接设备不一样导致扇区大小不一致的问题>Linux下解决同一硬盘因为连接设备不一样导致扇区大小不一致的问题</a>
+</li>
+<li>
+<a href=https://kxn.github.io/post/529.html title="RHEL/CentOS/OracleLinux 8  yum 能看到，安装却没有的情况">RHEL/CentOS/OracleLinux 8 yum 能看到，安装却没有的情况</a>
+</li>
+<li>
+<a href=https://kxn.github.io/post/521.html title=让服务器响应整个网段中的请求>让服务器响应整个网段中的请求</a>
+</li>
+<li>
+<a href=https://kxn.github.io/post/514.html title="不要买技嘉 X570 Gaming X 主板">不要买技嘉 X570 Gaming X 主板</a>
+</li>
+<li>
+<a href=https://kxn.github.io/post/509.html title="Golang socket 里面奇怪的 pipe 使用">Golang socket 里面奇怪的 pipe 使用</a>
+</li>
+<li>
+<a href=https://kxn.github.io/post/504.html title=用RenderDoc和安卓模拟器抓帧手游>用RenderDoc和安卓模拟器抓帧手游</a>
+</li>
+<li>
+<a href=https://kxn.github.io/post/500.html title="解决 Mac 电脑原生 EFI 安装 Windows 启动很慢的问题">解决 Mac 电脑原生 EFI 安装 Windows 启动很慢的问题</a>
+</li>
+</ul>
+</section>
+<section class=widget>
+<h3 class=widget-title><a href=/categories/>分类</a></h3>
+<ul class=widget-list>
+<li><a href=https://kxn.github.io/categories/Coding/>Coding (12)</a></li>
+<li><a href=https://kxn.github.io/categories/Entertainment/>Entertainment (5)</a></li>
+<li><a href=https://kxn.github.io/categories/Network/>Network (33)</a></li>
+<li><a href=https://kxn.github.io/categories/Pictures/>Pictures (2)</a></li>
+<li><a href=https://kxn.github.io/categories/Software/>Software (27)</a></li>
+<li><a href=https://kxn.github.io/categories/Tech-Notes/>Tech Notes (174)</a></li>
+<li><a href=https://kxn.github.io/categories/Uncategorized/>Uncategorized (30)</a></li>
+</ul>
+</section>
+<section class=widget>
+<h3 class=widget-title><a href=/tags/>标签</a></h3>
+<div class=tagcloud>
+<a href=https://kxn.github.io/tags/.xsession-errors/>.xsession-errors</a>
+<a href=https://kxn.github.io/tags/139/>139</a>
+<a href=https://kxn.github.io/tags/720/>720</a>
+<a href=https://kxn.github.io/tags/CentOS/>CentOS</a>
+<a href=https://kxn.github.io/tags/adsl/>adsl</a>
+<a href=https://kxn.github.io/tags/aliedit/>aliedit</a>
+<a href=https://kxn.github.io/tags/bad-design/>bad design</a>
+<a href=https://kxn.github.io/tags/buggy/>buggy</a>
+<a href=https://kxn.github.io/tags/chdk-a570-canon/>chdk a570 canon</a>
+<a href=https://kxn.github.io/tags/cname/>cname</a>
+<a href=https://kxn.github.io/tags/dns/>dns</a>
+<a href=https://kxn.github.io/tags/error/>error</a>
+<a href=https://kxn.github.io/tags/fail/>fail</a>
+<a href=https://kxn.github.io/tags/filesort/>filesort</a>
+<a href=https://kxn.github.io/tags/fragrance-hill/>fragrance hill</a>
+<a href=https://kxn.github.io/tags/google-chrome/>google chrome</a>
+<a href=https://kxn.github.io/tags/gps/>gps</a>
+<a href=https://kxn.github.io/tags/gzip/>gzip</a>
+<a href=https://kxn.github.io/tags/half-duplex/>half duplex</a>
+<a href=https://kxn.github.io/tags/ipv6-isatap-fedora/>ipv6 isatap fedora</a>
+<a href=https://kxn.github.io/tags/javascript/>javascript</a>
+<a href=https://kxn.github.io/tags/jtag-debrick-dell-2300-%E6%97%A0%E7%BA%BF%E8%B7%AF%E7%94%B1%E5%99%A8-%E4%BF%AE%E5%A4%8D-openwrt/>jtag debrick dell 2300 无线路由器 修复 openwrt</a>
+<a href=https://kxn.github.io/tags/mobile-trail-explorer/>mobile trail explorer</a>
+<a href=https://kxn.github.io/tags/mysql/>mysql</a>
+<a href=https://kxn.github.io/tags/mysql-replication/>mysql replication</a>
+<a href=https://kxn.github.io/tags/optimize/>optimize</a>
+<a href=https://kxn.github.io/tags/performance/>performance</a>
+<a href=https://kxn.github.io/tags/pushmail/>pushmail</a>
+<a href=https://kxn.github.io/tags/query-cache/>query cache</a>
+<a href=https://kxn.github.io/tags/qwerty/>qwerty</a>
+<a href=https://kxn.github.io/tags/remote-backup/>remote backup</a>
+<a href=https://kxn.github.io/tags/shortcut/>shortcut</a>
+<a href=https://kxn.github.io/tags/slow-machine/>slow machine</a>
+<a href=https://kxn.github.io/tags/sony-ericsson-m600i/>sony ericsson m600i</a>
+<a href=https://kxn.github.io/tags/ssl/>ssl</a>
+<a href=https://kxn.github.io/tags/trackback/>trackback</a>
+<a href=https://kxn.github.io/tags/ucweb-6.3/>ucweb 6.3</a>
+<a href=https://kxn.github.io/tags/unstable/>unstable</a>
+<a href=https://kxn.github.io/tags/wildcard/>wildcard</a>
+<a href=https://kxn.github.io/tags/xp/>xp</a>
+<a href=https://kxn.github.io/tags/%E4%B8%93%E4%B8%9A%E7%89%88/>专业版</a>
+<a href=https://kxn.github.io/tags/%E5%AE%89%E5%85%A8%E9%97%AE%E9%A2%98/>安全问题</a>
+<a href=https://kxn.github.io/tags/%E6%8B%9B%E8%A1%8C/>招行</a>
+<a href=https://kxn.github.io/tags/%E6%96%90%E8%AE%AFN1/>斐讯N1</a>
+<a href=https://kxn.github.io/tags/%E9%A9%B1%E5%8A%A8/>驱动</a>
+</div>
+</section>
+<section class=widget>
+<h3 class=widget-title>友情链接</h3>
+<ul class=widget-list>
+<li>
+<a target=_blank href=https://blog.kangkang.net/ title=我的非技术blog>我的非技术blog</a>
+</li>
+</ul>
+</section>
+<section class=widget>
+<h3 class=widget-title>其它</h3>
+<ul class=widget-list>
+<li><a href=https://kxn.github.io/index.xml>文章 RSS</a></li>
+</ul>
+</section>
+</div>
+</div>
+</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,423 @@
+<!doctype html><html lang=zh-cn>
+<head>
+<meta charset=utf-8>
+<meta http-equiv=x-ua-compatible content="IE=edge">
+<meta name=viewport content="width=device-width,initial-scale=1">
+<meta name=referrer content="no-referrer-when-downgrade">
+<title>Tech Notes | Kxn's eXercise Notes</title>
+<meta property="og:title" content="Tech Notes - Kxn's eXercise Notes">
+<meta property="og:type" content="article">
+<meta name=Keywords content>
+<meta name=description content="Tech Notes">
+<meta name=author content="kxn">
+<meta property="og:url" content="https://kxn.github.io/categories/Tech-Notes/">
+<link rel="shortcut icon" href=/favicon.ico type=image/x-icon>
+<link rel=stylesheet href=/css/normalize.css>
+<link rel=stylesheet href=/css/style.css>
+<link rel=alternate type=application/rss+xml href=https://kxn.github.io/categories/Tech-Notes/index.xml title="Kxn's eXercise Notes">
+<script type=text/javascript src=//cdn.bootcdn.net/ajax/libs/jquery/3.4.1/jquery.min.js></script>
+<link rel=stylesheet href=/css/douban.css>
+<link rel=stylesheet href=/css/other.css>
+</head>
+<body>
+<header id=header class=clearfix>
+<div class=container>
+<div class=col-group>
+<div class=site-name>
+<a id=logo href=https://kxn.github.io>
+Kxn's eXercise Notes
+</a>
+<p class=description>Knowledge Sharing</p>
+</div>
+<div>
+<nav id=nav-menu class=clearfix>
+<a href=https://kxn.github.io>首页</a>
+<a href=https://kxn.github.io/archives/ title=归档>归档</a>
+<a href=https://kxn.github.io/about-me/ title="About Me">About Me</a>
+</nav>
+</div>
+</div>
+</div>
+</header>
+<div id=body>
+<div class=container>
+<div class=col-group>
+<div class=col-8 id=main>
+<div class=res-cons>
+<h3 class=archive-title>
+分类
+<span class=keyword>Tech Notes</span>
+中的文章
+</h3>
+<article class=post>
+<header>
+<h1 class=post-title>
+<a href=https://kxn.github.io/post/73.html>总结一下lighttpd的优缺点</a>
+</h1>
+</header>
+<date class="post-meta meta-date">
+2006年2月14日
+</date>
+<div class="post-meta meta-category">
+|
+<a href=/categories/Network>Network</a>
+<a href=/categories/Tech-Notes>Tech Notes</a>
+</div>
+<div class=post-content>
+今天实在没得可写，不如炒个冷饭，以前发在论坛的帖子 优点 发信人: kxn (一整夜), 信区: NewSoftClub 标 题: Re: eaccelerator 可以用在 apache+php+fastcgi 中吗? 发信站: 水木社区 (Sat Feb 11 11:19:26 2006), 站内 内存占用非常之少，可以节省下来大量内存给应用和磁盘缓存。此外单进程减少很多不必 要的 context switch , 在慢网并发连接时候非常明显了。 当然最明显的好处是比其……
+<p class=readmore><a href=https://kxn.github.io/post/73.html>阅读全文</a></p>
+</div>
+</article>
+<article class=post>
+<header>
+<h1 class=post-title>
+<a href=https://kxn.github.io/post/72.html>NOD32镜像建立脚本</a>
+</h1>
+</header>
+<date class="post-meta meta-date">
+2006年2月13日
+</date>
+<div class="post-meta meta-category">
+|
+<a href=/categories/Software>Software</a>
+<a href=/categories/Tech-Notes>Tech Notes</a>
+</div>
+<div class=post-content>
+无聊写的, 架 NOD32 更新镜像用的，这个是什么东西我就不解释了。比较懒用了 wget , 应该用 urllib 的。 使用方法 python nodmirror.py &#171;http://user:pass@nodmirrorhost/path/&#187; 就会抓一套下来在 localpath 放着 http://kangkang.org/wordpress/wp-content/uploads/2006/02/nodmirror.zip……
+<p class=readmore><a href=https://kxn.github.io/post/72.html>阅读全文</a></p>
+</div>
+</article>
+<article class=post>
+<header>
+<h1 class=post-title>
+<a href=https://kxn.github.io/post/70.html>将 lighttpd 进行到底, mod_proxy 对一些请求不返回应答 body 的解决方法.</a>
+</h1>
+</header>
+<date class="post-meta meta-date">
+2006年2月12日
+</date>
+<div class="post-meta meta-category">
+|
+<a href=/categories/Network>Network</a>
+<a href=/categories/Tech-Notes>Tech Notes</a>
+</div>
+<div class=post-content>
+1.4.10 这么快就出来了,号称里面修正了 mod_proxy 处理 30x 请求时候返回 body 不正常的问题, 不过升级了一下发现还是有问题,仔细看了一下,原来本身就是只修正了 301 这一种请求, 而某系统会发送 305 带 body 的结果,于是就不好用了. 自己简单改了一下让他可以支持该系统. 不过 lighttpd 这么干不是个事情啊. 今天搞了 305, 明天说不定还会有不……
+<p class=readmore><a href=https://kxn.github.io/post/70.html>阅读全文</a></p>
+</div>
+</article>
+<article class=post>
+<header>
+<h1 class=post-title>
+<a href=https://kxn.github.io/post/69.html>LVS 直接路由方式简单配置，以及响应时间抖动情况</a>
+</h1>
+</header>
+<date class="post-meta meta-date">
+2006年2月12日
+</date>
+<div class="post-meta meta-category">
+|
+<a href=/categories/Network>Network</a>
+<a href=/categories/Tech-Notes>Tech Notes</a>
+</div>
+<div class=post-content>
+最近发现 F5 这样的负载均衡设备可能请求时间会出现抖动现象，最长的请求经常可以达到好几秒。考虑到 F5 会对所有数据进行 NAT ，有可能处理能力不足，打算研究一下 LVS 会不会有类似现象。 小知识：什么是 LVS? LVS 是 Linux Virtual Server 的缩写，是章文嵩主持开发的基于 Linux 的类似 F5 这样的连接管理软件，它将接收到的数据包进行部分修……
+<p class=readmore><a href=https://kxn.github.io/post/69.html>阅读全文</a></p>
+</div>
+</article>
+<article class=post>
+<header>
+<h1 class=post-title>
+<a href=https://kxn.github.io/post/68.html>禁止 IBM Thinkpad 上面的 back.forward 键</a>
+</h1>
+</header>
+<date class="post-meta meta-date">
+2006年2月12日
+</date>
+<div class="post-meta meta-category">
+|
+<a href=/categories/Software>Software</a>
+<a href=/categories/Tech-Notes>Tech Notes</a>
+</div>
+<div class=post-content>
+这两个键的位置实在太恶心了，在中文输入这样经常敲击 ctrl 的情况下面。很容易造成在输入 blog 或者发帖子的时候被 back 掉，好不容易写了半天的文章就这么被废掉了。 禁止方式： 开始菜单 -> Access IBM -> Keyboard Customizer Utility -> Key Sensivity -> Enable Browser Keys 去掉……
+<p class=readmore><a href=https://kxn.github.io/post/68.html>阅读全文</a></p>
+</div>
+</article>
+<article class=post>
+<header>
+<h1 class=post-title>
+<a href=https://kxn.github.io/post/67.html>lighttpd 升级了，顺便跟一下</a>
+</h1>
+</header>
+<date class="post-meta meta-date">
+2006年1月27日
+</date>
+<div class="post-meta meta-category">
+|
+<a href=/categories/Network>Network</a>
+<a href=/categories/Tech-Notes>Tech Notes</a>
+</div>
+<div class=post-content>
+最新的是 1.4.9 比较好的一个事情是 1.4.8 带来的 mod_dirlisting 的中文乱码问题又修正了，省得我打 patch 了，赞一个。 另外一个比较不错的功能是 mod_evasive, 可以限制同一 IP 的连接数，当然本站暂时不需要它。hehe……
+<p class=readmore><a href=https://kxn.github.io/post/67.html>阅读全文</a></p>
+</div>
+</article>
+<article class=post>
+<header>
+<h1 class=post-title>
+<a href=https://kxn.github.io/post/65.html>被Squid的统计数据骗了。。</a>
+</h1>
+</header>
+<date class="post-meta meta-date">
+2006年1月17日
+</date>
+<div class="post-meta meta-category">
+|
+<a href=/categories/Network>Network</a>
+<a href=/categories/Tech-Notes>Tech Notes</a>
+</div>
+<div class=post-content>
+这年头真是连胡萝卜都不可以相信。 前一段时间用了很多很多的时间和精力奋斗 squid, 当时无论怎么调整参数, Linux 下面的 squid 性能就是比不上 FreeBSD 系统的。同样的硬件配置，DNS Round Robin 轮转均衡，Linux 的 squid 无论 hit rate 还是 traffic 都比 FreeBSD 的低一些，随着流量增加，差别还越来越明显。今天差距居然达到 33% 了，Linux 报告 traffic 在……
+<p class=readmore><a href=https://kxn.github.io/post/65.html>阅读全文</a></p>
+</div>
+</article>
+<article class=post>
+<header>
+<h1 class=post-title>
+<a href=https://kxn.github.io/post/64.html>Fight against cacti, net-snmp and squid</a>
+</h1>
+</header>
+<date class="post-meta meta-date">
+2006年1月15日
+</date>
+<div class="post-meta meta-category">
+|
+<a href=/categories/Network>Network</a>
+<a href=/categories/Tech-Notes>Tech Notes</a>
+</div>
+<div class=post-content>
+一天多来都在折腾这三个东西，作点笔记好了。 首先简单介绍一下: cacti 是一个用 rrdtool 来画图的网络监控系统, 通常一说到网络管理, 大家首先想到的经常是 mrtg, 但是 mrtg 画的图简单且难看, rrdtool 虽然画图本领一流, 画出来的图也漂亮, 但是他也就是一个画图工具, 不像 mrtg 那样本身还集成了数据收集功能. cacti 则是集成了各种数据……
+<p class=readmore><a href=https://kxn.github.io/post/64.html>阅读全文</a></p>
+</div>
+</article>
+<article class=post>
+<header>
+<h1 class=post-title>
+<a href=https://kxn.github.io/post/62.html>Client does not support authentication protocol requested by server 的解决办法</a>
+</h1>
+</header>
+<date class="post-meta meta-date">
+2006年1月14日
+</date>
+<div class="post-meta meta-category">
+|
+<a href=/categories/Tech-Notes>Tech Notes</a>
+</div>
+<div class=post-content>
+网上一 google 就找到了，不过 dev.mysql.com 很慢，在这里备个份。 php4/5 里面带的 mysql 扩展不支持 mysql 4.1 的新密码加密方式，但是支持的 mysqli 库的接口变化太多。 最简单的是降级 mysql 的密码加密方式 mysql> SET PASSWORD FOR &lsquo;some_user&rsquo;@&lsquo;some_host&rsquo; = OLD_PASSWORD(&lsquo;newpwd&rsquo;);……
+<p class=readmore><a href=https://kxn.github.io/post/62.html>阅读全文</a></p>
+</div>
+</article>
+<article class=post>
+<header>
+<h1 class=post-title>
+<a href=https://kxn.github.io/post/61.html>BaiduSpider好像学油了</a>
+</h1>
+</header>
+<date class="post-meta meta-date">
+2006年1月13日
+</date>
+<div class="post-meta meta-category">
+|
+<a href=/categories/Network>Network</a>
+<a href=/categories/Tech-Notes>Tech Notes</a>
+</div>
+<div class=post-content>
+看了一下 log ， 发现最近 baiduspider 都是抓了 feed 以后就走，如果有更新了，才见到来抓页面，难道是他已经可以根据 RSS Feed 来判断站点是不是更新了吗？admire……
+<p class=readmore><a href=https://kxn.github.io/post/61.html>阅读全文</a></p>
+</div>
+</article>
+<ol class=page-navigator>
+<li class=prev>
+<a href=https://kxn.github.io/categories/Tech-Notes/page/13/>上一页</a>
+</li>
+<li>
+<a href=https://kxn.github.io/categories/Tech-Notes/>1</a>
+</li>
+<li>
+<span>...</span>
+</li>
+<li>
+<a href=https://kxn.github.io/categories/Tech-Notes/page/12/>12</a>
+</li>
+<li>
+<a href=https://kxn.github.io/categories/Tech-Notes/page/13/>13</a>
+</li>
+<li class=current>
+<a href=https://kxn.github.io/categories/Tech-Notes/page/14/>14</a>
+</li>
+<li>
+<a href=https://kxn.github.io/categories/Tech-Notes/page/15/>15</a>
+</li>
+<li>
+<a href=https://kxn.github.io/categories/Tech-Notes/page/16/>16</a>
+</li>
+<li>
+<span>...</span>
+</li>
+<li>
+<a href=https://kxn.github.io/categories/Tech-Notes/page/18/>18</a>
+</li>
+<li class=next>
+<a href=https://kxn.github.io/categories/Tech-Notes/page/15/>下一页</a>
+</li>
+</ol>
+</div>
+<footer id=footer>
+<div>
+&copy; 2021 <a href=https://kxn.github.io>Kxn's eXercise Notes By kxn</a>
+</div>
+<br>
+<div>
+<div class=github-badge>
+<a href=https://gohugo.io/ target=_black rel=nofollow><span class=badge-subject>Powered by</span><span class="badge-value bg-blue">Hugo</span></a>
+</div>
+<div class=github-badge>
+<a href=https://www.flysnow.org/ target=_black><span class=badge-subject>Design by</span><span class="badge-value bg-brightgreen">飞雪无情</span></a>
+</div>
+<div class=github-badge>
+<a href=https://github.com/flysnow-org/maupassant-hugo target=_black><span class=badge-subject>Theme</span><span class="badge-value bg-yellowgreen">Maupassant</span></a>
+</div>
+</div>
+</footer>
+<a id=rocket href=#top></a>
+<script type=text/javascript src="/js/totop.js?v=0.0.0" async></script>
+<script type=text/javascript src=//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js async></script>
+<script src=/js/douban.js></script>
+</div>
+<div id=secondary>
+<section class=widget>
+<form id=search action=https://kxn.github.io/search/ method=get accept-charset=utf-8 target=_blank _lpchecked=1>
+<input type=text name=q maxlength=20 placeholder=Search>
+<input type=hidden name=sitesearch value=https://kxn.github.io>
+<button type=submit class="submit icon-search"></button>
+</form>
+</section>
+<section class=widget>
+<h3 class=widget-title>最近文章</h3>
+<ul class=widget-list>
+<li>
+<a href=https://kxn.github.io/post/557.html title="MSI B550 暗黑版跑黑苹果">MSI B550 暗黑版跑黑苹果</a>
+</li>
+<li>
+<a href=https://kxn.github.io/post/553.html title="最简单的打造一台能够 RenderDoc 的手机">最简单的打造一台能够 RenderDoc 的手机</a>
+</li>
+<li>
+<a href=https://kxn.github.io/post/541.html title="编译 RenderDoc 的安卓 apk(带interceptor-lib)">编译 RenderDoc 的安卓 apk(带interceptor-lib)</a>
+</li>
+<li>
+<a href=https://kxn.github.io/post/532.html title=Linux下解决同一硬盘因为连接设备不一样导致扇区大小不一致的问题>Linux下解决同一硬盘因为连接设备不一样导致扇区大小不一致的问题</a>
+</li>
+<li>
+<a href=https://kxn.github.io/post/529.html title="RHEL/CentOS/OracleLinux 8  yum 能看到，安装却没有的情况">RHEL/CentOS/OracleLinux 8 yum 能看到，安装却没有的情况</a>
+</li>
+<li>
+<a href=https://kxn.github.io/post/521.html title=让服务器响应整个网段中的请求>让服务器响应整个网段中的请求</a>
+</li>
+<li>
+<a href=https://kxn.github.io/post/514.html title="不要买技嘉 X570 Gaming X 主板">不要买技嘉 X570 Gaming X 主板</a>
+</li>
+<li>
+<a href=https://kxn.github.io/post/509.html title="Golang socket 里面奇怪的 pipe 使用">Golang socket 里面奇怪的 pipe 使用</a>
+</li>
+<li>
+<a href=https://kxn.github.io/post/504.html title=用RenderDoc和安卓模拟器抓帧手游>用RenderDoc和安卓模拟器抓帧手游</a>
+</li>
+<li>
+<a href=https://kxn.github.io/post/500.html title="解决 Mac 电脑原生 EFI 安装 Windows 启动很慢的问题">解决 Mac 电脑原生 EFI 安装 Windows 启动很慢的问题</a>
+</li>
+</ul>
+</section>
+<section class=widget>
+<h3 class=widget-title><a href=/categories/>分类</a></h3>
+<ul class=widget-list>
+<li><a href=https://kxn.github.io/categories/Coding/>Coding (12)</a></li>
+<li><a href=https://kxn.github.io/categories/Entertainment/>Entertainment (5)</a></li>
+<li><a href=https://kxn.github.io/categories/Network/>Network (33)</a></li>
+<li><a href=https://kxn.github.io/categories/Pictures/>Pictures (2)</a></li>
+<li><a href=https://kxn.github.io/categories/Software/>Software (27)</a></li>
+<li><a href=https://kxn.github.io/categories/Tech-Notes/>Tech Notes (174)</a></li>
+<li><a href=https://kxn.github.io/categories/Uncategorized/>Uncategorized (30)</a></li>
+</ul>
+</section>
+<section class=widget>
+<h3 class=widget-title><a href=/tags/>标签</a></h3>
+<div class=tagcloud>
+<a href=https://kxn.github.io/tags/.xsession-errors/>.xsession-errors</a>
+<a href=https://kxn.github.io/tags/139/>139</a>
+<a href=https://kxn.github.io/tags/720/>720</a>
+<a href=https://kxn.github.io/tags/CentOS/>CentOS</a>
+<a href=https://kxn.github.io/tags/adsl/>adsl</a>
+<a href=https://kxn.github.io/tags/aliedit/>aliedit</a>
+<a href=https://kxn.github.io/tags/bad-design/>bad design</a>
+<a href=https://kxn.github.io/tags/buggy/>buggy</a>
+<a href=https://kxn.github.io/tags/chdk-a570-canon/>chdk a570 canon</a>
+<a href=https://kxn.github.io/tags/cname/>cname</a>
+<a href=https://kxn.github.io/tags/dns/>dns</a>
+<a href=https://kxn.github.io/tags/error/>error</a>
+<a href=https://kxn.github.io/tags/fail/>fail</a>
+<a href=https://kxn.github.io/tags/filesort/>filesort</a>
+<a href=https://kxn.github.io/tags/fragrance-hill/>fragrance hill</a>
+<a href=https://kxn.github.io/tags/google-chrome/>google chrome</a>
+<a href=https://kxn.github.io/tags/gps/>gps</a>
+<a href=https://kxn.github.io/tags/gzip/>gzip</a>
+<a href=https://kxn.github.io/tags/half-duplex/>half duplex</a>
+<a href=https://kxn.github.io/tags/ipv6-isatap-fedora/>ipv6 isatap fedora</a>
+<a href=https://kxn.github.io/tags/javascript/>javascript</a>
+<a href=https://kxn.github.io/tags/jtag-debrick-dell-2300-%E6%97%A0%E7%BA%BF%E8%B7%AF%E7%94%B1%E5%99%A8-%E4%BF%AE%E5%A4%8D-openwrt/>jtag debrick dell 2300 无线路由器 修复 openwrt</a>
+<a href=https://kxn.github.io/tags/mobile-trail-explorer/>mobile trail explorer</a>
+<a href=https://kxn.github.io/tags/mysql/>mysql</a>
+<a href=https://kxn.github.io/tags/mysql-replication/>mysql replication</a>
+<a href=https://kxn.github.io/tags/optimize/>optimize</a>
+<a href=https://kxn.github.io/tags/performance/>performance</a>
+<a href=https://kxn.github.io/tags/pushmail/>pushmail</a>
+<a href=https://kxn.github.io/tags/query-cache/>query cache</a>
+<a href=https://kxn.github.io/tags/qwerty/>qwerty</a>
+<a href=https://kxn.github.io/tags/remote-backup/>remote backup</a>
+<a href=https://kxn.github.io/tags/shortcut/>shortcut</a>
+<a href=https://kxn.github.io/tags/slow-machine/>slow machine</a>
+<a href=https://kxn.github.io/tags/sony-ericsson-m600i/>sony ericsson m600i</a>
+<a href=https://kxn.github.io/tags/ssl/>ssl</a>
+<a href=https://kxn.github.io/tags/trackback/>trackback</a>
+<a href=https://kxn.github.io/tags/ucweb-6.3/>ucweb 6.3</a>
+<a href=https://kxn.github.io/tags/unstable/>unstable</a>
+<a href=https://kxn.github.io/tags/wildcard/>wildcard</a>
+<a href=https://kxn.github.io/tags/xp/>xp</a>
+<a href=https://kxn.github.io/tags/%E4%B8%93%E4%B8%9A%E7%89%88/>专业版</a>
+<a href=https://kxn.github.io/tags/%E5%AE%89%E5%85%A8%E9%97%AE%E9%A2%98/>安全问题</a>
+<a href=https://kxn.github.io/tags/%E6%8B%9B%E8%A1%8C/>招行</a>
+<a href=https://kxn.github.io/tags/%E6%96%90%E8%AE%AFN1/>斐讯N1</a>
+<a href=https://kxn.github.io/tags/%E9%A9%B1%E5%8A%A8/>驱动</a>
+</div>
+</section>
+<section class=widget>
+<h3 class=widget-title>友情链接</h3>
+<ul class=widget-list>
+<li>
+<a target=_blank href=https://blog.kangkang.net/ title=我的非技术blog>我的非技术blog</a>
+</li>
+</ul>
+</section>
+<section class=widget>
+<h3 class=widget-title>其它</h3>
+<ul class=widget-list>
+<li><a href=https://kxn.github.io/index.xml>文章 RSS</a></li>
+</ul>
+</section>
+</div>
+</div>
+</div>
+</div>
+</body>
+</html>

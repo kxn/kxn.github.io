@@ -1,0 +1,264 @@
+<!doctype html><html lang=zh-cn>
+<head>
+<meta charset=utf-8>
+<meta http-equiv=x-ua-compatible content="IE=edge">
+<meta name=viewport content="width=device-width,initial-scale=1">
+<meta name=referrer content="no-referrer-when-downgrade">
+<title>Bot 凶猛 | Kxn's eXercise Notes</title>
+<meta property="og:title" content="Bot 凶猛 - Kxn's eXercise Notes">
+<meta property="og:type" content="article">
+<meta property="article:published_time" content="2007-03-24T05:39:52+08:00">
+<meta property="article:modified_time" content="2007-03-24T05:39:52+08:00">
+<meta name=Keywords content>
+<meta name=description content="Bot 凶猛">
+<meta name=author content="kxn">
+<meta property="og:url" content="https://kxn.github.io/post/152.html">
+<link rel="shortcut icon" href=/favicon.ico type=image/x-icon>
+<link rel=stylesheet href=/css/normalize.css>
+<link rel=stylesheet href=/css/style.css>
+<script type=text/javascript src=//cdn.bootcdn.net/ajax/libs/jquery/3.4.1/jquery.min.js></script>
+<link rel=stylesheet href=/css/douban.css>
+<link rel=stylesheet href=/css/other.css>
+</head>
+<body>
+<header id=header class=clearfix>
+<div class=container>
+<div class=col-group>
+<div class=site-name>
+<a id=logo href=https://kxn.github.io>
+Kxn's eXercise Notes
+</a>
+<p class=description>Knowledge Sharing</p>
+</div>
+<div>
+<nav id=nav-menu class=clearfix>
+<a class=current href=https://kxn.github.io>首页</a>
+<a href=https://kxn.github.io/archives/ title=归档>归档</a>
+<a href=https://kxn.github.io/about-me/ title="About Me">About Me</a>
+</nav>
+</div>
+</div>
+</div>
+</header>
+<div id=body>
+<div class=container>
+<div class=col-group>
+<div class=col-8 id=main>
+<div class=res-cons>
+<article class=post>
+<header>
+<h1 class=post-title>Bot 凶猛</h1>
+</header>
+<date class="post-meta meta-date">
+2007年3月24日
+</date>
+<div class=post-meta>
+<span>|</span>
+<span class=meta-category><a href=/categories/Network>Network</a></span>
+</div>
+<div class=post-meta>
+<span id=busuanzi_container_page_pv>|<span id=busuanzi_value_page_pv></span><span>
+阅读</span></span>
+</div>
+<div class=post-content>
+<p>今天无聊看了一下 httpd 的 log, 发现这个地方真是 Bot 的乐园，一眼看去无数行 log 里面一个正常访问的用户都没有，有名的无名的 Bot 哗啦哗啦抓得不亦乐乎。还好我的带宽不要钱，要是虚拟主机用户岂不是要哭死。</p>
+<p>简单统计了一下 User-Agent：</p>
+<p>cut -d " " -f 12- access.log | sort | uniq -c | sort -k 1 -n -r > /tmp/uastat.log</p>
+<p>结果见附件。</p>
+<p>肉眼观察了一下，大概有如下这些 Bot，按照出现频率排序。</p>
+<p>&ldquo;Mozilla/5.0 (compatible; Yahoo! Slurp China; <a href=http://misc.yahoo.com.cn/help.html)%22>http://misc.yahoo.com.cn/help.html)"</a> // 毫无疑问，yahoo china 的是抓的最狠的。<br>
+&ldquo;Mozilla/5.0 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)&rdquo;<br>
+&ldquo;Baiduspider+(+http://www.baidu.com/search/spider.htm)&rdquo; // google 和 baidu 这俩其实不分上下，今天 g 抓的狠，明天 b 抓的狠<br>
+&ldquo;Mozilla/5.0 (compatible; Yahoo! Slurp; <a href=http://help.yahoo.com/help/us/ysearch/slurp)%22>http://help.yahoo.com/help/us/ysearch/slurp)"</a> // 美国和中国 yahoo 的 spider 明显是分开的。<br>
+&ldquo;Mozilla/4.0 (compatible; MSIE 6.0)&rdquo; // 这个肯定是什么玩意伪装的, 真正 IE 没有这么沉默，要加很多系统版本号之类。<br>
+&ldquo;msnbot/1.0 (+http://search.msn.com/msnbot.htm)&rdquo;<br>
+&ldquo;lanshanbot/1.0&rdquo; // 这是什么？<br>
+&ldquo;Anothr spider(<a href=http://www.anothr.com>http://www.anothr.com</a>; RServer 0.5)&rdquo; // 这个貌似是新冒出来的，以前没有见过。<br>
+&ldquo;lilina 0.9 (+http://lilina.sf.net/)&rdquo; // 谁家装的这个东东来抓我？<br>
+&ldquo;Bloglines/3.1 (<a href=http://www.bloglines.com>http://www.bloglines.com</a>; 1 subscriber)&rdquo;<br>
+&ldquo;Feedfetcher-Google; (+http://www.google.com/feedfetcher.html)&rdquo; // Google 他们家的 Bot 也分好几种<br>
+&ldquo;Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1; QihooBot 1.0 <a href=mailto:qihoobot@qihoo.net>qihoobot@qihoo.net</a>)&rdquo; // qihoo 也来凑热闹了，以前没有见过<br>
+&ldquo;iaskspider/2.0(+http://iask.com/help/help_index.html)&rdquo; // 这东西是死灰复燃了么？感觉跟快没了似的。。<br>
+&ldquo;Mozilla/5.0 (compatible; YodaoBot/1.0; <a href=http://www.yodao.com/help/webmaster/spider/;>http://www.yodao.com/help/webmaster/spider/;</a> )&rdquo; // yodao 貌似 bot 改过很多次名字了。<br>
+&ldquo;CafeRssCatch1.0&rdquo; // 这个是啥？<br>
+&ldquo;Mozilla/5.0 (compatible;YodaoBot-ZZZ/0.2;http://www.yodao.com/help/webmaster/spider/;zzzyzzz@gmail.com)/0.2 <a href=http://www.yodao.com/help/webmaster/spider/;>http://www.yodao.com/help/webmaster/spider/;</a> <a href=mailto:zzzyzzz@gmail.com>zzzyzzz@gmail.com</a>)&rdquo; // 不能不说 yodao 这个 Bot 描述写的太次了，描述就是简要描述，不是给你在里面写小说用的，要不要把手机号也写里面给大伙看看？<br>
+&ldquo;MagpieRSS/0.72 (+http://magpierss.sf.net) (Tiny Tiny RSS/1.2.5)&rdquo;<br>
+&ldquo;curl/7.15.1 (i386-redhat-linux-gnu) libcurl/7.15.1 OpenSSL/0.9.8a zlib/1.2.3 libidn/0.6.2&rdquo; // 经典且传统<br>
+&ldquo;Mozilla/5.0 (X11; U; Linux i686; en-US; rv:1.2.1; Rojo 1.0; <a href=http://www.rojo.com/corporate/help/agg/;>http://www.rojo.com/corporate/help/agg/;</a> Aggregating on behalf of 3 subscriber(s) online at <a href="http://www.rojo.com/?feed-id=2586324">http://www.rojo.com/?feed-id=2586324</a>) Gecko/20021130&rdquo; // 原来除了 yodao 那个，还有更恶心的描述，ft<br>
+&ldquo;NewsGatorOnline/2.0 (<a href=http://www.newsgator.com>http://www.newsgator.com</a>; 2 subscribers)&rdquo;<br>
+&ldquo;InetURL:/1.0&rdquo; // 超赞，这是哪个控件的默认 UA ?<br>
+&ldquo;Zhuaxia.com 9 Subscribers&rdquo;<br>
+&ldquo;Berrylines-rssbot (Berrylines-rssbot 0.1; 1 users)&rdquo;<br>
+&ldquo;FeedOnFeeds/0.1.8 (+http://minutillo.com/steve/feedonfeeds/)&rdquo;<br>
+&ldquo;Liferea/1.2.7 (Linux; zh_CN.UTF-8; <a href=http://liferea.sf.net/)%22>http://liferea.sf.net/)"</a> // 懒得看这个是客户端还是 Bot 了，先当 bot 算<br>
+&ldquo;sogou spider&rdquo;<br>
+&ldquo;sogou js robot&rdquo; // 有人喋喋不休就有人惜墨如金，加个描述网页的 URL 会被罚款吗？还是怕人找上门来算帐？<br>
+&ldquo;Mozilla/3.0 (compatible; Indy Library)&rdquo; // Delphi/BCB !<br>
+&ldquo;iearthworm/1.0, <a href=mailto:iearthworm@yahoo.com.cn>iearthworm@yahoo.com.cn</a>&rdquo; // 又是一个小本经营的啊。没有网页给大家看就放个邮箱。不过这名字听起来有点危险 &ndash; worm,,<br>
+&ldquo;TrackBack/1.02&rdquo; // 我没有名字，就叫我路人甲好了。。<br>
+&ldquo;Wget/1.9.1&rdquo; // wget 明显不行了啊，比 curl 少那么多。。<br>
+&ldquo;larbin_2.6.3 (<a href=mailto:larbin2.6.3@unspecified.mail>larbin2.6.3@unspecified.mail</a>)&rdquo; // 连默认配置都不改一下的一定是个懒人。。<br>
+&ldquo;User-Agent: Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1)&rdquo; // 还有程序写错了的，自己有没有抓包看看啊。。<br>
+&ldquo;P.Arthur 1.1&rdquo; // 久仰久仰，不过你到底是啥？<br>
+&ldquo;Mozilla/4.0 (compatible; NaverBot/1.0; <a href=http://help.naver.com/delete_main.asp)%22>http://help.naver.com/delete_main.asp)"</a> // 哇，韩国搜索引擎也对我这中文 blog 感兴趣么？<br>
+&ldquo;IRLbot/3.0 (compatible; MSIE 6.0; <a href=http://irl.cs.tamu.edu/crawler)%22>http://irl.cs.tamu.edu/crawler)"</a><br>
+&ldquo;daye&rdquo; // 你才大爷，你们全家都大爷，来抓还不说自己是谁。<br>
+&ldquo;libwww-perl/5.79&rdquo;<br>
+&ldquo;findlinks/1.1.3-beta9 (+http://wortschatz.uni-leipzig.de/findlinks/)&rdquo;<br>
+&ldquo;CFNetwork/129.20&rdquo;</p>
+<p><a href=http://blog.kangkang.org/wordpress/wp-content/uploads/2007/03/uastatlog.txt title=uastatlog.txt>uastatlog.txt</a></p>
+</div>
+<div class="post-meta meta-tags">
+没有标签
+</div>
+</article>
+</div>
+<footer id=footer>
+<div>
+&copy; 2021 <a href=https://kxn.github.io>Kxn's eXercise Notes By kxn</a>
+</div>
+<br>
+<div>
+<div class=github-badge>
+<a href=https://gohugo.io/ target=_black rel=nofollow><span class=badge-subject>Powered by</span><span class="badge-value bg-blue">Hugo</span></a>
+</div>
+<div class=github-badge>
+<a href=https://www.flysnow.org/ target=_black><span class=badge-subject>Design by</span><span class="badge-value bg-brightgreen">飞雪无情</span></a>
+</div>
+<div class=github-badge>
+<a href=https://github.com/flysnow-org/maupassant-hugo target=_black><span class=badge-subject>Theme</span><span class="badge-value bg-yellowgreen">Maupassant</span></a>
+</div>
+</div>
+</footer>
+<script type=text/javascript>window.MathJax={tex2jax:{inlineMath:[['$','$']],processEscapes:!0}}</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML" async></script>
+<a id=rocket href=#top></a>
+<script type=text/javascript src="/js/totop.js?v=0.0.0" async></script>
+<script type=text/javascript src=//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js async></script>
+<script src=/js/douban.js></script>
+</div>
+<div id=secondary>
+<section class=widget>
+<form id=search action=https://kxn.github.io/search/ method=get accept-charset=utf-8 target=_blank _lpchecked=1>
+<input type=text name=q maxlength=20 placeholder=Search>
+<input type=hidden name=sitesearch value=https://kxn.github.io>
+<button type=submit class="submit icon-search"></button>
+</form>
+</section>
+<section class=widget>
+<h3 class=widget-title>最近文章</h3>
+<ul class=widget-list>
+<li>
+<a href=https://kxn.github.io/post/557.html title="MSI B550 暗黑版跑黑苹果">MSI B550 暗黑版跑黑苹果</a>
+</li>
+<li>
+<a href=https://kxn.github.io/post/553.html title="最简单的打造一台能够 RenderDoc 的手机">最简单的打造一台能够 RenderDoc 的手机</a>
+</li>
+<li>
+<a href=https://kxn.github.io/post/541.html title="编译 RenderDoc 的安卓 apk(带interceptor-lib)">编译 RenderDoc 的安卓 apk(带interceptor-lib)</a>
+</li>
+<li>
+<a href=https://kxn.github.io/post/532.html title=Linux下解决同一硬盘因为连接设备不一样导致扇区大小不一致的问题>Linux下解决同一硬盘因为连接设备不一样导致扇区大小不一致的问题</a>
+</li>
+<li>
+<a href=https://kxn.github.io/post/529.html title="RHEL/CentOS/OracleLinux 8  yum 能看到，安装却没有的情况">RHEL/CentOS/OracleLinux 8 yum 能看到，安装却没有的情况</a>
+</li>
+<li>
+<a href=https://kxn.github.io/post/521.html title=让服务器响应整个网段中的请求>让服务器响应整个网段中的请求</a>
+</li>
+<li>
+<a href=https://kxn.github.io/post/514.html title="不要买技嘉 X570 Gaming X 主板">不要买技嘉 X570 Gaming X 主板</a>
+</li>
+<li>
+<a href=https://kxn.github.io/post/509.html title="Golang socket 里面奇怪的 pipe 使用">Golang socket 里面奇怪的 pipe 使用</a>
+</li>
+<li>
+<a href=https://kxn.github.io/post/504.html title=用RenderDoc和安卓模拟器抓帧手游>用RenderDoc和安卓模拟器抓帧手游</a>
+</li>
+<li>
+<a href=https://kxn.github.io/post/500.html title="解决 Mac 电脑原生 EFI 安装 Windows 启动很慢的问题">解决 Mac 电脑原生 EFI 安装 Windows 启动很慢的问题</a>
+</li>
+</ul>
+</section>
+<section class=widget>
+<h3 class=widget-title><a href=/categories/>分类</a></h3>
+<ul class=widget-list>
+<li><a href=https://kxn.github.io/categories/Coding/>Coding (12)</a></li>
+<li><a href=https://kxn.github.io/categories/Entertainment/>Entertainment (5)</a></li>
+<li><a href=https://kxn.github.io/categories/Network/>Network (33)</a></li>
+<li><a href=https://kxn.github.io/categories/Pictures/>Pictures (2)</a></li>
+<li><a href=https://kxn.github.io/categories/Software/>Software (27)</a></li>
+<li><a href=https://kxn.github.io/categories/Tech-Notes/>Tech Notes (174)</a></li>
+<li><a href=https://kxn.github.io/categories/Uncategorized/>Uncategorized (30)</a></li>
+</ul>
+</section>
+<section class=widget>
+<h3 class=widget-title><a href=/tags/>标签</a></h3>
+<div class=tagcloud>
+<a href=https://kxn.github.io/tags/.xsession-errors/>.xsession-errors</a>
+<a href=https://kxn.github.io/tags/139/>139</a>
+<a href=https://kxn.github.io/tags/720/>720</a>
+<a href=https://kxn.github.io/tags/CentOS/>CentOS</a>
+<a href=https://kxn.github.io/tags/adsl/>adsl</a>
+<a href=https://kxn.github.io/tags/aliedit/>aliedit</a>
+<a href=https://kxn.github.io/tags/bad-design/>bad design</a>
+<a href=https://kxn.github.io/tags/buggy/>buggy</a>
+<a href=https://kxn.github.io/tags/chdk-a570-canon/>chdk a570 canon</a>
+<a href=https://kxn.github.io/tags/cname/>cname</a>
+<a href=https://kxn.github.io/tags/dns/>dns</a>
+<a href=https://kxn.github.io/tags/error/>error</a>
+<a href=https://kxn.github.io/tags/fail/>fail</a>
+<a href=https://kxn.github.io/tags/filesort/>filesort</a>
+<a href=https://kxn.github.io/tags/fragrance-hill/>fragrance hill</a>
+<a href=https://kxn.github.io/tags/google-chrome/>google chrome</a>
+<a href=https://kxn.github.io/tags/gps/>gps</a>
+<a href=https://kxn.github.io/tags/gzip/>gzip</a>
+<a href=https://kxn.github.io/tags/half-duplex/>half duplex</a>
+<a href=https://kxn.github.io/tags/ipv6-isatap-fedora/>ipv6 isatap fedora</a>
+<a href=https://kxn.github.io/tags/javascript/>javascript</a>
+<a href=https://kxn.github.io/tags/jtag-debrick-dell-2300-%E6%97%A0%E7%BA%BF%E8%B7%AF%E7%94%B1%E5%99%A8-%E4%BF%AE%E5%A4%8D-openwrt/>jtag debrick dell 2300 无线路由器 修复 openwrt</a>
+<a href=https://kxn.github.io/tags/mobile-trail-explorer/>mobile trail explorer</a>
+<a href=https://kxn.github.io/tags/mysql/>mysql</a>
+<a href=https://kxn.github.io/tags/mysql-replication/>mysql replication</a>
+<a href=https://kxn.github.io/tags/optimize/>optimize</a>
+<a href=https://kxn.github.io/tags/performance/>performance</a>
+<a href=https://kxn.github.io/tags/pushmail/>pushmail</a>
+<a href=https://kxn.github.io/tags/query-cache/>query cache</a>
+<a href=https://kxn.github.io/tags/qwerty/>qwerty</a>
+<a href=https://kxn.github.io/tags/remote-backup/>remote backup</a>
+<a href=https://kxn.github.io/tags/shortcut/>shortcut</a>
+<a href=https://kxn.github.io/tags/slow-machine/>slow machine</a>
+<a href=https://kxn.github.io/tags/sony-ericsson-m600i/>sony ericsson m600i</a>
+<a href=https://kxn.github.io/tags/ssl/>ssl</a>
+<a href=https://kxn.github.io/tags/trackback/>trackback</a>
+<a href=https://kxn.github.io/tags/ucweb-6.3/>ucweb 6.3</a>
+<a href=https://kxn.github.io/tags/unstable/>unstable</a>
+<a href=https://kxn.github.io/tags/wildcard/>wildcard</a>
+<a href=https://kxn.github.io/tags/xp/>xp</a>
+<a href=https://kxn.github.io/tags/%E4%B8%93%E4%B8%9A%E7%89%88/>专业版</a>
+<a href=https://kxn.github.io/tags/%E5%AE%89%E5%85%A8%E9%97%AE%E9%A2%98/>安全问题</a>
+<a href=https://kxn.github.io/tags/%E6%8B%9B%E8%A1%8C/>招行</a>
+<a href=https://kxn.github.io/tags/%E6%96%90%E8%AE%AFN1/>斐讯N1</a>
+<a href=https://kxn.github.io/tags/%E9%A9%B1%E5%8A%A8/>驱动</a>
+</div>
+</section>
+<section class=widget>
+<h3 class=widget-title>友情链接</h3>
+<ul class=widget-list>
+<li>
+<a target=_blank href=https://blog.kangkang.net/ title=我的非技术blog>我的非技术blog</a>
+</li>
+</ul>
+</section>
+<section class=widget>
+<h3 class=widget-title>其它</h3>
+<ul class=widget-list>
+<li><a href=https://kxn.github.io/index.xml>文章 RSS</a></li>
+</ul>
+</section>
+</div>
+</div>
+</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,402 @@
+<!doctype html><html lang=zh-cn>
+<head>
+<meta name=generator content="Hugo 0.90.1">
+<meta charset=utf-8>
+<meta http-equiv=x-ua-compatible content="IE=edge">
+<meta name=viewport content="width=device-width,initial-scale=1">
+<meta name=referrer content="no-referrer-when-downgrade">
+<title>Kxn's eXercise Notes | Knowledge Sharing</title>
+<meta property="og:title" content="Kxn's eXercise Notes | Knowledge Sharing">
+<meta property="og:type" content="website">
+<meta name=Keywords content>
+<meta name=description content>
+<meta property="og:url" content="https://kxn.github.io/">
+<link rel="shortcut icon" href=/favicon.ico type=image/x-icon>
+<link rel=stylesheet href=/css/normalize.css>
+<link rel=stylesheet href=/css/style.css>
+<link rel=alternate type=application/rss+xml href=https://kxn.github.io/index.xml title="Kxn's eXercise Notes">
+<script type=text/javascript src=//cdn.bootcdn.net/ajax/libs/jquery/3.4.1/jquery.min.js></script>
+<link rel=stylesheet href=/css/douban.css>
+<link rel=stylesheet href=/css/other.css>
+</head>
+<body>
+<header id=header class=clearfix>
+<div class=container>
+<div class=col-group>
+<div class=site-name>
+<h1>
+<a id=logo href=https://kxn.github.io>
+Kxn's eXercise Notes
+</a>
+</h1>
+<p class=description>Knowledge Sharing</p>
+</div>
+<div>
+<nav id=nav-menu class=clearfix>
+<a class=current href=https://kxn.github.io>首页</a>
+<a href=https://kxn.github.io/archives/ title=归档>归档</a>
+<a href=https://kxn.github.io/about-me/ title="About Me">About Me</a>
+</nav>
+</div>
+</div>
+</div>
+</header>
+<div id=body>
+<div class=container>
+<div class=col-group>
+<div class=col-8 id=main>
+<div class=res-cons>
+<article class=post>
+<header>
+<h1 class=post-title>
+<a href=https://kxn.github.io/post/496.html title="CentOS 在线升级 Oracle Linux 的方法">CentOS 在线升级 Oracle Linux 的方法</a>
+</h1>
+</header>
+<date class="post-meta meta-date">
+2020年12月9日
+</date>
+<div class=post-meta>
+<span>|</span>
+<span class=meta-category><a href=/categories/Tech-Notes>Tech Notes</a></span>
+</div>
+<div class=post-content>
+1：强制安装 oraclelinux-release 和 redhat-release 的包 从 yum.oracle.com 找到对应版本这两个包的最新版，例如 Oracle Linux 8(对应 CentOs 8) x86_64 这两个包最新版是 https://yum.oracle.com/repo/OracleLinux/OL8/baseos/latest/x86_64/getPackage/oraclelinux-release-8.3-1.0.4.el8.x86_64.rpm https://yum.oracle.com/repo/OracleLinux/OL8/baseos/latest/x86_64/getPackage/redhat-release-8.3-1.0.0.1.el8.x86_64.rpm 用 rpm 强制安装之 rpm -i --force https://yum.oracle.com/repo/OracleLinux/OL8/baseos/latest/x86_64/getPackage/oraclelinux-release-8.3-1.0.4.el8.x86_64.rpm https://yum.oracle.com/repo/OracleLinux/OL8/baseos/latest/x86_64/getPackage/redhat-release-8.3-1.0.0.1.el8.x86_64.rpm 2: 删除原有 centos release 包 rpm -e centos-gpg-keys centos-repos centos-release 如果有安装 epel-release 也一起删除 rpm -e epel-release 3: 安装 oraclelinux-release-el? 的包，比如 centos 8 就用 oracle-release-el8 ，同样从 yum.oracle.com 找到这个包的最新版 https://yum.oracle.com/repo/OracleLinux/OL8/baseos/latest/x86_64/getPackage/oraclelinux-release-el8-1.0-14.el8.x86_64.rpm rpm -i https://yum.oracle.com/repo/OracleLinux/OL8/baseos/latest/x86_64/getPackage/oraclelinux-release-el8-1.0-14.el8.x86_64.rpm (剩下的事情都可以用 yum 来搞定了) 4: 如果之……
+</div>
+<p class=readmore><a href=https://kxn.github.io/post/496.html>阅读全文</a></p>
+</article>
+<article class=post>
+<header>
+<h1 class=post-title>
+<a href=https://kxn.github.io/post/492.html title="Hello Oracle Linux">Hello Oracle Linux</a>
+</h1>
+</header>
+<date class="post-meta meta-date">
+2020年12月9日
+</date>
+<div class=post-meta>
+<span>|</span>
+<span class=meta-category><a href=/categories/Tech-Notes>Tech Notes</a></span>
+</div>
+<div class=post-content>
+为了响应红帽给 CentOS 判的死刑，本站今晚成功在线升级到 Oracle Linux 8，完全平滑无障碍。 [root@blog ~]# cat /etc/oracle-release Oracle Linux Server release 8.3 [root@blog ~]# cat /etc/redhat-release Red Hat Enterprise Linux release 8.3 (Ootpa) [root@blog ~]# uname -a Linux blog.kangkang.org 4.18.0-240.1.1.el8_3.x86_64 #1 SMP Mon Nov 9 16:26:47 PST 2020 x86_64 x86_64 x86_64 GNU/Linux 升级完了才发现原来 CentOS 8 摸鱼很久了，内核原来落后了这么多。 然后刚才又手贱了一把，升级了一下 Oracle 自己的内核，号称 Unbreakable Enterprise Kernel。。。 虽……
+</div>
+<p class=readmore><a href=https://kxn.github.io/post/492.html>阅读全文</a></p>
+</article>
+<article class=post>
+<header>
+<h1 class=post-title>
+<a href=https://kxn.github.io/post/483.html title=防止掉盘云/我家云/粒子云掉盘>防止掉盘云/我家云/粒子云掉盘</a>
+</h1>
+</header>
+<date class="post-meta meta-date">
+2020年8月11日
+</date>
+<div class=post-meta>
+<span>|</span>
+<span class=meta-category><a href=/categories/Tech-Notes>Tech Notes</a></span>
+</div>
+<div class=post-content>
+感觉这个应该是终极解决方案了 sdparm --clear=STANDBY /dev/sda -S 这个命令会让硬盘不进入睡眠状态，而且保存在硬盘 nvram 里面了，重启以后状态依然保留。 sdparm 不是 hdparm，需要用 dnf 装。CentOS 8 的 repo 里面是有的。……
+</div>
+<p class=readmore><a href=https://kxn.github.io/post/483.html>阅读全文</a></p>
+</article>
+<article class=post>
+<header>
+<h1 class=post-title>
+<a href=https://kxn.github.io/post/481.html title=解决小米盒子之类安卓播放器无法访问samba的问题>解决小米盒子之类安卓播放器无法访问samba的问题</a>
+</h1>
+</header>
+<date class="post-meta meta-date">
+2020年8月5日
+</date>
+<div class=post-meta>
+<span>|</span>
+<span class=meta-category><a href=/categories/Tech-Notes>Tech Notes</a></span>
+</div>
+<div class=post-content>
+CentOS8 里面 samba 默认设置 server min procotol = SMB2，这样小米盒子里面自带的播放器这种只支持 SMB1 的就连不上了，在 smb.conf 里面 [global] 加上一行 server min protocol = NT1 即可解决。……
+</div>
+<p class=readmore><a href=https://kxn.github.io/post/481.html>阅读全文</a></p>
+</article>
+<article class=post>
+<header>
+<h1 class=post-title>
+<a href=https://kxn.github.io/post/478.html title=blog迁移时候竟然忘记开opcache了！>blog迁移时候竟然忘记开opcache了！</a>
+</h1>
+</header>
+<date class="post-meta meta-date">
+2020年8月4日
+</date>
+<div class=post-meta>
+<span>|</span>
+<span class=meta-category><a href=/categories/Tech-Notes>Tech Notes</a></span>
+</div>
+<div class=post-content>
+我说怎么这么慢呢。。……
+</div>
+<p class=readmore><a href=https://kxn.github.io/post/478.html>阅读全文</a></p>
+</article>
+<article class=post>
+<header>
+<h1 class=post-title>
+<a href=https://kxn.github.io/post/474.html title=我家云/粒子云刷CentOS>我家云/粒子云刷CentOS</a>
+</h1>
+</header>
+<date class="post-meta meta-date">
+2020年8月4日
+</date>
+<div class=post-meta>
+<span>|</span>
+<span class=meta-category><a href=/categories/Tech-Notes>Tech Notes</a></span>
+</div>
+<div class=post-content>
+最近又发现一个矿渣，我家云或者粒子云，配置是 RK3328 + 1G RAM + 8G EMMC。单看配置确实没啥看的价值，但是好就好在他可以内置一个 3.5 寸的硬盘，磁盘读写速度比起只有 USB 2.0 的 N1 盒子来说完全不可同日而语。矿难以后价格一度降到五六十块包邮，然而我总是后知后觉，发现的时候价格又都涨到 80 左右包邮了，无论如……
+</div>
+<p class=readmore><a href=https://kxn.github.io/post/474.html>阅读全文</a></p>
+</article>
+<article class=post>
+<header>
+<h1 class=post-title>
+<a href=https://kxn.github.io/post/470.html title=搬家到腾讯云轻量应用服务器了>搬家到腾讯云轻量应用服务器了</a>
+</h1>
+</header>
+<date class="post-meta meta-date">
+2020年7月30日
+</date>
+<div class=post-meta>
+<span>|</span>
+<span class=meta-category><a href=/categories/Tech-Notes>Tech Notes</a></span>
+</div>
+<div class=post-content>
+感觉比阿里的良心一些啊。至少目前线路还可以。。。……
+</div>
+<p class=readmore><a href=https://kxn.github.io/post/470.html>阅读全文</a></p>
+</article>
+<article class=post>
+<header>
+<h1 class=post-title>
+<a href=https://kxn.github.io/post/468.html title="阿里云/腾讯云 CentOS7 在线升级 CentOS8 脚本">阿里云/腾讯云 CentOS7 在线升级 CentOS8 脚本</a>
+</h1>
+</header>
+<date class="post-meta meta-date">
+2020年7月29日
+</date>
+<div class=post-meta>
+<span>|</span>
+<span class=meta-category><a href=/categories/Tech-Notes>Tech Notes</a></span>
+</div>
+<div class=post-content>
+仅在轻量应用服务器上测试过。建议只在刚生成的机器上使用。 https://github.com/kxn/scripts/blob/master/CentOS/aliyun-txyun-7-to-8.sh……
+</div>
+<p class=readmore><a href=https://kxn.github.io/post/468.html>阅读全文</a></p>
+</article>
+<article class=post>
+<header>
+<h1 class=post-title>
+<a href=https://kxn.github.io/post/454.html title="开启 OCSP Stapling 来解决苹果客户端连 https 很慢的问题">开启 OCSP Stapling 来解决苹果客户端连 https 很慢的问题</a>
+</h1>
+</header>
+<date class="post-meta meta-date">
+2020年7月9日
+</date>
+<div class=post-meta>
+<span>|</span>
+<span class=meta-category><a href=/categories/Tech-Notes>Tech Notes</a></span>
+</div>
+<div class=post-content>
+最近墙不知道为何抽风把 ocsp.int-x3.letsencrypt.org 给封了，导致所有用 letsencrypt 证书的网站，用 iOS 客户端连的时候都要卡几秒验证 ocsp。 这个破 blog 当然也受到了影响。 解决还是很容易的，打开 OCSP Stapling 就可以了。这个原理简单说，就是让本来该客户端去验证 ocsp 的事情，由 nginx 替它做了，去下来 ocsp 的结果然后和证书一起发给客户端，客户端验证以后就……
+</div>
+<p class=readmore><a href=https://kxn.github.io/post/454.html>阅读全文</a></p>
+</article>
+<article class=post>
+<header>
+<h1 class=post-title>
+<a href=https://kxn.github.io/post/434.html title="CentOS 7 在线升级 CentOS 8">CentOS 7 在线升级 CentOS 8</a>
+</h1>
+</header>
+<date class="post-meta meta-date">
+2020年6月13日
+</date>
+<div class=post-meta>
+<span>|</span>
+<span class=meta-category><a href=/categories/Tech-Notes>Tech Notes</a></span>
+</div>
+<div class=post-content>
+CentOS7 上的软件逐渐已经开始落后于时代。虽然 CentOS 8 出来的时间还没有那么多，可能还需要很多小白鼠的考验。但是按照以前经验，已经需要开始试用了。 和 6 在线升 7 不一样，7 在线升 8 是没有官方支持的，只是能用而已，所以搞之前务必小心。 参考的基本贴是这里https://www.tecmint.com/……
+</div>
+<p class=readmore><a href=https://kxn.github.io/post/434.html>阅读全文</a></p>
+</article>
+<ol class=page-navigator>
+<li class=prev>
+<a href=https://kxn.github.io/>上一页</a>
+</li>
+<li>
+<a href=https://kxn.github.io/>1</a>
+</li>
+<li class=current>
+<a href=https://kxn.github.io/page/2/>2</a>
+</li>
+<li>
+<a href=https://kxn.github.io/page/3/>3</a>
+</li>
+<li>
+<a href=https://kxn.github.io/page/4/>4</a>
+</li>
+<li>
+<span>...</span>
+</li>
+<li>
+<a href=https://kxn.github.io/page/22/>22</a>
+</li>
+<li class=next>
+<a href=https://kxn.github.io/page/3/>下一页</a>
+</li>
+</ol>
+</div>
+<footer id=footer>
+<div>
+&copy; 2021 <a href=https://kxn.github.io>Kxn's eXercise Notes By kxn</a>
+</div>
+<br>
+<div>
+<div class=github-badge>
+<a href=https://gohugo.io/ target=_black rel=nofollow><span class=badge-subject>Powered by</span><span class="badge-value bg-blue">Hugo</span></a>
+</div>
+<div class=github-badge>
+<a href=https://www.flysnow.org/ target=_black><span class=badge-subject>Design by</span><span class="badge-value bg-brightgreen">飞雪无情</span></a>
+</div>
+<div class=github-badge>
+<a href=https://github.com/flysnow-org/maupassant-hugo target=_black><span class=badge-subject>Theme</span><span class="badge-value bg-yellowgreen">Maupassant</span></a>
+</div>
+</div>
+</footer>
+<a id=rocket href=#top></a>
+<script type=text/javascript src="/js/totop.js?v=0.0.0" async></script>
+<script type=text/javascript src=//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js async></script>
+<script src=/js/douban.js></script>
+</div>
+<div id=secondary>
+<section class=widget>
+<form id=search action=https://kxn.github.io/search/ method=get accept-charset=utf-8 target=_blank _lpchecked=1>
+<input type=text name=q maxlength=20 placeholder=Search>
+<input type=hidden name=sitesearch value=https://kxn.github.io>
+<button type=submit class="submit icon-search"></button>
+</form>
+</section>
+<section class=widget>
+<h3 class=widget-title>最近文章</h3>
+<ul class=widget-list>
+<li>
+<a href=https://kxn.github.io/post/557.html title="MSI B550 暗黑版跑黑苹果">MSI B550 暗黑版跑黑苹果</a>
+</li>
+<li>
+<a href=https://kxn.github.io/post/553.html title="最简单的打造一台能够 RenderDoc 的手机">最简单的打造一台能够 RenderDoc 的手机</a>
+</li>
+<li>
+<a href=https://kxn.github.io/post/541.html title="编译 RenderDoc 的安卓 apk(带interceptor-lib)">编译 RenderDoc 的安卓 apk(带interceptor-lib)</a>
+</li>
+<li>
+<a href=https://kxn.github.io/post/532.html title=Linux下解决同一硬盘因为连接设备不一样导致扇区大小不一致的问题>Linux下解决同一硬盘因为连接设备不一样导致扇区大小不一致的问题</a>
+</li>
+<li>
+<a href=https://kxn.github.io/post/529.html title="RHEL/CentOS/OracleLinux 8  yum 能看到，安装却没有的情况">RHEL/CentOS/OracleLinux 8 yum 能看到，安装却没有的情况</a>
+</li>
+<li>
+<a href=https://kxn.github.io/post/521.html title=让服务器响应整个网段中的请求>让服务器响应整个网段中的请求</a>
+</li>
+<li>
+<a href=https://kxn.github.io/post/514.html title="不要买技嘉 X570 Gaming X 主板">不要买技嘉 X570 Gaming X 主板</a>
+</li>
+<li>
+<a href=https://kxn.github.io/post/509.html title="Golang socket 里面奇怪的 pipe 使用">Golang socket 里面奇怪的 pipe 使用</a>
+</li>
+<li>
+<a href=https://kxn.github.io/post/504.html title=用RenderDoc和安卓模拟器抓帧手游>用RenderDoc和安卓模拟器抓帧手游</a>
+</li>
+<li>
+<a href=https://kxn.github.io/post/500.html title="解决 Mac 电脑原生 EFI 安装 Windows 启动很慢的问题">解决 Mac 电脑原生 EFI 安装 Windows 启动很慢的问题</a>
+</li>
+</ul>
+</section>
+<section class=widget>
+<h3 class=widget-title><a href=/categories/>分类</a></h3>
+<ul class=widget-list>
+<li><a href=https://kxn.github.io/categories/Coding/>Coding (12)</a></li>
+<li><a href=https://kxn.github.io/categories/Entertainment/>Entertainment (5)</a></li>
+<li><a href=https://kxn.github.io/categories/Network/>Network (33)</a></li>
+<li><a href=https://kxn.github.io/categories/Pictures/>Pictures (2)</a></li>
+<li><a href=https://kxn.github.io/categories/Software/>Software (27)</a></li>
+<li><a href=https://kxn.github.io/categories/Tech-Notes/>Tech Notes (174)</a></li>
+<li><a href=https://kxn.github.io/categories/Uncategorized/>Uncategorized (30)</a></li>
+</ul>
+</section>
+<section class=widget>
+<h3 class=widget-title><a href=/tags/>标签</a></h3>
+<div class=tagcloud>
+<a href=https://kxn.github.io/tags/.xsession-errors/>.xsession-errors</a>
+<a href=https://kxn.github.io/tags/139/>139</a>
+<a href=https://kxn.github.io/tags/720/>720</a>
+<a href=https://kxn.github.io/tags/CentOS/>CentOS</a>
+<a href=https://kxn.github.io/tags/adsl/>adsl</a>
+<a href=https://kxn.github.io/tags/aliedit/>aliedit</a>
+<a href=https://kxn.github.io/tags/bad-design/>bad design</a>
+<a href=https://kxn.github.io/tags/buggy/>buggy</a>
+<a href=https://kxn.github.io/tags/chdk-a570-canon/>chdk a570 canon</a>
+<a href=https://kxn.github.io/tags/cname/>cname</a>
+<a href=https://kxn.github.io/tags/dns/>dns</a>
+<a href=https://kxn.github.io/tags/error/>error</a>
+<a href=https://kxn.github.io/tags/fail/>fail</a>
+<a href=https://kxn.github.io/tags/filesort/>filesort</a>
+<a href=https://kxn.github.io/tags/fragrance-hill/>fragrance hill</a>
+<a href=https://kxn.github.io/tags/google-chrome/>google chrome</a>
+<a href=https://kxn.github.io/tags/gps/>gps</a>
+<a href=https://kxn.github.io/tags/gzip/>gzip</a>
+<a href=https://kxn.github.io/tags/half-duplex/>half duplex</a>
+<a href=https://kxn.github.io/tags/ipv6-isatap-fedora/>ipv6 isatap fedora</a>
+<a href=https://kxn.github.io/tags/javascript/>javascript</a>
+<a href=https://kxn.github.io/tags/jtag-debrick-dell-2300-%E6%97%A0%E7%BA%BF%E8%B7%AF%E7%94%B1%E5%99%A8-%E4%BF%AE%E5%A4%8D-openwrt/>jtag debrick dell 2300 无线路由器 修复 openwrt</a>
+<a href=https://kxn.github.io/tags/mobile-trail-explorer/>mobile trail explorer</a>
+<a href=https://kxn.github.io/tags/mysql/>mysql</a>
+<a href=https://kxn.github.io/tags/mysql-replication/>mysql replication</a>
+<a href=https://kxn.github.io/tags/optimize/>optimize</a>
+<a href=https://kxn.github.io/tags/performance/>performance</a>
+<a href=https://kxn.github.io/tags/pushmail/>pushmail</a>
+<a href=https://kxn.github.io/tags/query-cache/>query cache</a>
+<a href=https://kxn.github.io/tags/qwerty/>qwerty</a>
+<a href=https://kxn.github.io/tags/remote-backup/>remote backup</a>
+<a href=https://kxn.github.io/tags/shortcut/>shortcut</a>
+<a href=https://kxn.github.io/tags/slow-machine/>slow machine</a>
+<a href=https://kxn.github.io/tags/sony-ericsson-m600i/>sony ericsson m600i</a>
+<a href=https://kxn.github.io/tags/ssl/>ssl</a>
+<a href=https://kxn.github.io/tags/trackback/>trackback</a>
+<a href=https://kxn.github.io/tags/ucweb-6.3/>ucweb 6.3</a>
+<a href=https://kxn.github.io/tags/unstable/>unstable</a>
+<a href=https://kxn.github.io/tags/wildcard/>wildcard</a>
+<a href=https://kxn.github.io/tags/xp/>xp</a>
+<a href=https://kxn.github.io/tags/%E4%B8%93%E4%B8%9A%E7%89%88/>专业版</a>
+<a href=https://kxn.github.io/tags/%E5%AE%89%E5%85%A8%E9%97%AE%E9%A2%98/>安全问题</a>
+<a href=https://kxn.github.io/tags/%E6%8B%9B%E8%A1%8C/>招行</a>
+<a href=https://kxn.github.io/tags/%E6%96%90%E8%AE%AFN1/>斐讯N1</a>
+<a href=https://kxn.github.io/tags/%E9%A9%B1%E5%8A%A8/>驱动</a>
+</div>
+</section>
+<section class=widget>
+<h3 class=widget-title>友情链接</h3>
+<ul class=widget-list>
+<li>
+<a target=_blank href=https://blog.kangkang.net/ title=我的非技术blog>我的非技术blog</a>
+</li>
+</ul>
+</section>
+<section class=widget>
+<h3 class=widget-title>其它</h3>
+<ul class=widget-list>
+<li><a href=https://kxn.github.io/index.xml>文章 RSS</a></li>
+</ul>
+</section>
+</div>
+</div>
+</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,353 @@
+<!doctype html><html lang=zh-cn>
+<head>
+<meta charset=utf-8>
+<meta http-equiv=x-ua-compatible content="IE=edge">
+<meta name=viewport content="width=device-width,initial-scale=1">
+<meta name=referrer content="no-referrer-when-downgrade">
+<title>在 LinkSYS WRT54G 上面用 OpenWRT | Kxn's eXercise Notes</title>
+<meta property="og:title" content="在 LinkSYS WRT54G 上面用 OpenWRT - Kxn's eXercise Notes">
+<meta property="og:type" content="article">
+<meta property="article:published_time" content="2006-04-01T14:34:00+08:00">
+<meta property="article:modified_time" content="2006-04-01T14:34:00+08:00">
+<meta name=Keywords content>
+<meta name=description content="在 LinkSYS WRT54G 上面用 OpenWRT">
+<meta name=author content="kxn">
+<meta property="og:url" content="https://kxn.github.io/post/90.html">
+<link rel="shortcut icon" href=/favicon.ico type=image/x-icon>
+<link rel=stylesheet href=/css/normalize.css>
+<link rel=stylesheet href=/css/style.css>
+<script type=text/javascript src=//cdn.bootcdn.net/ajax/libs/jquery/3.4.1/jquery.min.js></script>
+<link rel=stylesheet href=/css/douban.css>
+<link rel=stylesheet href=/css/other.css>
+</head>
+<body>
+<header id=header class=clearfix>
+<div class=container>
+<div class=col-group>
+<div class=site-name>
+<a id=logo href=https://kxn.github.io>
+Kxn's eXercise Notes
+</a>
+<p class=description>Knowledge Sharing</p>
+</div>
+<div>
+<nav id=nav-menu class=clearfix>
+<a class=current href=https://kxn.github.io>首页</a>
+<a href=https://kxn.github.io/archives/ title=归档>归档</a>
+<a href=https://kxn.github.io/about-me/ title="About Me">About Me</a>
+</nav>
+</div>
+</div>
+</div>
+</header>
+<div id=body>
+<div class=container>
+<div class=col-group>
+<div class=col-8 id=main>
+<div class=res-cons>
+<article class=post>
+<header>
+<h1 class=post-title>在 LinkSYS WRT54G 上面用 OpenWRT</h1>
+</header>
+<date class="post-meta meta-date">
+2006年4月1日
+</date>
+<div class=post-meta>
+<span>|</span>
+<span class=meta-category><a href=/categories/Tech-Notes>Tech Notes</a></span>
+</div>
+<div class=post-meta>
+<span id=busuanzi_container_page_pv>|<span id=busuanzi_value_page_pv></span><span>
+阅读</span></span>
+</div>
+<div class=post-content>
+<p>不是我不知道，这世界变化快，家用无线路由器上面可以跑 Linux 了也。</p>
+<p>以前用的无线路由是一台 TP-Link WR541G ，可能是因为 CPU 比较弱的原因，BT 时候线程不能开太多，否则就算带宽还没有打满，网络反应也会很慢，上 bbs 都一卡一卡的。最不能忍的是 TCP NAT 的超时时间非常短，只有五分钟，而且在超时的时候不会给两方发 RST ，对我这样经常开很多 SCRT 窗口干活的人来说实在是太恶心了，很容易就造成很多 shell 尸体。虽然 SCRT 可以设置 anti idle ，但是我一百多个已有的 session，一个一个改过来会累死人的。。</p>
+<p>前几天在网上看到了 <a href=http://openwrt.org/>OpenWRT</a>，是一个可以运行在 linksys 等一系列家用无线路由器上面的 linux 发行版。Linksys 本身的 firmware 就是基于 linux 的，后来 linksys 不知道为啥一高兴就放出来源代码。于是网上冒出了各种打造版本的 firmware ，但是都还是在 linksys 版本上面的修修补补，每次修改都是生成整个的 firmware 文件刷进路由器。OpenWRT 的开发者觉得这样很麻烦，于是他们选择了不同的一条路，从一个最小的嵌入 linux 开始，一点一点增加功能进去，尽量向 linksys 版本的功能靠近，现在的 OpenWRT 可用性已经相当不错，除了 web 界面都是调用的 shell ，速度比较慢之外，剩下的无线路由基本功能都具备，而且因为是 linux 的缘故，可以自己加入更多好用的功能比如用 linux-igd 支持 upnp, 用 openvpn 把你的路由器和工作单位的机器打通 vpn 连接等等。</p>
+<p>不是所有的 linksys 路由器都能支持 OpenWRT, <a href=http://wiki.openwrt.org/TableOfHardware>这个页面</a> 里面有所有已知支持的无线路由器列表，里面除了 linksys，还有不少其他体系结构相近的或者直接就是 linksys OEM 的产品。这个列表里面没有 TP-Link 的 WR541G ，我找人借来一台 linksys WRT54G （TP-Link 的型号跟 Linksys 的也太像了一点，让人不能不怀疑 TP-Link 有混水摸鱼之嫌），打算刷坏了就还给人家，刷好了就把 TP-Link 还给他 :8，还好最后没有出现那种比较不好的情况，呵呵。</p>
+<p>OpenWRT 的安装说明在 <a href=http://wiki.openwrt.org/OpenWrtDocs>http://wiki.openwrt.org/OpenWrtDocs</a>，虽然现在 OpenWRT 的最新版本 RC5 已经相当不错，安装非常简单，但是我还是强烈建议所有要安装 OpenWRT 的人通读所有说明，了解在安装过程中什么时候容易出现问题，什么时候不要做什么操作，以及一旦挂了如何处理，毕竟不是所有人的人品都很好的 :P 另外就是刷 OpenWRT 会失去保修，如果刷死了，又没有串口线之类设备能通过 tftp 刷回来的话，找商家换的时候千万不要说是自己刷死的。。</p>
+<p>OpenWRT 的安装非常之简单，从 <a href=http://downloads.openwrt.org/whiterussian/newest/bin/>http://downloads.openwrt.org/whiterussian/newest/bin/</a> 下载来适合你路由器的版本，每种路由器都有 squashfs 和 jffs2 两种版本，前者的文件系统是只读的，后者文件系统可写，但是稍微浪费空间一些，个人推荐第一种，官方也推荐这个，不用担心只读文件系统导致不能装其他软件，OpenWRT 使用了一些 trick 来使得 squashfs 版本够安装。安装过程和普通升级 firmware 过程一样，在 linksys 的 firmware 里面找到升级页面，直接选择下载来的 firmware，选择升级就可以了。当然，过程中不要关闭电源。升级完了以后路由器会自动重启。</p>
+<p>OpenWRT 的第一次重启会用比较长时间，大概需要几分钟，启动过程中 OpenWRT 会点亮路由器的 DMZ 灯，灯灭了以后应该就可以连接了。默认的 IP 是 192.168.1.1, 你需要把你的网卡 IP 强行指定到 192.168.1 网段，注意如果 DMZ 灯灭了还是 ping 不通，尝试把网卡禁用一下再启用，可能跟 OpenWRT 内部使用了 VLAN 有关。</p>
+<p>OpenWRT 安装好了以后是没有默认密码的，需要用 telnet 连上去设置初始密码。</p>
+<blockquote>
+<p>telnet 192.168.1.1</p>
+<p>Trying 192.168.1.1&mldr;<br>
+Connected to 192.168.1.1.<br>
+Escape character is &lsquo;^]&rsquo;.<br>
+=== IMPORTANT ============================<br>
+Use &lsquo;passwd&rsquo; to set your login password<br>
+this will disable telnet and enable SSH<br>
+-&ndash;-&ndash;-&ndash;-&ndash;-&ndash;-&ndash;-&ndash;-&ndash;-&ndash;-&ndash;-&ndash;-&ndash;-&ndash;-&ndash;</p>
+<p>BusyBox v1.00 (2006.03.24-09:16+0000) Built-in shell (ash)<br>
+Enter &lsquo;help&rsquo; for a list of built-in commands.</p>
+<p>_<strong>_</strong>_ <strong>_</strong>___ __<br>
+| |.-&mdash;-.-&mdash;-.-&mdash;-.| | | |.-&mdash;.| |_<br>
+| - || _ | -<em>_| || | | || _|| _|<br>
+|_**</em>_\<em>_|| __|**_\</em>_|__|__||______\__||__| |_<strong>_|<br>
+|</strong>| W I R E L E S S F R E E D O M<br>
+WHITE RUSSIAN -&ndash;-&ndash;-&ndash;-&ndash;-&ndash;-&ndash;-&ndash;-&ndash;-&ndash;-&ndash;-&ndash;-&mdash;</p>
+<ul>
+<li>2 oz Vodka Mix the Vodka and Kahlua together</li>
+<li>1 oz Kahlua over ice, then float the cream or</li>
+<li>1/2oz cream milk on the top.<br>
+-&ndash;-&ndash;-&ndash;-&ndash;-&ndash;-&ndash;-&ndash;-&ndash;-&ndash;-&ndash;-&ndash;-&ndash;-&ndash;-&ndash;-&ndash;-&ndash;-&ndash;<br>
+root@OpenWrt:~# passwd<br>
+Changing password for root<br>
+Enter the new password (minimum of 5, maximum of 8 characters)<br>
+Please use a combination of upper and lower case letters and numbers.<br>
+Enter new password:<br>
+Re-enter new password:<br>
+Password changed.<br>
+root@OpenWrt:~#</li>
+</ul>
+</blockquote>
+<p>设置初始密码以后，就无法再 telnet OpenWRT 了，以后只能用 ssh 登录，第一次设置密码以后，OpenWRT 会启动 sshd, 这之间可能需要几分钟来生成 ssh 的 key, 路由器的 cpu 很慢，所以连不上不要着急，更不要重启。</p>
+<p>ssh 登录进去以后可以看到这个系统上面有无数网络接口</p>
+<blockquote>
+<p>root@comman:~# ifconfig<br>
+br0 Link encap:Ethernet HWaddr 00:06:25:DA:1E:AD<br>
+inet addr:192.168.1.1 Bcast:192.168.1.255 Mask:255.255.255.0<br>
+UP BROADCAST RUNNING MULTICAST MTU:1500 Metric:1<br>
+RX packets:1895257 errors:0 dropped:0 overruns:0 frame:0<br>
+TX packets:1715280 errors:0 dropped:0 overruns:0 carrier:0<br>
+collisions:0 txqueuelen:0<br>
+RX bytes:882547891 (841.6 MiB) TX bytes:1190856407 (1.1 GiB)</p>
+<p>eth0 Link encap:Ethernet HWaddr 00:06:25:DF:90:81<br>
+UP BROADCAST RUNNING PROMISC MULTICAST MTU:1500 Metric:1<br>
+RX packets:3695441 errors:0 dropped:0 overruns:0 frame:0<br>
+TX packets:3674824 errors:0 dropped:0 overruns:0 carrier:0<br>
+collisions:0 txqueuelen:1000<br>
+RX bytes:2216675196 (2.0 GiB) TX bytes:2141503118 (1.9 GiB)<br>
+Interrupt:3</p>
+<p>eth2 Link encap:Ethernet HWaddr 00:06:25:DA:1E:AD<br>
+UP BROADCAST RUNNING ALLMULTI MULTICAST MTU:1500 Metric:1<br>
+RX packets:50309 errors:0 dropped:0 overruns:0 frame:15659<br>
+TX packets:69983 errors:33 dropped:0 overruns:0 carrier:0<br>
+collisions:0 txqueuelen:1000<br>
+RX bytes:6256618 (5.9 MiB) TX bytes:77584248 (73.9 MiB)<br>
+Interrupt:6 Base address:0x2000</p>
+<p>lo Link encap:Local Loopback<br>
+inet addr:127.0.0.1 Mask:255.0.0.0<br>
+UP LOOPBACK RUNNING MTU:16436 Metric:1<br>
+RX packets:16 errors:0 dropped:0 overruns:0 frame:0<br>
+TX packets:16 errors:0 dropped:0 overruns:0 carrier:0<br>
+collisions:0 txqueuelen:0<br>
+RX bytes:1063 (1.0 KiB) TX bytes:1063 (1.0 KiB)</p>
+<p>vlan1 Link encap:Ethernet HWaddr 00:06:25:DF:90:81<br>
+UP BROADCAST RUNNING MULTICAST MTU:1500 Metric:1<br>
+RX packets:1743209 errors:0 dropped:0 overruns:0 frame:0<br>
+TX packets:1920871 errors:0 dropped:0 overruns:0 carrier:0<br>
+collisions:0 txqueuelen:0<br>
+RX bytes:1190884315 (1.1 GiB) TX bytes:927881045 (884.8 MiB)</p>
+<p>vlan2 Link encap:Ethernet HWaddr 00:06:25:DF:90:81<br>
+UP BROADCAST RUNNING ALLMULTI MULTICAST MTU:1500 Metric:1<br>
+RX packets:1951915 errors:0 dropped:0 overruns:0 frame:0<br>
+TX packets:1753960 errors:0 dropped:0 overruns:0 carrier:0<br>
+collisions:0 txqueuelen:0<br>
+RX bytes:959278641 (914.8 MiB) TX bytes:1196757129 (1.1 GiB)</p>
+</blockquote>
+<p>这个系统里面 eth0 是有线接口 , eth2 是无线 lan，他为了使得无线和有线 lan 都可以访问 192.168.1.1 ，把 eth0 和 eth2 加到 br0 上面，然后给 br0 绑定了 192.168.1.1 。有线接口的 lan 和 wan 是通过 vlan 来划分的。</p>
+<p>进程不多</p>
+<blockquote>
+<p>PID Uid VmSize Stat Command<br>
+1 root 360 S init<br>
+2 root SW [keventd]<br>
+3 root RWN [ksoftirqd_CPU0]<br>
+4 root SW [kswapd]<br>
+5 root SW [bdflush]<br>
+6 root SW [kupdated]<br>
+9 root SW [mtdblockd]<br>
+51 root SWN [jffs2_gcd_mtd4]<br>
+73 root 348 S logger -s -p 6 -t<br>
+74 root 344 S syslogd -C 16<br>
+76 root 304 S klogd<br>
+371 root 408 S /bin/sh /sbin/ifup.pppoe wan<br>
+387 root 592 S /usr/sbin/pppd nodetach plugin rp-pppoe.so connect /bin/true usepeerdns defaultroute replacedefaultroute<br>
+488 nobody 424 S dnsmasq -K -F 192.168.1.2,192.168.1.24,255.255.255.0,12h -I ppp0<br>
+493 root 400 S /usr/sbin/dropbear<br>
+494 root 380 S httpd -p 80 -h /www -r Internal<br>
+501 root 436 S upnp -D -L br0 -W ppp0<br>
+508 root 344 S crond -c /etc/crontabs<br>
+5787 root 600 R /usr/sbin/dropbear<br>
+5788 root 440 S -ash<br>
+6120 root 352 S /sbin/wifi<br>
+6136 root 440 S /usr/sbin/nas -P /var/run/nas.lan.pid -l br0 -H 34954 -i eth2<br>
+6189 root 360 R ps axf</p>
+</blockquote>
+<p>磁盘可用情况</p>
+<blockquote>
+<p>Filesystem 1k-blocks Used Available Use% Mounted on<br>
+/dev/root 1024 1024 0 100% /rom<br>
+/dev/mtdblock/4 2240 1704 536 76% /<br>
+none 7172 40 7132 1% /tmp</p>
+</blockquote>
+<p>/rom 就是 squashfs, 不可写, / 是可写的 jffs2 , 大部分的东西都是 symlink 到 /rom 下面去的，如果你想修改什么东西，就删除 symlink , 复制一份过来自己改改。</p>
+<p>我的这台 CPU 主频是 125M 的, 内存 16M</p>
+<blockquote>
+<p>CPU: BCM4710 rev 0 at 125 MHz<br>
+Using 62.400 MHz high precision timer.<br>
+!unable to setup serial console!<br>
+Calibrating delay loop&mldr; 82.94 BogoMIPS<br>
+Memory: 14268k/16384k available (1412k kernel code, 2116k reserved, 100k data, 80k init, 0k highmem)</p>
+</blockquote>
+<p>另外有 ipkg 类似 apt-get , 可以 ipkg install 来安装软件包。看了一下甚至有 openvpn 之类冬冬。</p>
+<p>Web 界面，功能不太多，基本够用，当然还是 shell 更爽一些。</p>
+<p><a href=http://kangkang.org/wordpress/wp-content/uploads/2006/04/openwrt.PNG>
+<img class=mx-auto alt="OpenWRT webadmin" src=http://kangkang.org/wordpress/wp-content/uploads/2006/04/openwrt-tb.PNG>
+</a></p>
+<p>最后说一下使用感受，linksys 的性能确实比 TP-Link 好的不是一点半点，BT 开很多链接也不会影响上 bbs, TP-Link 的我没有拆开看，不过估计那个 cpu 也就几十 Mhz 甚至十几 Mhz 的，也太节省成本了。OpenWRT 用上以后，定制性也不成问题，实在是最理想的无线路由了，虽然价格贵一些，但是绝对超值。现在我 scrt 基本不用担心断线了。</p>
+</div>
+<div class="post-meta meta-tags">
+没有标签
+</div>
+</article>
+</div>
+<footer id=footer>
+<div>
+&copy; 2021 <a href=https://kxn.github.io>Kxn's eXercise Notes By kxn</a>
+</div>
+<br>
+<div>
+<div class=github-badge>
+<a href=https://gohugo.io/ target=_black rel=nofollow><span class=badge-subject>Powered by</span><span class="badge-value bg-blue">Hugo</span></a>
+</div>
+<div class=github-badge>
+<a href=https://www.flysnow.org/ target=_black><span class=badge-subject>Design by</span><span class="badge-value bg-brightgreen">飞雪无情</span></a>
+</div>
+<div class=github-badge>
+<a href=https://github.com/flysnow-org/maupassant-hugo target=_black><span class=badge-subject>Theme</span><span class="badge-value bg-yellowgreen">Maupassant</span></a>
+</div>
+</div>
+</footer>
+<script type=text/javascript>window.MathJax={tex2jax:{inlineMath:[['$','$']],processEscapes:!0}}</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML" async></script>
+<a id=rocket href=#top></a>
+<script type=text/javascript src="/js/totop.js?v=0.0.0" async></script>
+<script type=text/javascript src=//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js async></script>
+<script src=/js/douban.js></script>
+</div>
+<div id=secondary>
+<section class=widget>
+<form id=search action=https://kxn.github.io/search/ method=get accept-charset=utf-8 target=_blank _lpchecked=1>
+<input type=text name=q maxlength=20 placeholder=Search>
+<input type=hidden name=sitesearch value=https://kxn.github.io>
+<button type=submit class="submit icon-search"></button>
+</form>
+</section>
+<section class=widget>
+<h3 class=widget-title>最近文章</h3>
+<ul class=widget-list>
+<li>
+<a href=https://kxn.github.io/post/557.html title="MSI B550 暗黑版跑黑苹果">MSI B550 暗黑版跑黑苹果</a>
+</li>
+<li>
+<a href=https://kxn.github.io/post/553.html title="最简单的打造一台能够 RenderDoc 的手机">最简单的打造一台能够 RenderDoc 的手机</a>
+</li>
+<li>
+<a href=https://kxn.github.io/post/541.html title="编译 RenderDoc 的安卓 apk(带interceptor-lib)">编译 RenderDoc 的安卓 apk(带interceptor-lib)</a>
+</li>
+<li>
+<a href=https://kxn.github.io/post/532.html title=Linux下解决同一硬盘因为连接设备不一样导致扇区大小不一致的问题>Linux下解决同一硬盘因为连接设备不一样导致扇区大小不一致的问题</a>
+</li>
+<li>
+<a href=https://kxn.github.io/post/529.html title="RHEL/CentOS/OracleLinux 8  yum 能看到，安装却没有的情况">RHEL/CentOS/OracleLinux 8 yum 能看到，安装却没有的情况</a>
+</li>
+<li>
+<a href=https://kxn.github.io/post/521.html title=让服务器响应整个网段中的请求>让服务器响应整个网段中的请求</a>
+</li>
+<li>
+<a href=https://kxn.github.io/post/514.html title="不要买技嘉 X570 Gaming X 主板">不要买技嘉 X570 Gaming X 主板</a>
+</li>
+<li>
+<a href=https://kxn.github.io/post/509.html title="Golang socket 里面奇怪的 pipe 使用">Golang socket 里面奇怪的 pipe 使用</a>
+</li>
+<li>
+<a href=https://kxn.github.io/post/504.html title=用RenderDoc和安卓模拟器抓帧手游>用RenderDoc和安卓模拟器抓帧手游</a>
+</li>
+<li>
+<a href=https://kxn.github.io/post/500.html title="解决 Mac 电脑原生 EFI 安装 Windows 启动很慢的问题">解决 Mac 电脑原生 EFI 安装 Windows 启动很慢的问题</a>
+</li>
+</ul>
+</section>
+<section class=widget>
+<h3 class=widget-title><a href=/categories/>分类</a></h3>
+<ul class=widget-list>
+<li><a href=https://kxn.github.io/categories/Coding/>Coding (12)</a></li>
+<li><a href=https://kxn.github.io/categories/Entertainment/>Entertainment (5)</a></li>
+<li><a href=https://kxn.github.io/categories/Network/>Network (33)</a></li>
+<li><a href=https://kxn.github.io/categories/Pictures/>Pictures (2)</a></li>
+<li><a href=https://kxn.github.io/categories/Software/>Software (27)</a></li>
+<li><a href=https://kxn.github.io/categories/Tech-Notes/>Tech Notes (174)</a></li>
+<li><a href=https://kxn.github.io/categories/Uncategorized/>Uncategorized (30)</a></li>
+</ul>
+</section>
+<section class=widget>
+<h3 class=widget-title><a href=/tags/>标签</a></h3>
+<div class=tagcloud>
+<a href=https://kxn.github.io/tags/.xsession-errors/>.xsession-errors</a>
+<a href=https://kxn.github.io/tags/139/>139</a>
+<a href=https://kxn.github.io/tags/720/>720</a>
+<a href=https://kxn.github.io/tags/CentOS/>CentOS</a>
+<a href=https://kxn.github.io/tags/adsl/>adsl</a>
+<a href=https://kxn.github.io/tags/aliedit/>aliedit</a>
+<a href=https://kxn.github.io/tags/bad-design/>bad design</a>
+<a href=https://kxn.github.io/tags/buggy/>buggy</a>
+<a href=https://kxn.github.io/tags/chdk-a570-canon/>chdk a570 canon</a>
+<a href=https://kxn.github.io/tags/cname/>cname</a>
+<a href=https://kxn.github.io/tags/dns/>dns</a>
+<a href=https://kxn.github.io/tags/error/>error</a>
+<a href=https://kxn.github.io/tags/fail/>fail</a>
+<a href=https://kxn.github.io/tags/filesort/>filesort</a>
+<a href=https://kxn.github.io/tags/fragrance-hill/>fragrance hill</a>
+<a href=https://kxn.github.io/tags/google-chrome/>google chrome</a>
+<a href=https://kxn.github.io/tags/gps/>gps</a>
+<a href=https://kxn.github.io/tags/gzip/>gzip</a>
+<a href=https://kxn.github.io/tags/half-duplex/>half duplex</a>
+<a href=https://kxn.github.io/tags/ipv6-isatap-fedora/>ipv6 isatap fedora</a>
+<a href=https://kxn.github.io/tags/javascript/>javascript</a>
+<a href=https://kxn.github.io/tags/jtag-debrick-dell-2300-%E6%97%A0%E7%BA%BF%E8%B7%AF%E7%94%B1%E5%99%A8-%E4%BF%AE%E5%A4%8D-openwrt/>jtag debrick dell 2300 无线路由器 修复 openwrt</a>
+<a href=https://kxn.github.io/tags/mobile-trail-explorer/>mobile trail explorer</a>
+<a href=https://kxn.github.io/tags/mysql/>mysql</a>
+<a href=https://kxn.github.io/tags/mysql-replication/>mysql replication</a>
+<a href=https://kxn.github.io/tags/optimize/>optimize</a>
+<a href=https://kxn.github.io/tags/performance/>performance</a>
+<a href=https://kxn.github.io/tags/pushmail/>pushmail</a>
+<a href=https://kxn.github.io/tags/query-cache/>query cache</a>
+<a href=https://kxn.github.io/tags/qwerty/>qwerty</a>
+<a href=https://kxn.github.io/tags/remote-backup/>remote backup</a>
+<a href=https://kxn.github.io/tags/shortcut/>shortcut</a>
+<a href=https://kxn.github.io/tags/slow-machine/>slow machine</a>
+<a href=https://kxn.github.io/tags/sony-ericsson-m600i/>sony ericsson m600i</a>
+<a href=https://kxn.github.io/tags/ssl/>ssl</a>
+<a href=https://kxn.github.io/tags/trackback/>trackback</a>
+<a href=https://kxn.github.io/tags/ucweb-6.3/>ucweb 6.3</a>
+<a href=https://kxn.github.io/tags/unstable/>unstable</a>
+<a href=https://kxn.github.io/tags/wildcard/>wildcard</a>
+<a href=https://kxn.github.io/tags/xp/>xp</a>
+<a href=https://kxn.github.io/tags/%E4%B8%93%E4%B8%9A%E7%89%88/>专业版</a>
+<a href=https://kxn.github.io/tags/%E5%AE%89%E5%85%A8%E9%97%AE%E9%A2%98/>安全问题</a>
+<a href=https://kxn.github.io/tags/%E6%8B%9B%E8%A1%8C/>招行</a>
+<a href=https://kxn.github.io/tags/%E6%96%90%E8%AE%AFN1/>斐讯N1</a>
+<a href=https://kxn.github.io/tags/%E9%A9%B1%E5%8A%A8/>驱动</a>
+</div>
+</section>
+<section class=widget>
+<h3 class=widget-title>友情链接</h3>
+<ul class=widget-list>
+<li>
+<a target=_blank href=https://blog.kangkang.net/ title=我的非技术blog>我的非技术blog</a>
+</li>
+</ul>
+</section>
+<section class=widget>
+<h3 class=widget-title>其它</h3>
+<ul class=widget-list>
+<li><a href=https://kxn.github.io/index.xml>文章 RSS</a></li>
+</ul>
+</section>
+</div>
+</div>
+</div>
+</div>
+</body>
+</html>

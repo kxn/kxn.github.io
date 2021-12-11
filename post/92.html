@@ -1,0 +1,249 @@
+<!doctype html><html lang=zh-cn>
+<head>
+<meta charset=utf-8>
+<meta http-equiv=x-ua-compatible content="IE=edge">
+<meta name=viewport content="width=device-width,initial-scale=1">
+<meta name=referrer content="no-referrer-when-downgrade">
+<title>[转贴]我国互联网骨干网网间互联问题分析及建议 | Kxn's eXercise Notes</title>
+<meta property="og:title" content="[转贴]我国互联网骨干网网间互联问题分析及建议 - Kxn's eXercise Notes">
+<meta property="og:type" content="article">
+<meta property="article:published_time" content="2006-04-02T02:46:07+08:00">
+<meta property="article:modified_time" content="2006-04-02T02:46:07+08:00">
+<meta name=Keywords content>
+<meta name=description content="[转贴]我国互联网骨干网网间互联问题分析及建议">
+<meta name=author content="kxn">
+<meta property="og:url" content="https://kxn.github.io/post/92.html">
+<link rel="shortcut icon" href=/favicon.ico type=image/x-icon>
+<link rel=stylesheet href=/css/normalize.css>
+<link rel=stylesheet href=/css/style.css>
+<script type=text/javascript src=//cdn.bootcdn.net/ajax/libs/jquery/3.4.1/jquery.min.js></script>
+<link rel=stylesheet href=/css/douban.css>
+<link rel=stylesheet href=/css/other.css>
+</head>
+<body>
+<header id=header class=clearfix>
+<div class=container>
+<div class=col-group>
+<div class=site-name>
+<a id=logo href=https://kxn.github.io>
+Kxn's eXercise Notes
+</a>
+<p class=description>Knowledge Sharing</p>
+</div>
+<div>
+<nav id=nav-menu class=clearfix>
+<a class=current href=https://kxn.github.io>首页</a>
+<a href=https://kxn.github.io/archives/ title=归档>归档</a>
+<a href=https://kxn.github.io/about-me/ title="About Me">About Me</a>
+</nav>
+</div>
+</div>
+</div>
+</header>
+<div id=body>
+<div class=container>
+<div class=col-group>
+<div class=col-8 id=main>
+<div class=res-cons>
+<article class=post>
+<header>
+<h1 class=post-title>[转贴]我国互联网骨干网网间互联问题分析及建议</h1>
+</header>
+<date class="post-meta meta-date">
+2006年4月2日
+</date>
+<div class=post-meta>
+<span>|</span>
+<span class=meta-category><a href=/categories/Tech-Notes>Tech Notes</a></span>
+</div>
+<div class=post-meta>
+<span id=busuanzi_container_page_pv>|<span id=busuanzi_value_page_pv></span><span>
+阅读</span></span>
+</div>
+<div class=post-content>
+<p><strong>原作者不明，知道者请提供信息。转贴不代表同意其观点，仅供参考。</strong></p>
+<p>我国互联网骨干网网间互联问题分析及建议</p>
+<p>今年世界电信日的主题是“建设公平的信息社会”，在互联网产业里，公平的信息社会对普通消费者来说，意味着每个人都应该享有平等接入网络和访问资源的权利；对互联网提供者来说，则意味着每个运营主体都应获得平等互联、公平竞争等为用户提供服务的机会。而在我国互联网产业的发展过程中，不公平的现象一直存在且有日益壮大之势。</p>
+<p>这种不公平集中表现在小网与大网之间非对等的互联互通，或通而不畅，或小网付出巨大的交易成本，导致不同网络的用户不能得到公平与平等的服务，小网的用户经常要被动地接受网络不通、连接速度缓慢、费用高昂等无奈的事实。本文从我国互联网骨干网互联互通的现状入手，深入剖析了产生这种不公平的原因，试图呼吁将世界电信日的口号贯彻到互联网产业的发展中，共同创造一个公平、和谐的网络社会。</p>
+<p>我国骨干网网间互联存在的问题</p>
+<p>骨干网之间的互联模式主要有三种，分别是通过互联网交换中心（NAP 点，NetworkAccessPoint）互联、对等直联和转接互联。</p>
+<p>一、NAP 点被过度使用</p>
+<p>2000 年开始，为打破国内互联网产业中原中国电信 Chinanet“一网独大”的局面，信息产业部在网络资源相对集中的北京、上海、广州分别建立了国家级交换中心，截止到 2001 年底，三地 NAP 点全部开通，在信息产业部的强制要求下，经营性网络全部接入所有 NAP 点；非经营性网络可以选择接入一个或多个 NAP 点。信息产业部对全国互联网交换中心进行统一规划和管理。</p>
+<p>NAP 点建立之初在提高网络的利用率和价值、节省骨干网的互联成本、构建我国互联网的有效竞争格局、为用户提供更高水平的互联网服务等方面起到了积极的推动作用，但是随着互联网产业的迅猛发展，NAP 点互联的方式开始显露出它的弊端。</p>
+<p>目前国内只建立了北京、上海和广州三个国家级互联网交换中心，由于信产业部对建设地方型交换中心的严格管制，本地 NAP 点数量非常有限。因此骨干网之间如果仅通过 NAP 点互联而不兼有其他互联方式的话，产生并终止于同一个城市但归属于不同骨干网的流量在没有本地 NAP 点的情况下，就要通过非本地的至少一个国家级 NAP 点实现交换。这种过度的、低效的使用不仅加重了 NAP 点的负担，而且浪费了宝贵的电路中继带宽，更重要的是会在一定程度上降低业务质量和服务水平，影响用户的使用体验。特别是随着流媒体、视频点播、可视电话等对带宽和时延要求很高的新业务不断涌现，仅仅靠骨干网 NAP 点互联无法达到新业务所要求的服务质量，不利于新业务的推广和普及。</p>
+<p>二、NAP 点结算办法离公平还远</p>
+<p>根据信息产业部 2001 年颁布的《互联网骨干网互联结算办法》，NAP 点上的各互联单位（除中国电信、中国网通外）以互联网骨干网流入、流出 NAP 点流量和的平均值为基础向 Chinanet 和 China169 支付结算费用，其它互联单位之间互不结算。</p>
+<p>这种结算方法会带来一个明显的负效应，那些后起的、弱小的骨干网运营商，如中国联通、中国铁通、中国移动，他们不仅要为自己网内的用户访问电信和网通的内容付费，同时还要为自己的内容给电信和网通用户提供的服务付费，因此出现了一个双向付费问题。而且随着其他骨干网运营商网络内容增多，电信或网通用户访问其他骨干网运营商的资源增加，造成出流量越大，其他骨干网运营商向电信和网通支付的结算费用越高，出现了严重的不合理。</p>
+<p>NAP 点结算办法的不合理性扩张了电信网的自然垄断性，造成的后果是“赢者通吃，强者更强”，抑制了整个互联网产业的平等竞争。不仅起点不公平，而且这种起点的不公平被不断地遗传，就象没有遗产税的遗传一样，通过不断地继承使“富的人越来越富，穷的人越来越穷”，弱小运营商和后进运营商无法获得公平竞争的机会，整个产业也就失去了持续繁荣的基础。</p>
+<p>三、直联的品质、转接的价格</p>
+<p>由于 NAP 点互联质量和互联带宽容量的限制，以及现行结算办法給后起骨干网运营商造成巨大的结算成本，后起骨干网运营商还采用了对等直联的方式与 Chinanet、China169 互联。对等直联的结算国际上通常采用的方法是，直联双方互不结算，各方承担各互联所需的自己那部分传输带宽、交换设备等相关设施的费用。但是电信和网通却要求按转接互联的方式收取结算费用。转接互联是互联网商业化发展过程中派生出的模式。在这种模式下，提供转接的一方与要求转接的一方存在着明显的上下级关系，互联的决策权和控制权都掌握在提供转接方，特别是在结算费用上，要求转接方几乎没有谈判的余地，只能被动地接受提供转接方开出的价格，因此大大增加了这些骨干网运营商的交易成本。另外，对等直联的方式决定了其他骨干网运营商的用户只能访问 Chinanet 和 China169 网内的资源，不能“穿透”到其他国内和国际的网络。付出了转接的费用却只能享受直联的服务和品质，这其中的不合理性不言而喻。</p>
+<p>四、用户难做上帝</p>
+<p>由于历史原因，Chinanet 和 China169 的网络规模、网络性能和网间流量在国内都是首屈一指，大量的接入资源、内容资源和用户都被中国电信和中国网通垄断，其他运营商的网络无法与之抗衡。在 NAP 点被低效和过度使用的情况下，移动、联通、铁通以及一些 ISP 的接入用户在访问 Chinanet 和 China169 网上的内容时，响应速度缓慢；新浪、搜狐、网易等 ICP 不得不同时在几个网络中架设他们的服务器，才能使得不同接入网络的用户能够体验到相同水准的内容和服务，这样就会带来巨大的交易成本，也会使整个产业付出很大的成本，ICP 们不能有效地推广他们的内容，用户也不能平等的得到服务。这种对网络、内容和用户的全方位垄断也不利于新技术的导入和新商业模式的演进，妨碍了内容的有效共享和内容提供商的发展，阻碍了我国互联网产业技术的进步和服务水平的提升。从长远看，即使是 Chinanet 和 China169 的用户，也很难找到“上帝”的感觉。</p>
+<p>对我国骨干网网间互联的建议</p>
+<p>根据以上对我国互联网骨干网网间互联存在的问题分析，本文提出改进我国互联网骨干网网间互联的几点建议。</p>
+<p>一、增建本地 NAP 点</p>
+<p>为了解决同城内不同骨干网之间流量交换要“绕道而行”的问题，建议信息产业部放松对建设地方性互联网交换中心的管制，允许各省（或市）建立本地 NAP 点，这样可以极大地节省信息传输时间和运营商的中继电路带宽，减轻国家级 NAP 点的压力，提高互联网资源的 利用率。</p>
+<p>二、实施基于流量差的结算办法</p>
+<p>现行的基于流量和平均值的结算办法严重损害了除中国电信和中国网通外的其他骨干网运营商和 ISP 的利益，打击了其他骨干网运营商和 ISP 进行互联互通的积极性。网间结算应充分考虑到互联各方的经营成本和经济利益，本文建议实施基于流量差的结算办法，以流入、流出 NAP 点的流量差，即净流量为基础进行结算。这种结算办法有以下三方面的好处：</p>
+<p>1．基于流量差的结算办法依然能够保护主导运营商（中国电信、中国网通）的利益。主导运营商拥有大量的用户和内容，其出流量远大于入流量，流量差越大、收益也必然越大，充分体现了主导运营商的规模优势。</p>
+<p>2．以流量差为基础进行互联结算能够給后起运营商提供公平的竞争机会。现行的结算办法产生的“出流量越大、结算费用越高”的结果无异于給后起运营商带上了一副沉重的成本枷锁，严重打击和束缚了他们的发展热情和空间，也失去了与主导运营商抗衡的可能。只有以流量差为基础进行结算，后起运营商才有足够的激励去发展内容和用户，才有可能达到与主导运营商平等竞争的实力和规模，从而促进互联网产业有效竞争格局的形成。</p>
+<p>3．基于流量差的结算办法能够促进互联网内容的发展。内容是互联网产业成败兴衰的决定性因素.对运营商来讲，谁拥有的内容多，就意味着有可能获得更多的入流量、净流量和经济利益。因此只有施行基于流量差的结算办法，才能够充分调动骨干网运营商发展内容的积极性，内容丰富了，互联网产业的真正繁荣便指日可待。</p>
+<p>目前，我国的 NAP 点已经具备了实施基于流量差的计费方式的条件，早在 2003 年初，信息产业部就已经在征求有关互联网运营商意见的基础上，提出了基于流量差的 NAP 点结算技术方案，并从技术上论证了该方案的可行性，得到了 NAP 点管理机构及多数互联单位 的肯定，我们呼吁信息产业部尽快实施该方案。</p>
+<p>三、政府应有所为有所不为</p>
+<p>互联互通与结算费用之争历来是互联网产业发展过程中的“老大难”，除了骨干网运营商对各自经济利益的严防死守外，政府没有进行有效地监管也是一个很重要的原因。在市场经济环境下，互联网日益商业化是个不争的事实，但这并不意味着政府要完全退出，任其发展。</p>
+<p>互联网产业具有明显的外部经济性和规模经济性的特点，有效的互联互通、合理的结算办法是产业发展的基本保证。我国的现状是，非主导运营商与主导运营商之间实力相差悬殊，中国电信和中国网通垄断互联网上的内容和接入资源不是市场竞争的结果，而是继承的原因。如果没有政府规制，非主导运营商根本就不具备与电信和网通开展公平、有效竞争的可能。因此必须由政府部门出面，成立相应的组织机构，进行必要的监管。除了对 NAP 点结算办法进行改革和管制外，我们建议政府对直联电路的价格也进行定价或者限价，以规制主导运营商的行为，改变非主导运营商受制于主导运营商的被动局面，为整个产业创造公平、公开、公正的发展环境。</p>
+</div>
+<div class="post-meta meta-tags">
+没有标签
+</div>
+</article>
+</div>
+<footer id=footer>
+<div>
+&copy; 2021 <a href=https://kxn.github.io>Kxn's eXercise Notes By kxn</a>
+</div>
+<br>
+<div>
+<div class=github-badge>
+<a href=https://gohugo.io/ target=_black rel=nofollow><span class=badge-subject>Powered by</span><span class="badge-value bg-blue">Hugo</span></a>
+</div>
+<div class=github-badge>
+<a href=https://www.flysnow.org/ target=_black><span class=badge-subject>Design by</span><span class="badge-value bg-brightgreen">飞雪无情</span></a>
+</div>
+<div class=github-badge>
+<a href=https://github.com/flysnow-org/maupassant-hugo target=_black><span class=badge-subject>Theme</span><span class="badge-value bg-yellowgreen">Maupassant</span></a>
+</div>
+</div>
+</footer>
+<script type=text/javascript>window.MathJax={tex2jax:{inlineMath:[['$','$']],processEscapes:!0}}</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML" async></script>
+<a id=rocket href=#top></a>
+<script type=text/javascript src="/js/totop.js?v=0.0.0" async></script>
+<script type=text/javascript src=//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js async></script>
+<script src=/js/douban.js></script>
+</div>
+<div id=secondary>
+<section class=widget>
+<form id=search action=https://kxn.github.io/search/ method=get accept-charset=utf-8 target=_blank _lpchecked=1>
+<input type=text name=q maxlength=20 placeholder=Search>
+<input type=hidden name=sitesearch value=https://kxn.github.io>
+<button type=submit class="submit icon-search"></button>
+</form>
+</section>
+<section class=widget>
+<h3 class=widget-title>最近文章</h3>
+<ul class=widget-list>
+<li>
+<a href=https://kxn.github.io/post/557.html title="MSI B550 暗黑版跑黑苹果">MSI B550 暗黑版跑黑苹果</a>
+</li>
+<li>
+<a href=https://kxn.github.io/post/553.html title="最简单的打造一台能够 RenderDoc 的手机">最简单的打造一台能够 RenderDoc 的手机</a>
+</li>
+<li>
+<a href=https://kxn.github.io/post/541.html title="编译 RenderDoc 的安卓 apk(带interceptor-lib)">编译 RenderDoc 的安卓 apk(带interceptor-lib)</a>
+</li>
+<li>
+<a href=https://kxn.github.io/post/532.html title=Linux下解决同一硬盘因为连接设备不一样导致扇区大小不一致的问题>Linux下解决同一硬盘因为连接设备不一样导致扇区大小不一致的问题</a>
+</li>
+<li>
+<a href=https://kxn.github.io/post/529.html title="RHEL/CentOS/OracleLinux 8  yum 能看到，安装却没有的情况">RHEL/CentOS/OracleLinux 8 yum 能看到，安装却没有的情况</a>
+</li>
+<li>
+<a href=https://kxn.github.io/post/521.html title=让服务器响应整个网段中的请求>让服务器响应整个网段中的请求</a>
+</li>
+<li>
+<a href=https://kxn.github.io/post/514.html title="不要买技嘉 X570 Gaming X 主板">不要买技嘉 X570 Gaming X 主板</a>
+</li>
+<li>
+<a href=https://kxn.github.io/post/509.html title="Golang socket 里面奇怪的 pipe 使用">Golang socket 里面奇怪的 pipe 使用</a>
+</li>
+<li>
+<a href=https://kxn.github.io/post/504.html title=用RenderDoc和安卓模拟器抓帧手游>用RenderDoc和安卓模拟器抓帧手游</a>
+</li>
+<li>
+<a href=https://kxn.github.io/post/500.html title="解决 Mac 电脑原生 EFI 安装 Windows 启动很慢的问题">解决 Mac 电脑原生 EFI 安装 Windows 启动很慢的问题</a>
+</li>
+</ul>
+</section>
+<section class=widget>
+<h3 class=widget-title><a href=/categories/>分类</a></h3>
+<ul class=widget-list>
+<li><a href=https://kxn.github.io/categories/Coding/>Coding (12)</a></li>
+<li><a href=https://kxn.github.io/categories/Entertainment/>Entertainment (5)</a></li>
+<li><a href=https://kxn.github.io/categories/Network/>Network (33)</a></li>
+<li><a href=https://kxn.github.io/categories/Pictures/>Pictures (2)</a></li>
+<li><a href=https://kxn.github.io/categories/Software/>Software (27)</a></li>
+<li><a href=https://kxn.github.io/categories/Tech-Notes/>Tech Notes (174)</a></li>
+<li><a href=https://kxn.github.io/categories/Uncategorized/>Uncategorized (30)</a></li>
+</ul>
+</section>
+<section class=widget>
+<h3 class=widget-title><a href=/tags/>标签</a></h3>
+<div class=tagcloud>
+<a href=https://kxn.github.io/tags/.xsession-errors/>.xsession-errors</a>
+<a href=https://kxn.github.io/tags/139/>139</a>
+<a href=https://kxn.github.io/tags/720/>720</a>
+<a href=https://kxn.github.io/tags/CentOS/>CentOS</a>
+<a href=https://kxn.github.io/tags/adsl/>adsl</a>
+<a href=https://kxn.github.io/tags/aliedit/>aliedit</a>
+<a href=https://kxn.github.io/tags/bad-design/>bad design</a>
+<a href=https://kxn.github.io/tags/buggy/>buggy</a>
+<a href=https://kxn.github.io/tags/chdk-a570-canon/>chdk a570 canon</a>
+<a href=https://kxn.github.io/tags/cname/>cname</a>
+<a href=https://kxn.github.io/tags/dns/>dns</a>
+<a href=https://kxn.github.io/tags/error/>error</a>
+<a href=https://kxn.github.io/tags/fail/>fail</a>
+<a href=https://kxn.github.io/tags/filesort/>filesort</a>
+<a href=https://kxn.github.io/tags/fragrance-hill/>fragrance hill</a>
+<a href=https://kxn.github.io/tags/google-chrome/>google chrome</a>
+<a href=https://kxn.github.io/tags/gps/>gps</a>
+<a href=https://kxn.github.io/tags/gzip/>gzip</a>
+<a href=https://kxn.github.io/tags/half-duplex/>half duplex</a>
+<a href=https://kxn.github.io/tags/ipv6-isatap-fedora/>ipv6 isatap fedora</a>
+<a href=https://kxn.github.io/tags/javascript/>javascript</a>
+<a href=https://kxn.github.io/tags/jtag-debrick-dell-2300-%E6%97%A0%E7%BA%BF%E8%B7%AF%E7%94%B1%E5%99%A8-%E4%BF%AE%E5%A4%8D-openwrt/>jtag debrick dell 2300 无线路由器 修复 openwrt</a>
+<a href=https://kxn.github.io/tags/mobile-trail-explorer/>mobile trail explorer</a>
+<a href=https://kxn.github.io/tags/mysql/>mysql</a>
+<a href=https://kxn.github.io/tags/mysql-replication/>mysql replication</a>
+<a href=https://kxn.github.io/tags/optimize/>optimize</a>
+<a href=https://kxn.github.io/tags/performance/>performance</a>
+<a href=https://kxn.github.io/tags/pushmail/>pushmail</a>
+<a href=https://kxn.github.io/tags/query-cache/>query cache</a>
+<a href=https://kxn.github.io/tags/qwerty/>qwerty</a>
+<a href=https://kxn.github.io/tags/remote-backup/>remote backup</a>
+<a href=https://kxn.github.io/tags/shortcut/>shortcut</a>
+<a href=https://kxn.github.io/tags/slow-machine/>slow machine</a>
+<a href=https://kxn.github.io/tags/sony-ericsson-m600i/>sony ericsson m600i</a>
+<a href=https://kxn.github.io/tags/ssl/>ssl</a>
+<a href=https://kxn.github.io/tags/trackback/>trackback</a>
+<a href=https://kxn.github.io/tags/ucweb-6.3/>ucweb 6.3</a>
+<a href=https://kxn.github.io/tags/unstable/>unstable</a>
+<a href=https://kxn.github.io/tags/wildcard/>wildcard</a>
+<a href=https://kxn.github.io/tags/xp/>xp</a>
+<a href=https://kxn.github.io/tags/%E4%B8%93%E4%B8%9A%E7%89%88/>专业版</a>
+<a href=https://kxn.github.io/tags/%E5%AE%89%E5%85%A8%E9%97%AE%E9%A2%98/>安全问题</a>
+<a href=https://kxn.github.io/tags/%E6%8B%9B%E8%A1%8C/>招行</a>
+<a href=https://kxn.github.io/tags/%E6%96%90%E8%AE%AFN1/>斐讯N1</a>
+<a href=https://kxn.github.io/tags/%E9%A9%B1%E5%8A%A8/>驱动</a>
+</div>
+</section>
+<section class=widget>
+<h3 class=widget-title>友情链接</h3>
+<ul class=widget-list>
+<li>
+<a target=_blank href=https://blog.kangkang.net/ title=我的非技术blog>我的非技术blog</a>
+</li>
+</ul>
+</section>
+<section class=widget>
+<h3 class=widget-title>其它</h3>
+<ul class=widget-list>
+<li><a href=https://kxn.github.io/index.xml>文章 RSS</a></li>
+</ul>
+</section>
+</div>
+</div>
+</div>
+</div>
+</body>
+</html>
