@@ -50,8 +50,8 @@ summaryLength = 140
 
 ## 配置 utteranc评论,教程参考 https://utteranc.es/
 [params.utteranc]
-  enable = false
-  repo = "your github repo" ##换成自己得
+  enable = true
+  repo = "kxn/kxn.github.io" ##换成自己得
   issueTerm = "pathname"
   theme = "github-light"
 
