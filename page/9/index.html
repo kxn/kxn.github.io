@@ -10,11 +10,11 @@
 <meta property="og:type" content="website">
 <meta name=Keywords content>
 <meta name=description content>
-<meta property="og:url" content="https://kxn.github.io/">
+<meta property="og:url" content="https://blogtest.kangkang.org/">
 <link rel="shortcut icon" href=/favicon.ico type=image/x-icon>
 <link rel=stylesheet href=/css/normalize.css>
 <link rel=stylesheet href=/css/style.css>
-<link rel=alternate type=application/rss+xml href=https://kxn.github.io/index.xml title="Kxn's eXercise Notes">
+<link rel=alternate type=application/rss+xml href=https://blogtest.kangkang.org/index.xml title="Kxn's eXercise Notes">
 <script type=text/javascript src=//cdn.bootcdn.net/ajax/libs/jquery/3.4.1/jquery.min.js></script>
 <link rel=stylesheet href=/css/douban.css>
 <link rel=stylesheet href=/css/other.css>
@@ -25,7 +25,7 @@
 <div class=col-group>
 <div class=site-name>
 <h1>
-<a id=logo href=https://kxn.github.io>
+<a id=logo href=https://blogtest.kangkang.org>
 Kxn's eXercise Notes
 </a>
 </h1>
@@ -33,9 +33,9 @@ Kxn's eXercise Notes
 </div>
 <div>
 <nav id=nav-menu class=clearfix>
-<a class=current href=https://kxn.github.io>首页</a>
-<a href=https://kxn.github.io/archives/ title=归档>归档</a>
-<a href=https://kxn.github.io/about-me/ title="About Me">About Me</a>
+<a class=current href=https://blogtest.kangkang.org>首页</a>
+<a href=https://blogtest.kangkang.org/archives/ title=归档>归档</a>
+<a href=https://blogtest.kangkang.org/about-me/ title="About Me">About Me</a>
 </nav>
 </div>
 </div>
@@ -49,7 +49,7 @@ Kxn's eXercise Notes
 <article class=post>
 <header>
 <h1 class=post-title>
-<a href=https://kxn.github.io/post/185.html title="2.6.25 里面看来要包括 ISATAP 支持了">2.6.25 里面看来要包括 ISATAP 支持了</a>
+<a href=https://blogtest.kangkang.org/post/185.html title="2.6.25 里面看来要包括 ISATAP 支持了">2.6.25 里面看来要包括 ISATAP 支持了</a>
 </h1>
 </header>
 <date class="post-meta meta-date">
@@ -62,12 +62,12 @@ Kxn's eXercise Notes
 <div class=post-content>
 期待！这样某的机器也可以有 IPV6 接入啦。还是喜欢 ISATAP 方式，太简单了。 [root@prescott src]# bzgrep ISATAP patch-2.6.24-git19.bz2 +#define IFF_ISATAP 0x80 /* ISATAP interface (RFC4214) */ +#define SIT_ISATAP 0x0001 if (dev->type == ARPHRD_SIT && (dev->priv_flags & IFF_ISATAP)) { if (dev->priv_flags & IFF_ISATAP) ISATAP (draft-ietf-ngtrans-isatap-13.txt) 5.1 ISATAP (RFC4214) 6.1 if (dev->priv_flags & IFF_ISATAP) { if (parms->i_flags & SIT_ISATAP) dev->priv_flags |= IFF_ISATAP; +/* ISATAP (RFC4214) - check source address */ if ((tunnel->dev->priv_flags & IFF_ISATAP) && /* ISATAP (RFC4214) - must come before 6to4 */ if (dev->priv_flags & IFF_ISATAP) {……
 </div>
-<p class=readmore><a href=https://kxn.github.io/post/185.html>阅读全文</a></p>
+<p class=readmore><a href=https://blogtest.kangkang.org/post/185.html>阅读全文</a></p>
 </article>
 <article class=post>
 <header>
 <h1 class=post-title>
-<a href=https://kxn.github.io/post/184.html title="Beware of progsreiserfs package for CentOS 5 in dag RPM repository">Beware of progsreiserfs package for CentOS 5 in dag RPM repository</a>
+<a href=https://blogtest.kangkang.org/post/184.html title="Beware of progsreiserfs package for CentOS 5 in dag RPM repository">Beware of progsreiserfs package for CentOS 5 in dag RPM repository</a>
 </h1>
 </header>
 <date class="post-meta meta-date">
@@ -81,12 +81,12 @@ Kxn's eXercise Notes
 Beware of non-functional progsreiserfs package for CentOS 5 in dag RPM repository, at least its fsck.reiserfs is just some shit that will say &ldquo;Not implemented&rdquo; when you want to fsck your reiserfs partition. Throw it away immediately if you do have reiserfs volumes, grab and build/install a reiserfs-utils RPM, which is easy to find at rpmfind.net.
 The progsreiserfs is rather weird, it puts all of its binaries in /usr/sbin and /usr/lib, therefore at boot time, CentOS will say &ldquo;fsck.reiserfs not found&rdquo; but it will continue with booting, leaving your reiserfs volumes unchecked. I was very angry when I saw the fsck.reiserfs said &ldquo;Not implemented&rdquo; after I had manually copied fsck.reiserfs and its dependency(Yes, the fsck.reiserfs binary is dynamically linked in that package&mldr;) to root partition. I don&rsquo;t know who had put this piece of unusable crap into dag repository and even tried to make it conflict with the usable one, reiserfs-utils.……
 </div>
-<p class=readmore><a href=https://kxn.github.io/post/184.html>阅读全文</a></p>
+<p class=readmore><a href=https://blogtest.kangkang.org/post/184.html>阅读全文</a></p>
 </article>
 <article class=post>
 <header>
 <h1 class=post-title>
-<a href=https://kxn.github.io/post/180.html title="CHDK for A570 IS v1.01a">CHDK for A570 IS v1.01a</a>
+<a href=https://blogtest.kangkang.org/post/180.html title="CHDK for A570 IS v1.01a">CHDK for A570 IS v1.01a</a>
 </h1>
 </header>
 <date class="post-meta meta-date">
@@ -105,12 +105,12 @@ diskboot.BIN
 Read here for what CHDK is, and here for how to use CHDK.
 Thanks fly to rossig (chdkuser AT fastmail DOT fm), atppp……
 </div>
-<p class=readmore><a href=https://kxn.github.io/post/180.html>阅读全文</a></p>
+<p class=readmore><a href=https://blogtest.kangkang.org/post/180.html>阅读全文</a></p>
 </article>
 <article class=post>
 <header>
 <h1 class=post-title>
-<a href=https://kxn.github.io/post/179.html title="用自己架的邮件地址注册 MSN/Live Messenger">用自己架的邮件地址注册 MSN/Live Messenger</a>
+<a href=https://blogtest.kangkang.org/post/179.html title="用自己架的邮件地址注册 MSN/Live Messenger">用自己架的邮件地址注册 MSN/Live Messenger</a>
 </h1>
 </header>
 <date class="post-meta meta-date">
@@ -123,12 +123,12 @@ Thanks fly to rossig (chdkuser AT fastmail DOT fm), atppp……
 <div class=post-content>
 应该很多人都知道怎么搞, 不过今天看到有人问, 就写下来做个备忘. MS 貌似把它的 Messenger 上面注册帐号的链接指向 hotmail 了, 在这个页面上面只能注册 hotmail.com , msn.com 或者 live.* 的帐号, 于是好多人注册 msn 帐号就只能注册微软提供的邮箱地址. 其实还是可以用自己的邮件地址来注册的, 直接访问 www.passport.net , 选里面使用自己的邮件帐号注册即可.……
 </div>
-<p class=readmore><a href=https://kxn.github.io/post/179.html>阅读全文</a></p>
+<p class=readmore><a href=https://blogtest.kangkang.org/post/179.html>阅读全文</a></p>
 </article>
 <article class=post>
 <header>
 <h1 class=post-title>
-<a href=https://kxn.github.io/post/177.html title="索爱 M600i 使用感觉">索爱 M600i 使用感觉</a>
+<a href=https://blogtest.kangkang.org/post/177.html title="索爱 M600i 使用感觉">索爱 M600i 使用感觉</a>
 </h1>
 </header>
 <date class="post-meta meta-date">
@@ -141,12 +141,12 @@ Thanks fly to rossig (chdkuser AT fastmail DOT fm), atppp……
 <div class=post-content>
 前段时候因为 Treo 650 始终不能上 GPRS, 再加上他跑 java 总是有一定概率死机. 看到水货索爱 M600i 价格已经低到了 15XX, 于是心动入了一只. 从入手到现在大概 5 天左右, 总的感觉是比较满意的. 首先这个机器外形不错, 而且因为没有摄像头, 分量轻了不少, 我本身对摄像头不太排斥, 不过如果去掉摄像头可以让机器轻这么多, 那没有……
 </div>
-<p class=readmore><a href=https://kxn.github.io/post/177.html>阅读全文</a></p>
+<p class=readmore><a href=https://blogtest.kangkang.org/post/177.html>阅读全文</a></p>
 </article>
 <article class=post>
 <header>
 <h1 class=post-title>
-<a href=https://kxn.github.io/post/176.html title="CERNET 的免费 IP 地址居然增加了不少">CERNET 的免费 IP 地址居然增加了不少</a>
+<a href=https://blogtest.kangkang.org/post/176.html title="CERNET 的免费 IP 地址居然增加了不少">CERNET 的免费 IP 地址居然增加了不少</a>
 </h1>
 </header>
 <date class="post-meta meta-date">
@@ -159,12 +159,12 @@ Thanks fly to rossig (chdkuser AT fastmail DOT fm), atppp……
 <div class=post-content>
 好久没有更新 CERNET 免费 IP 地址了， 今天更新了一把， 发现居然增加了好多。 [root@amazing network-scripts]# tail eth0.route GATEWAY504=59.66.124.1 ADDRESS505=222.222.0.0 NETMASK505=255.254.0.0 GATEWAY505=59.66.124.1 ADDRESS506=222.240.0.0 NETMASK506=255.248.0.0 GATEWAY506=59.66.124.1 ADDRESS507=222.248.0.0 NETMASK507=255.254.0.0 GATEWAY507=59.66.124.1 以前 [root@amazing network-scripts]# tail old.eth0.route GATEWAY355=59.66.124.1 ADDRESS356=222.222.0.0 NETMASK356=255.254.0.0 GATEWAY356=59.66.124.1 ADDRESS357=222.240.0.0 NETMASK357=255.248.0.0 GATEWAY357=59.66.124.1 ADDRESS358=222.248.0.0 NETMASK358=255.255.0.0 GATEWAY358=59.66.124.1……
 </div>
-<p class=readmore><a href=https://kxn.github.io/post/176.html>阅读全文</a></p>
+<p class=readmore><a href=https://blogtest.kangkang.org/post/176.html>阅读全文</a></p>
 </article>
 <article class=post>
 <header>
 <h1 class=post-title>
-<a href=https://kxn.github.io/post/175.html title="Treo 650 和北京移动的 EDGE 升级不兼容?">Treo 650 和北京移动的 EDGE 升级不兼容?</a>
+<a href=https://blogtest.kangkang.org/post/175.html title="Treo 650 和北京移动的 EDGE 升级不兼容?">Treo 650 和北京移动的 EDGE 升级不兼容?</a>
 </h1>
 </header>
 <date class="post-meta meta-date">
@@ -177,12 +177,12 @@ Thanks fly to rossig (chdkuser AT fastmail DOT fm), atppp……
 <div class=post-content>
 最近这段时间来, Treo 650 在北京越来越难上 GPRS, 最常见的是在 Signing on 的时候很长时间不结束, 最后出一个错误. 少数情况是在 Attach GPRS 的时候就挂掉了. 如果在 Java 程序里面遇到这种现象, 死机的概率非常的大. 可怜我又要用 ucweb 看新闻和小说(Blazer 好是好, 就是太费流量了, 用不起). 于是一天下来, 机器怎么着也要被重……
 </div>
-<p class=readmore><a href=https://kxn.github.io/post/175.html>阅读全文</a></p>
+<p class=readmore><a href=https://blogtest.kangkang.org/post/175.html>阅读全文</a></p>
 </article>
 <article class=post>
 <header>
 <h1 class=post-title>
-<a href=https://kxn.github.io/post/174.html title="Treo 650 七宗罪">Treo 650 七宗罪</a>
+<a href=https://blogtest.kangkang.org/post/174.html title="Treo 650 七宗罪">Treo 650 七宗罪</a>
 </h1>
 </header>
 <date class="post-meta meta-date">
@@ -195,12 +195,12 @@ Thanks fly to rossig (chdkuser AT fastmail DOT fm), atppp……
 <div class=post-content>
 去年在林总的蛊惑下面买了 Treo 650, 用了到现在快有一年了, 平心而论, Treo 650 确实是一个不错的东西, 当时买他的时候主要看上的他的全键盘, 以及还算比较流行的平台, 毕竟可以共享已有的大量 Palm PDA 上面的软件. 用的时间长了, 发现他本身的很多功能也还算顺手. 短信的聊天风格很赞. 但是用了这么长时间, 有些东西还……
 </div>
-<p class=readmore><a href=https://kxn.github.io/post/174.html>阅读全文</a></p>
+<p class=readmore><a href=https://blogtest.kangkang.org/post/174.html>阅读全文</a></p>
 </article>
 <article class=post>
 <header>
 <h1 class=post-title>
-<a href=https://kxn.github.io/post/173.html title=该说百度牛还是弱呢…>该说百度牛还是弱呢…</a>
+<a href=https://blogtest.kangkang.org/post/173.html title=该说百度牛还是弱呢…>该说百度牛还是弱呢…</a>
 </h1>
 </header>
 <date class="post-meta meta-date">
@@ -213,12 +213,12 @@ Thanks fly to rossig (chdkuser AT fastmail DOT fm), atppp……
 <div class=post-content>
 有那么一段时间我站上面的 next page 插件出问题了, 然后 last page 显示的是 999999 页. 我在前段时间修正了这个问题, 之后变态的事情就出现了. 几乎是不约而同地, yodao 和 baidu 都对我站上面的认证码链接表示出了浓厚的兴趣, 不停的来抓他. 我用的是 secureimage, 因为这是一个 wp 插件而我懒得写 lighttpd 的 rewrite 规则, 所以从外观上面并不能判断这其实是……
 </div>
-<p class=readmore><a href=https://kxn.github.io/post/173.html>阅读全文</a></p>
+<p class=readmore><a href=https://blogtest.kangkang.org/post/173.html>阅读全文</a></p>
 </article>
 <article class=post>
 <header>
 <h1 class=post-title>
-<a href=https://kxn.github.io/post/172.html title="lighttpd 1.4.15 $HTTP[“url”] condition is broken">lighttpd 1.4.15 $HTTP[“url”] condition is broken</a>
+<a href=https://blogtest.kangkang.org/post/172.html title="lighttpd 1.4.15 $HTTP[“url”] condition is broken">lighttpd 1.4.15 $HTTP[“url”] condition is broken</a>
 </h1>
 </header>
 <date class="post-meta meta-date">
@@ -235,47 +235,47 @@ After a short investigation, I found that in configfile-glue.c
 con->uri.path is always an empty string, thus $HTTP[&ldquo;url&rdquo;] condition is always false.
 I&rsquo;m not familiar with lighttpd architecture, therefore I simply changed uri.path to uri.path_raw and everything seemed to be fine. According to lighttpd trac, the uri.path statement has been there since 1.3.x, so there must be a logic change in lighttpd core code, resulting an empty uri.path at that time. I&rsquo;m curious why such a serious bug has not been reported since it was introduced.……
 </div>
-<p class=readmore><a href=https://kxn.github.io/post/172.html>阅读全文</a></p>
+<p class=readmore><a href=https://blogtest.kangkang.org/post/172.html>阅读全文</a></p>
 </article>
 <ol class=page-navigator>
 <li class=prev>
-<a href=https://kxn.github.io/page/8/>上一页</a>
+<a href=https://blogtest.kangkang.org/page/8/>上一页</a>
 </li>
 <li>
-<a href=https://kxn.github.io/>1</a>
+<a href=https://blogtest.kangkang.org/>1</a>
 </li>
 <li>
 <span>...</span>
 </li>
 <li>
-<a href=https://kxn.github.io/page/7/>7</a>
+<a href=https://blogtest.kangkang.org/page/7/>7</a>
 </li>
 <li>
-<a href=https://kxn.github.io/page/8/>8</a>
+<a href=https://blogtest.kangkang.org/page/8/>8</a>
 </li>
 <li class=current>
-<a href=https://kxn.github.io/page/9/>9</a>
+<a href=https://blogtest.kangkang.org/page/9/>9</a>
 </li>
 <li>
-<a href=https://kxn.github.io/page/10/>10</a>
+<a href=https://blogtest.kangkang.org/page/10/>10</a>
 </li>
 <li>
-<a href=https://kxn.github.io/page/11/>11</a>
+<a href=https://blogtest.kangkang.org/page/11/>11</a>
 </li>
 <li>
 <span>...</span>
 </li>
 <li>
-<a href=https://kxn.github.io/page/22/>22</a>
+<a href=https://blogtest.kangkang.org/page/22/>22</a>
 </li>
 <li class=next>
-<a href=https://kxn.github.io/page/10/>下一页</a>
+<a href=https://blogtest.kangkang.org/page/10/>下一页</a>
 </li>
 </ol>
 </div>
 <footer id=footer>
 <div>
-&copy; 2021 <a href=https://kxn.github.io>Kxn's eXercise Notes By kxn</a>
+&copy; 2021 <a href=https://blogtest.kangkang.org>Kxn's eXercise Notes By kxn</a>
 </div>
 <br>
 <div>
@@ -297,9 +297,9 @@ I&rsquo;m not familiar with lighttpd architecture, therefore I simply changed ur
 </div>
 <div id=secondary>
 <section class=widget>
-<form id=search action=https://kxn.github.io/search/ method=get accept-charset=utf-8 target=_blank _lpchecked=1>
+<form id=search action=https://blogtest.kangkang.org/search/ method=get accept-charset=utf-8 target=_blank _lpchecked=1>
 <input type=text name=q maxlength=20 placeholder=Search>
-<input type=hidden name=sitesearch value=https://kxn.github.io>
+<input type=hidden name=sitesearch value=https://blogtest.kangkang.org>
 <button type=submit class="submit icon-search"></button>
 </form>
 </section>
@@ -307,97 +307,97 @@ I&rsquo;m not familiar with lighttpd architecture, therefore I simply changed ur
 <h3 class=widget-title>最近文章</h3>
 <ul class=widget-list>
 <li>
-<a href=https://kxn.github.io/post/557.html title="MSI B550 暗黑版跑黑苹果">MSI B550 暗黑版跑黑苹果</a>
+<a href=https://blogtest.kangkang.org/post/557.html title="MSI B550 暗黑版跑黑苹果">MSI B550 暗黑版跑黑苹果</a>
 </li>
 <li>
-<a href=https://kxn.github.io/post/553.html title="最简单的打造一台能够 RenderDoc 的手机">最简单的打造一台能够 RenderDoc 的手机</a>
+<a href=https://blogtest.kangkang.org/post/553.html title="最简单的打造一台能够 RenderDoc 的手机">最简单的打造一台能够 RenderDoc 的手机</a>
 </li>
 <li>
-<a href=https://kxn.github.io/post/541.html title="编译 RenderDoc 的安卓 apk(带interceptor-lib)">编译 RenderDoc 的安卓 apk(带interceptor-lib)</a>
+<a href=https://blogtest.kangkang.org/post/541.html title="编译 RenderDoc 的安卓 apk(带interceptor-lib)">编译 RenderDoc 的安卓 apk(带interceptor-lib)</a>
 </li>
 <li>
-<a href=https://kxn.github.io/post/532.html title=Linux下解决同一硬盘因为连接设备不一样导致扇区大小不一致的问题>Linux下解决同一硬盘因为连接设备不一样导致扇区大小不一致的问题</a>
+<a href=https://blogtest.kangkang.org/post/532.html title=Linux下解决同一硬盘因为连接设备不一样导致扇区大小不一致的问题>Linux下解决同一硬盘因为连接设备不一样导致扇区大小不一致的问题</a>
 </li>
 <li>
-<a href=https://kxn.github.io/post/529.html title="RHEL/CentOS/OracleLinux 8  yum 能看到，安装却没有的情况">RHEL/CentOS/OracleLinux 8 yum 能看到，安装却没有的情况</a>
+<a href=https://blogtest.kangkang.org/post/529.html title="RHEL/CentOS/OracleLinux 8  yum 能看到，安装却没有的情况">RHEL/CentOS/OracleLinux 8 yum 能看到，安装却没有的情况</a>
 </li>
 <li>
-<a href=https://kxn.github.io/post/521.html title=让服务器响应整个网段中的请求>让服务器响应整个网段中的请求</a>
+<a href=https://blogtest.kangkang.org/post/521.html title=让服务器响应整个网段中的请求>让服务器响应整个网段中的请求</a>
 </li>
 <li>
-<a href=https://kxn.github.io/post/514.html title="不要买技嘉 X570 Gaming X 主板">不要买技嘉 X570 Gaming X 主板</a>
+<a href=https://blogtest.kangkang.org/post/514.html title="不要买技嘉 X570 Gaming X 主板">不要买技嘉 X570 Gaming X 主板</a>
 </li>
 <li>
-<a href=https://kxn.github.io/post/509.html title="Golang socket 里面奇怪的 pipe 使用">Golang socket 里面奇怪的 pipe 使用</a>
+<a href=https://blogtest.kangkang.org/post/509.html title="Golang socket 里面奇怪的 pipe 使用">Golang socket 里面奇怪的 pipe 使用</a>
 </li>
 <li>
-<a href=https://kxn.github.io/post/504.html title=用RenderDoc和安卓模拟器抓帧手游>用RenderDoc和安卓模拟器抓帧手游</a>
+<a href=https://blogtest.kangkang.org/post/504.html title=用RenderDoc和安卓模拟器抓帧手游>用RenderDoc和安卓模拟器抓帧手游</a>
 </li>
 <li>
-<a href=https://kxn.github.io/post/500.html title="解决 Mac 电脑原生 EFI 安装 Windows 启动很慢的问题">解决 Mac 电脑原生 EFI 安装 Windows 启动很慢的问题</a>
+<a href=https://blogtest.kangkang.org/post/500.html title="解决 Mac 电脑原生 EFI 安装 Windows 启动很慢的问题">解决 Mac 电脑原生 EFI 安装 Windows 启动很慢的问题</a>
 </li>
 </ul>
 </section>
 <section class=widget>
 <h3 class=widget-title><a href=/categories/>分类</a></h3>
 <ul class=widget-list>
-<li><a href=https://kxn.github.io/categories/Coding/>Coding (12)</a></li>
-<li><a href=https://kxn.github.io/categories/Entertainment/>Entertainment (5)</a></li>
-<li><a href=https://kxn.github.io/categories/Network/>Network (33)</a></li>
-<li><a href=https://kxn.github.io/categories/Pictures/>Pictures (2)</a></li>
-<li><a href=https://kxn.github.io/categories/Software/>Software (27)</a></li>
-<li><a href=https://kxn.github.io/categories/Tech-Notes/>Tech Notes (174)</a></li>
-<li><a href=https://kxn.github.io/categories/Uncategorized/>Uncategorized (30)</a></li>
+<li><a href=https://blogtest.kangkang.org/categories/Coding/>Coding (12)</a></li>
+<li><a href=https://blogtest.kangkang.org/categories/Entertainment/>Entertainment (5)</a></li>
+<li><a href=https://blogtest.kangkang.org/categories/Network/>Network (33)</a></li>
+<li><a href=https://blogtest.kangkang.org/categories/Pictures/>Pictures (2)</a></li>
+<li><a href=https://blogtest.kangkang.org/categories/Software/>Software (27)</a></li>
+<li><a href=https://blogtest.kangkang.org/categories/Tech-Notes/>Tech Notes (174)</a></li>
+<li><a href=https://blogtest.kangkang.org/categories/Uncategorized/>Uncategorized (30)</a></li>
 </ul>
 </section>
 <section class=widget>
 <h3 class=widget-title><a href=/tags/>标签</a></h3>
 <div class=tagcloud>
-<a href=https://kxn.github.io/tags/.xsession-errors/>.xsession-errors</a>
-<a href=https://kxn.github.io/tags/139/>139</a>
-<a href=https://kxn.github.io/tags/720/>720</a>
-<a href=https://kxn.github.io/tags/CentOS/>CentOS</a>
-<a href=https://kxn.github.io/tags/adsl/>adsl</a>
-<a href=https://kxn.github.io/tags/aliedit/>aliedit</a>
-<a href=https://kxn.github.io/tags/bad-design/>bad design</a>
-<a href=https://kxn.github.io/tags/buggy/>buggy</a>
-<a href=https://kxn.github.io/tags/chdk-a570-canon/>chdk a570 canon</a>
-<a href=https://kxn.github.io/tags/cname/>cname</a>
-<a href=https://kxn.github.io/tags/dns/>dns</a>
-<a href=https://kxn.github.io/tags/error/>error</a>
-<a href=https://kxn.github.io/tags/fail/>fail</a>
-<a href=https://kxn.github.io/tags/filesort/>filesort</a>
-<a href=https://kxn.github.io/tags/fragrance-hill/>fragrance hill</a>
-<a href=https://kxn.github.io/tags/google-chrome/>google chrome</a>
-<a href=https://kxn.github.io/tags/gps/>gps</a>
-<a href=https://kxn.github.io/tags/gzip/>gzip</a>
-<a href=https://kxn.github.io/tags/half-duplex/>half duplex</a>
-<a href=https://kxn.github.io/tags/ipv6-isatap-fedora/>ipv6 isatap fedora</a>
-<a href=https://kxn.github.io/tags/javascript/>javascript</a>
-<a href=https://kxn.github.io/tags/jtag-debrick-dell-2300-%E6%97%A0%E7%BA%BF%E8%B7%AF%E7%94%B1%E5%99%A8-%E4%BF%AE%E5%A4%8D-openwrt/>jtag debrick dell 2300 无线路由器 修复 openwrt</a>
-<a href=https://kxn.github.io/tags/mobile-trail-explorer/>mobile trail explorer</a>
-<a href=https://kxn.github.io/tags/mysql/>mysql</a>
-<a href=https://kxn.github.io/tags/mysql-replication/>mysql replication</a>
-<a href=https://kxn.github.io/tags/optimize/>optimize</a>
-<a href=https://kxn.github.io/tags/performance/>performance</a>
-<a href=https://kxn.github.io/tags/pushmail/>pushmail</a>
-<a href=https://kxn.github.io/tags/query-cache/>query cache</a>
-<a href=https://kxn.github.io/tags/qwerty/>qwerty</a>
-<a href=https://kxn.github.io/tags/remote-backup/>remote backup</a>
-<a href=https://kxn.github.io/tags/shortcut/>shortcut</a>
-<a href=https://kxn.github.io/tags/slow-machine/>slow machine</a>
-<a href=https://kxn.github.io/tags/sony-ericsson-m600i/>sony ericsson m600i</a>
-<a href=https://kxn.github.io/tags/ssl/>ssl</a>
-<a href=https://kxn.github.io/tags/trackback/>trackback</a>
-<a href=https://kxn.github.io/tags/ucweb-6.3/>ucweb 6.3</a>
-<a href=https://kxn.github.io/tags/unstable/>unstable</a>
-<a href=https://kxn.github.io/tags/wildcard/>wildcard</a>
-<a href=https://kxn.github.io/tags/xp/>xp</a>
-<a href=https://kxn.github.io/tags/%E4%B8%93%E4%B8%9A%E7%89%88/>专业版</a>
-<a href=https://kxn.github.io/tags/%E5%AE%89%E5%85%A8%E9%97%AE%E9%A2%98/>安全问题</a>
-<a href=https://kxn.github.io/tags/%E6%8B%9B%E8%A1%8C/>招行</a>
-<a href=https://kxn.github.io/tags/%E6%96%90%E8%AE%AFN1/>斐讯N1</a>
-<a href=https://kxn.github.io/tags/%E9%A9%B1%E5%8A%A8/>驱动</a>
+<a href=https://blogtest.kangkang.org/tags/.xsession-errors/>.xsession-errors</a>
+<a href=https://blogtest.kangkang.org/tags/139/>139</a>
+<a href=https://blogtest.kangkang.org/tags/720/>720</a>
+<a href=https://blogtest.kangkang.org/tags/CentOS/>CentOS</a>
+<a href=https://blogtest.kangkang.org/tags/adsl/>adsl</a>
+<a href=https://blogtest.kangkang.org/tags/aliedit/>aliedit</a>
+<a href=https://blogtest.kangkang.org/tags/bad-design/>bad design</a>
+<a href=https://blogtest.kangkang.org/tags/buggy/>buggy</a>
+<a href=https://blogtest.kangkang.org/tags/chdk-a570-canon/>chdk a570 canon</a>
+<a href=https://blogtest.kangkang.org/tags/cname/>cname</a>
+<a href=https://blogtest.kangkang.org/tags/dns/>dns</a>
+<a href=https://blogtest.kangkang.org/tags/error/>error</a>
+<a href=https://blogtest.kangkang.org/tags/fail/>fail</a>
+<a href=https://blogtest.kangkang.org/tags/filesort/>filesort</a>
+<a href=https://blogtest.kangkang.org/tags/fragrance-hill/>fragrance hill</a>
+<a href=https://blogtest.kangkang.org/tags/google-chrome/>google chrome</a>
+<a href=https://blogtest.kangkang.org/tags/gps/>gps</a>
+<a href=https://blogtest.kangkang.org/tags/gzip/>gzip</a>
+<a href=https://blogtest.kangkang.org/tags/half-duplex/>half duplex</a>
+<a href=https://blogtest.kangkang.org/tags/ipv6-isatap-fedora/>ipv6 isatap fedora</a>
+<a href=https://blogtest.kangkang.org/tags/javascript/>javascript</a>
+<a href=https://blogtest.kangkang.org/tags/jtag-debrick-dell-2300-%E6%97%A0%E7%BA%BF%E8%B7%AF%E7%94%B1%E5%99%A8-%E4%BF%AE%E5%A4%8D-openwrt/>jtag debrick dell 2300 无线路由器 修复 openwrt</a>
+<a href=https://blogtest.kangkang.org/tags/mobile-trail-explorer/>mobile trail explorer</a>
+<a href=https://blogtest.kangkang.org/tags/mysql/>mysql</a>
+<a href=https://blogtest.kangkang.org/tags/mysql-replication/>mysql replication</a>
+<a href=https://blogtest.kangkang.org/tags/optimize/>optimize</a>
+<a href=https://blogtest.kangkang.org/tags/performance/>performance</a>
+<a href=https://blogtest.kangkang.org/tags/pushmail/>pushmail</a>
+<a href=https://blogtest.kangkang.org/tags/query-cache/>query cache</a>
+<a href=https://blogtest.kangkang.org/tags/qwerty/>qwerty</a>
+<a href=https://blogtest.kangkang.org/tags/remote-backup/>remote backup</a>
+<a href=https://blogtest.kangkang.org/tags/shortcut/>shortcut</a>
+<a href=https://blogtest.kangkang.org/tags/slow-machine/>slow machine</a>
+<a href=https://blogtest.kangkang.org/tags/sony-ericsson-m600i/>sony ericsson m600i</a>
+<a href=https://blogtest.kangkang.org/tags/ssl/>ssl</a>
+<a href=https://blogtest.kangkang.org/tags/trackback/>trackback</a>
+<a href=https://blogtest.kangkang.org/tags/ucweb-6.3/>ucweb 6.3</a>
+<a href=https://blogtest.kangkang.org/tags/unstable/>unstable</a>
+<a href=https://blogtest.kangkang.org/tags/wildcard/>wildcard</a>
+<a href=https://blogtest.kangkang.org/tags/xp/>xp</a>
+<a href=https://blogtest.kangkang.org/tags/%E4%B8%93%E4%B8%9A%E7%89%88/>专业版</a>
+<a href=https://blogtest.kangkang.org/tags/%E5%AE%89%E5%85%A8%E9%97%AE%E9%A2%98/>安全问题</a>
+<a href=https://blogtest.kangkang.org/tags/%E6%8B%9B%E8%A1%8C/>招行</a>
+<a href=https://blogtest.kangkang.org/tags/%E6%96%90%E8%AE%AFN1/>斐讯N1</a>
+<a href=https://blogtest.kangkang.org/tags/%E9%A9%B1%E5%8A%A8/>驱动</a>
 </div>
 </section>
 <section class=widget>
@@ -411,7 +411,7 @@ I&rsquo;m not familiar with lighttpd architecture, therefore I simply changed ur
 <section class=widget>
 <h3 class=widget-title>其它</h3>
 <ul class=widget-list>
-<li><a href=https://kxn.github.io/index.xml>文章 RSS</a></li>
+<li><a href=https://blogtest.kangkang.org/index.xml>文章 RSS</a></li>
 </ul>
 </section>
 </div>
