@@ -52,6 +52,24 @@ Kxn's eXercise Notes
 <article class=post>
 <header>
 <h1 class=post-title>
+<a href=https://blog.kangkang.org/post/454.html>开启 OCSP Stapling 来解决苹果客户端连 https 很慢的问题</a>
+</h1>
+</header>
+<date class="post-meta meta-date">
+2020年7月9日
+</date>
+<div class="post-meta meta-category">
+|
+<a href=/categories/Tech-Notes>Tech Notes</a>
+</div>
+<div class=post-content>
+最近墙不知道为何抽风把 ocsp.int-x3.letsencrypt.org 给封了，导致所有用 letsencrypt 证书的网站，用 iOS 客户端连的时候都要卡几秒验证 ocsp。 这个破 blog 当然也受到了影响。 解决还是很容易的，打开 OCSP Stapling 就可以了。这个原理简单说，就是让本来该客户端去验证 ocsp 的事情，由 nginx 替它做了，去下来 ocsp 的结果然后和证书一起发给客户端，客户端验证以后就……
+<p class=readmore><a href=https://blog.kangkang.org/post/454.html>阅读全文</a></p>
+</div>
+</article>
+<article class=post>
+<header>
+<h1 class=post-title>
 <a href=https://blog.kangkang.org/post/434.html>CentOS 7 在线升级 CentOS 8</a>
 </h1>
 </header>
@@ -211,24 +229,6 @@ UE4 在 Linux 下面默认用 Vulkan 作为渲染 API，但是 Vulkan 渲染代�
 <p class=readmore><a href=https://blog.kangkang.org/post/387.html>阅读全文</a></p>
 </div>
 </article>
-<article class=post>
-<header>
-<h1 class=post-title>
-<a href=https://blog.kangkang.org/post/382.html>Google Pixel3 (XL) 开启电信 + VoLTE 支持之最干净的改法</a>
-</h1>
-</header>
-<date class="post-meta meta-date">
-2019年7月8日
-</date>
-<div class="post-meta meta-category">
-|
-<a href=/categories/Tech-Notes>Tech Notes</a>
-</div>
-<div class=post-content>
-Pixel3(XL) 开启电信和 VoLTE 支持网上有很多改法，但是大部分都对系统伤害过大，或者使用的版本过老。自己倒腾了半天大概搞明白了，于是这里就是对系统最小的改法了。 开开发模式，允许 adb 什么的设置就不讲了。 先解锁，这一步会丢数据，注意了。 adb reboot bootloader 等重启进 bootloader 以后 fastboot flashing unlock 等界面上提示以后，用音量键上选择确认解锁。……
-<p class=readmore><a href=https://blog.kangkang.org/post/382.html>阅读全文</a></p>
-</div>
-</article>
 <ol class=page-navigator>
 <li class=prev>
 <a href=https://blog.kangkang.org/categories/Tech-Notes/page/2/>上一页</a>
@@ -293,6 +293,9 @@ Pixel3(XL) 开启电信和 VoLTE 支持网上有很多改法，但是大部分�
 <h3 class=widget-title>最近文章</h3>
 <ul class=widget-list>
 <li>
+<a href=https://blog.kangkang.org/post/559.html title="RouterOS 解决升级到 7.1 以后 IPv6 不通的问题">RouterOS 解决升级到 7.1 以后 IPv6 不通的问题</a>
+</li>
+<li>
 <a href=https://blog.kangkang.org/post/558.html title=迁移到hugo并且流窜到github>迁移到hugo并且流窜到github</a>
 </li>
 <li>
@@ -319,9 +322,6 @@ Pixel3(XL) 开启电信和 VoLTE 支持网上有很多改法，但是大部分�
 <li>
 <a href=https://blog.kangkang.org/post/509.html title="Golang socket 里面奇怪的 pipe 使用">Golang socket 里面奇怪的 pipe 使用</a>
 </li>
-<li>
-<a href=https://blog.kangkang.org/post/504.html title=用RenderDoc和安卓模拟器抓帧手游>用RenderDoc和安卓模拟器抓帧手游</a>
-</li>
 </ul>
 </section>
 <section class=widget>
@@ -332,7 +332,7 @@ Pixel3(XL) 开启电信和 VoLTE 支持网上有很多改法，但是大部分�
 <li><a href=https://blog.kangkang.org/categories/Network/>Network (33)</a></li>
 <li><a href=https://blog.kangkang.org/categories/Pictures/>Pictures (2)</a></li>
 <li><a href=https://blog.kangkang.org/categories/Software/>Software (27)</a></li>
-<li><a href=https://blog.kangkang.org/categories/Tech-Notes/>Tech Notes (175)</a></li>
+<li><a href=https://blog.kangkang.org/categories/Tech-Notes/>Tech Notes (176)</a></li>
 <li><a href=https://blog.kangkang.org/categories/Uncategorized/>Uncategorized (30)</a></li>
 </ul>
 </section>

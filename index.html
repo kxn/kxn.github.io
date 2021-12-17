@@ -49,6 +49,24 @@ Kxn's eXercise Notes
 <article class=post>
 <header>
 <h1 class=post-title>
+<a href=https://blog.kangkang.org/post/559.html title="RouterOS 解决升级到 7.1 以后 IPv6 不通的问题">RouterOS 解决升级到 7.1 以后 IPv6 不通的问题</a>
+</h1>
+</header>
+<date class="post-meta meta-date">
+2021年12月17日
+</date>
+<div class=post-meta>
+<span>|</span>
+<span class=meta-category><a href=/categories/Tech-Notes>Tech Notes</a></span>
+</div>
+<div class=post-content>
+最近发现 RouterOS v7.1 成为 stable 了，于是手贱升级了一下。没想到升级以后 IPV6 完全不通了，表现是本地的 v6 地址和路由上的 v6 地址都能 ping 通，但是 ping 外网就是不通，简单查看了一下没看出来啥问题就赶紧降级回 6.49.2 马上就好了。 开始以为是 RoS 的大 bug，然而晚上越想越觉得不对，这么大一个 bug 感觉不应该留着这么久直接 stable 了。搜……
+</div>
+<p class=readmore><a href=https://blog.kangkang.org/post/559.html>阅读全文</a></p>
+</article>
+<article class=post>
+<header>
+<h1 class=post-title>
 <a href=https://blog.kangkang.org/post/558.html title=迁移到hugo并且流窜到github>迁移到hugo并且流窜到github</a>
 </h1>
 </header>
@@ -208,24 +226,6 @@ Kxn's eXercise Notes
 </div>
 <p class=readmore><a href=https://blog.kangkang.org/post/509.html>阅读全文</a></p>
 </article>
-<article class=post>
-<header>
-<h1 class=post-title>
-<a href=https://blog.kangkang.org/post/504.html title=用RenderDoc和安卓模拟器抓帧手游>用RenderDoc和安卓模拟器抓帧手游</a>
-</h1>
-</header>
-<date class="post-meta meta-date">
-2021年1月14日
-</date>
-<div class=post-meta>
-<span>|</span>
-<span class=meta-category><a href=/categories/Tech-Notes>Tech Notes</a></span>
-</div>
-<div class=post-content>
-知乎上有一篇用 Intel GPA 和安卓模拟器抓帧手游的帖子，不过 Intel GPA 配置相对比较繁琐，还有版本问题。还是 RenderDoc 比较习惯。所以研究了一下如何用 RenderDoc 来抓帧模拟器，倒是蛮简单的。这样手游只要能用模拟器运行，就一定可以被抓帧，什么 ro.debuggable 啊，USB 调试啊都不需要管，root 也不用开，绝无被检测到的可能。 首先要设置……
-</div>
-<p class=readmore><a href=https://blog.kangkang.org/post/504.html>阅读全文</a></p>
-</article>
 <ol class=page-navigator>
 <li class=current>
 <a href=https://blog.kangkang.org/>1</a>
@@ -281,6 +281,9 @@ Kxn's eXercise Notes
 <h3 class=widget-title>最近文章</h3>
 <ul class=widget-list>
 <li>
+<a href=https://blog.kangkang.org/post/559.html title="RouterOS 解决升级到 7.1 以后 IPv6 不通的问题">RouterOS 解决升级到 7.1 以后 IPv6 不通的问题</a>
+</li>
+<li>
 <a href=https://blog.kangkang.org/post/558.html title=迁移到hugo并且流窜到github>迁移到hugo并且流窜到github</a>
 </li>
 <li>
@@ -307,9 +310,6 @@ Kxn's eXercise Notes
 <li>
 <a href=https://blog.kangkang.org/post/509.html title="Golang socket 里面奇怪的 pipe 使用">Golang socket 里面奇怪的 pipe 使用</a>
 </li>
-<li>
-<a href=https://blog.kangkang.org/post/504.html title=用RenderDoc和安卓模拟器抓帧手游>用RenderDoc和安卓模拟器抓帧手游</a>
-</li>
 </ul>
 </section>
 <section class=widget>
@@ -320,7 +320,7 @@ Kxn's eXercise Notes
 <li><a href=https://blog.kangkang.org/categories/Network/>Network (33)</a></li>
 <li><a href=https://blog.kangkang.org/categories/Pictures/>Pictures (2)</a></li>
 <li><a href=https://blog.kangkang.org/categories/Software/>Software (27)</a></li>
-<li><a href=https://blog.kangkang.org/categories/Tech-Notes/>Tech Notes (175)</a></li>
+<li><a href=https://blog.kangkang.org/categories/Tech-Notes/>Tech Notes (176)</a></li>
 <li><a href=https://blog.kangkang.org/categories/Uncategorized/>Uncategorized (30)</a></li>
 </ul>
 </section>

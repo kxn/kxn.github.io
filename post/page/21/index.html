@@ -47,6 +47,24 @@ Kxn's eXercise Notes
 <article class=post>
 <header>
 <h1 class=post-title>
+<a href=https://blog.kangkang.org/post/19.html title="遇到了ext3 写延迟的问题">遇到了ext3 写延迟的问题</a>
+</h1>
+</header>
+<date class="post-meta meta-date">
+2005年12月8日
+</date>
+<div class=post-meta>
+<span>|</span>
+<span class=meta-category><a href=/categories/Tech-Notes>Tech Notes</a></span>
+</div>
+<div class=post-content>
+在一个 ext3 分区上面大量写，可能会阻塞其他盘 ext3 分区上面的读请求一段时间，最长可能阻到 1 秒左右。 不知道 2.6.11-mm 里面那个 reservation latency 的 patch 是不是就是修正这个的, 还没有做测试 anyway, 在数据安全性不是特别重要的地方，就用 ext2 也没什么不好的，不是吗？……
+</div>
+<p class=readmore><a href=https://blog.kangkang.org/post/19.html>阅读全文</a></p>
+</article>
+<article class=post>
+<header>
+<h1 class=post-title>
 <a href=https://blog.kangkang.org/post/18.html title="MSVCR80.DLL 里面的黑手& fick Microsoft">MSVCR80.DLL 里面的黑手& fick Microsoft</a>
 </h1>
 </header>
@@ -210,25 +228,6 @@ scaner 推荐的东西通常都是不错的，这次的 lighttpd 也不例外。
 </div>
 <p class=readmore><a href=https://blog.kangkang.org/post/10.html>阅读全文</a></p>
 </article>
-<article class=post>
-<header>
-<h1 class=post-title>
-<a href=https://blog.kangkang.org/post/9.html title=终于把机器弄起来了，FC4在用非ext3的/boot时候会有问题-_->终于把机器弄起来了，FC4在用非ext3的/boot时候会有问题-_-</a>
-</h1>
-</header>
-<date class="post-meta meta-date">
-2005年10月7日
-</date>
-<div class=post-meta>
-<span>|</span>
-<span class=meta-category><a href=/categories/Network>Network</a></span>
-<span class=meta-category><a href=/categories/Tech-Notes>Tech Notes</a></span>
-</div>
-<div class=post-content>
-呃，距离上次发 blog 有一个月还多了。中间机器挂掉好长时间，一直没有时间去弄，今天总算弄好了，随便写两句。 挂掉的起因是因为在线升级了 FC3 到 FC4, 这本来是件挺美好的事儿，但是 FC4 就是不给面子，机器没有重启起来，本来以为是 openvpn 的事情，去了一看原来是 grub load kernel 的时候就死掉了。没办法，把系统拿回来重装吧。 没……
-</div>
-<p class=readmore><a href=https://blog.kangkang.org/post/9.html>阅读全文</a></p>
-</article>
 <ol class=page-navigator>
 <li class=prev>
 <a href=https://blog.kangkang.org/post/page/20/>上一页</a>
@@ -290,6 +289,9 @@ scaner 推荐的东西通常都是不错的，这次的 lighttpd 也不例外。
 <h3 class=widget-title>最近文章</h3>
 <ul class=widget-list>
 <li>
+<a href=https://blog.kangkang.org/post/559.html title="RouterOS 解决升级到 7.1 以后 IPv6 不通的问题">RouterOS 解决升级到 7.1 以后 IPv6 不通的问题</a>
+</li>
+<li>
 <a href=https://blog.kangkang.org/post/558.html title=迁移到hugo并且流窜到github>迁移到hugo并且流窜到github</a>
 </li>
 <li>
@@ -316,9 +318,6 @@ scaner 推荐的东西通常都是不错的，这次的 lighttpd 也不例外。
 <li>
 <a href=https://blog.kangkang.org/post/509.html title="Golang socket 里面奇怪的 pipe 使用">Golang socket 里面奇怪的 pipe 使用</a>
 </li>
-<li>
-<a href=https://blog.kangkang.org/post/504.html title=用RenderDoc和安卓模拟器抓帧手游>用RenderDoc和安卓模拟器抓帧手游</a>
-</li>
 </ul>
 </section>
 <section class=widget>
@@ -329,7 +328,7 @@ scaner 推荐的东西通常都是不错的，这次的 lighttpd 也不例外。
 <li><a href=https://blog.kangkang.org/categories/Network/>Network (33)</a></li>
 <li><a href=https://blog.kangkang.org/categories/Pictures/>Pictures (2)</a></li>
 <li><a href=https://blog.kangkang.org/categories/Software/>Software (27)</a></li>
-<li><a href=https://blog.kangkang.org/categories/Tech-Notes/>Tech Notes (175)</a></li>
+<li><a href=https://blog.kangkang.org/categories/Tech-Notes/>Tech Notes (176)</a></li>
 <li><a href=https://blog.kangkang.org/categories/Uncategorized/>Uncategorized (30)</a></li>
 </ul>
 </section>

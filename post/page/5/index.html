@@ -47,6 +47,24 @@ Kxn's eXercise Notes
 <article class=post>
 <header>
 <h1 class=post-title>
+<a href=https://blog.kangkang.org/post/318.html title=解决笔记本触摸板在X下面无法拖拽窗口>解决笔记本触摸板在X下面无法拖拽窗口</a>
+</h1>
+</header>
+<date class="post-meta meta-date">
+2015年4月4日
+</date>
+<div class=post-meta>
+<span>|</span>
+<span class=meta-category><a href=/categories/Tech-Notes>Tech Notes</a></span>
+</div>
+<div class=post-content>
+新买的笔记本，在 win 下面可以拖拽窗口，linux 下面不行。一开始不知道该用什么关键词查找，浪费了不少时间。这里记录一下。 执行 synclient ClickPad=1 即可 让这个能够开机自动生效的话，创建 /etc/X11/xorg.conf.d/50-synaptics.conf 文件 内容是 &lt;br /> Section "InputClass"&lt;br /> Identifier "touchpad catchall"&lt;br /> Driver "synaptics"&lt;br /> MatchIsTouchpad "on"&lt;br /> MatchDevicePath "/dev/input/event*"&lt;br /> Option "ClickPad" "1"&lt;br /> EndSection&lt;br /> 就搞定了。……
+</div>
+<p class=readmore><a href=https://blog.kangkang.org/post/318.html>阅读全文</a></p>
+</article>
+<article class=post>
+<header>
+<h1 class=post-title>
 <a href=https://blog.kangkang.org/post/314.html title=测试一下>测试一下</a>
 </h1>
 </header>
@@ -206,24 +224,6 @@ Kxn's eXercise Notes
 </div>
 <p class=readmore><a href=https://blog.kangkang.org/post/259.html>阅读全文</a></p>
 </article>
-<article class=post>
-<header>
-<h1 class=post-title>
-<a href=https://blog.kangkang.org/post/253.html title="mfcuk, mfoc 以及 libnfc 1.6.0 rc1 里面带的工具 for Win32">mfcuk, mfoc 以及 libnfc 1.6.0 rc1 里面带的工具 for Win32</a>
-</h1>
-</header>
-<date class="post-meta meta-date">
-2012年11月30日
-</date>
-<div class=post-meta>
-<span>|</span>
-<span class=meta-category><a href=/categories/Tech-Notes>Tech Notes</a></span>
-</div>
-<div class=post-content>
-如题。 Update: 360 貌似会报 mfcuk 是马。。不过我实在懒得研究怎么绕过他的误报了。不放心就不要下载好了。。 utils……
-</div>
-<p class=readmore><a href=https://blog.kangkang.org/post/253.html>阅读全文</a></p>
-</article>
 <ol class=page-navigator>
 <li class=prev>
 <a href=https://blog.kangkang.org/post/page/4/>上一页</a>
@@ -294,6 +294,9 @@ Kxn's eXercise Notes
 <h3 class=widget-title>最近文章</h3>
 <ul class=widget-list>
 <li>
+<a href=https://blog.kangkang.org/post/559.html title="RouterOS 解决升级到 7.1 以后 IPv6 不通的问题">RouterOS 解决升级到 7.1 以后 IPv6 不通的问题</a>
+</li>
+<li>
 <a href=https://blog.kangkang.org/post/558.html title=迁移到hugo并且流窜到github>迁移到hugo并且流窜到github</a>
 </li>
 <li>
@@ -320,9 +323,6 @@ Kxn's eXercise Notes
 <li>
 <a href=https://blog.kangkang.org/post/509.html title="Golang socket 里面奇怪的 pipe 使用">Golang socket 里面奇怪的 pipe 使用</a>
 </li>
-<li>
-<a href=https://blog.kangkang.org/post/504.html title=用RenderDoc和安卓模拟器抓帧手游>用RenderDoc和安卓模拟器抓帧手游</a>
-</li>
 </ul>
 </section>
 <section class=widget>
@@ -333,7 +333,7 @@ Kxn's eXercise Notes
 <li><a href=https://blog.kangkang.org/categories/Network/>Network (33)</a></li>
 <li><a href=https://blog.kangkang.org/categories/Pictures/>Pictures (2)</a></li>
 <li><a href=https://blog.kangkang.org/categories/Software/>Software (27)</a></li>
-<li><a href=https://blog.kangkang.org/categories/Tech-Notes/>Tech Notes (175)</a></li>
+<li><a href=https://blog.kangkang.org/categories/Tech-Notes/>Tech Notes (176)</a></li>
 <li><a href=https://blog.kangkang.org/categories/Uncategorized/>Uncategorized (30)</a></li>
 </ul>
 </section>
