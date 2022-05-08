@@ -1,6 +1,10 @@
 ---
 title: "{{ replace .Name "-" " " | title }}"
 date: {{ .Date }}
-draft: true
+author: kxn
+type: post
+url: /post/{{.Name}}.html
+categories:
+  - Tech Notes
 ---
 
