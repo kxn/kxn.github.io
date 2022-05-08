@@ -1,179 +1,16 @@
-<!doctype html><html lang=zh-cn>
-<head>
-<meta charset=utf-8>
-<meta http-equiv=x-ua-compatible content="IE=edge">
-<meta name=viewport content="width=device-width,initial-scale=1">
-<meta name=referrer content="no-referrer-when-downgrade">
-<title>用 swig 给脚本语言做 wrapper | Kxn's eXercise Notes</title>
-<meta property="og:title" content="用 swig 给脚本语言做 wrapper - Kxn's eXercise Notes">
-<meta property="og:type" content="article">
-<meta property="article:published_time" content="2005-12-12T14:45:06+08:00">
-<meta property="article:modified_time" content="2005-12-12T14:45:06+08:00">
-<meta name=Keywords content>
-<meta name=description content="用 swig 给脚本语言做 wrapper">
-<meta name=author content="kxn">
-<meta property="og:url" content="https://blog.kangkang.org/post/35.html">
-<link rel="shortcut icon" href=/favicon.ico type=image/x-icon>
-<link rel=stylesheet href=/css/normalize.css>
-<link rel=stylesheet href=/css/style.css>
-<script type=text/javascript src=//cdn.bootcdn.net/ajax/libs/jquery/3.4.1/jquery.min.js></script>
-<link rel=stylesheet href=/css/douban.css>
-<link rel=stylesheet href=/css/other.css>
-</head>
-<body>
-<header id=header class=clearfix>
-<div class=container>
-<div class=col-group>
-<div class=site-name>
-<a id=logo href=https://blog.kangkang.org>
-Kxn's eXercise Notes
-</a>
-<p class=description>Knowledge Sharing</p>
-</div>
-<div>
-<nav id=nav-menu class=clearfix>
-<a class=current href=https://blog.kangkang.org>首页</a>
+<!doctype html><html lang=zh-cn><head><meta charset=utf-8><meta http-equiv=x-ua-compatible content="IE=edge"><meta name=viewport content="width=device-width,initial-scale=1"><meta name=referrer content="no-referrer-when-downgrade"><title>用 swig 给脚本语言做 wrapper | Kxn's eXercise Notes</title><meta property="og:title" content="用 swig 给脚本语言做 wrapper - Kxn's eXercise Notes"><meta property="og:type" content="article"><meta property="article:published_time" content="2005-12-12T14:45:06+08:00"><meta property="article:modified_time" content="2005-12-12T14:45:06+08:00"><meta name=Keywords content><meta name=description content="用 swig 给脚本语言做 wrapper"><meta name=author content="kxn"><meta property="og:url" content="https://blog.kangkang.org/post/35.html"><link rel="shortcut icon" href=/favicon.ico type=image/x-icon><link rel=stylesheet href=/css/normalize.css><link rel=stylesheet href=/css/style.css><script type=text/javascript src=//cdn.bootcdn.net/ajax/libs/jquery/3.4.1/jquery.min.js></script>
+<link rel=stylesheet href=/css/douban.css><link rel=stylesheet href=/css/other.css></head><body><header id=header class=clearfix><div class=container><div class=col-group><div class=site-name><a id=logo href=https://blog.kangkang.org>Kxn's eXercise Notes</a><p class=description>Knowledge Sharing</p></div><div><nav id=nav-menu class=clearfix><a class=current href=https://blog.kangkang.org>首页</a>
 <a href=https://blog.kangkang.org/archives/ title=归档>归档</a>
-<a href=https://blog.kangkang.org/about-me/ title="About Me">About Me</a>
-</nav>
-</div>
-</div>
-</div>
-</header>
-<div id=body>
-<div class=container>
-<div class=col-group>
-<div class=col-8 id=main>
-<div class=res-cons>
-<article class=post>
-<header>
-<h1 class=post-title>用 swig 给脚本语言做 wrapper</h1>
-</header>
-<date class="post-meta meta-date">
-2005年12月12日
-</date>
-<div class=post-meta>
-<span>|</span>
+<a href=https://blog.kangkang.org/about-me/ title="About Me">About Me</a></nav></div></div></div></header><div id=body><div class=container><div class=col-group><div class=col-8 id=main><div class=res-cons><article class=post><header><h1 class=post-title>用 swig 给脚本语言做 wrapper</h1></header><date class="post-meta meta-date">2005年12月12日</date><div class=post-meta><span>|</span>
 <span class=meta-category><a href=/categories/Coding>Coding</a></span>
-<span class=meta-category><a href=/categories/Tech-Notes>Tech Notes</a></span>
-</div>
-<div class=post-meta>
-<span id=busuanzi_container_page_pv>|<span id=busuanzi_value_page_pv></span><span>
-阅读</span></span>
-</div>
-<div class=post-content>
-<p>工程里面有时候需要将某些 C 或者 C++编写的模块封装成脚本语言的扩展，以便在脚本语言里面调用，这个工作通常很枯燥，会写出来很多重复代码，人一向都是会偷懒的动物，因此就诞生了一些工具来帮助人们做这件事情，其中比较有名的就是 swig, 此外还有 boost::python 等，不过我觉得还是 swig 最好，因为他可以同时支持很多种脚本语言。<br>
-　　SWIG 是一种接口编译器，专门用来连接 C/C++ 程序和脚本语言的，它可以直接处理 C/C++ 头文件里面的声明，生成包装代码。和原有代码编译链接以后，生成多种脚本语言的扩展，可以加载进脚本语言解释器中使用。经过不少年的发展，他已经对 C/C++语言支持得非常好了，甚至包括对模版的支持。swig 生成的代码基本都是可以直接用的，不需要再手动填空。他支持的脚本语言更是非常之多，还包括一些编译类型的伪码语言比如 Java。我的 Fedora Core 4 系统带的 swig 1.3.24 支持这些脚本语言：ALLEGROL，CHICKEN，C#，GUILE，Java，Modula3，Mzscheme，Ocaml，Perl，PHP，Pike，Python，Ruby，Lisp，Tcl，XML(???这个怎么都有)。很多都没有听说过，不过常用的 Perl/PHP/Python 都是支持的。<br>
-　　 swig 接受的输入是类似 C 的头文件一样的一种声明文件，支持很多以 % 开头的宏。同时他可以识别 C/C++语言的声明，从而对应生成包装代码，常见的数据结构都可以建立对应关系，例如 int &lt;-> int, char * &lt;=> string 等等。下面是一个例子：</p>
-<p>fileio.i<br>
-%module fileio<br>
-　　%{<br>
-　　/* 这里放的是后面声明所需要的其他 header ，以及一些私有声明之类，会被 swig 原封抄到生成的代码里面去*/<br>
-　　#include &lt;stdio.h><br>
-　　%}<br>
-　　/* 这后面写需要生成包装代码的方法和对象声明，这个例子是 C 的，因此只有简单的函数声明，虽然 stdio.h 里面声明了很多函数和数据类型，但是我们想要包装的只有 fopen 和 fclose 两个函数 */</p>
-<p>FILE *fopen(const char *filename, char *mode);<br>
-　　 int fclose(FILE *fp);<br>
-这就是一个简单的 swig 输入文件, %module 是给这个扩展起名字，将作为这个扩展在脚本语言中的名字，如果在 python 里面，使用时候就要 import fileio。</p>
-<p>用 swig 处理 fileio.i 会得到一个 .c 或者 .cxx 文件，取决于 swig 是否加了 -c++ 参数。如果用 c++ 方式处理，那么 swig 生成代码会有所不同，比如分配内存会用　 new 来作，但总的来说，区别不大。</p>
-<p>[root@kangkang.org ~] swig -python -o fileio_wrap.c fileio.i</p>
-<p>然后<br>
-　　[root@kangkang.org ~] gcc -shared -o _fileio.so -I/usr/include/python2.4 fileio_wrap.c</p>
-<p>本例里面因为我们没有任何现有代码，封装的是 libc 里面已经有的 fopen 和 fclose ，因此只要单独编译包装代码 fileio_wrap.c 就可以了，如果是封装已有工程的代码，就需要将已有工程代码一起编译链接成动态库。</p>
-<p>在执行 swig 的时候，swig 除了生成 fileio_wrap.c 包装代码之外，还会负责生成脚本语言端需要的声明代码，本例中它会生成 fileio.py，负责声明和加载 _fileio.so ，在 python 运行环境里面，只要 import fileio ，就可以自动载入 _fileio.so 。然后就可以使用 fileio.fopen 和 fileio.fclose 了。</p>
-<p>这只是一个简单的例子，实际 swig 的功能远比这个例子来得强大，需要进一步了解的，可以读他的说明文档</p>
-</div>
-<div class="post-meta meta-tags">
-没有标签
-</div>
-</article>
-<div class="post bg-white">
-<script src=https://utteranc.es/client.js repo=kxn/kxn.github.io issue-term=pathname theme=github-light crossorigin=anonymous async></script>
-</div>
-</div>
-<footer id=footer>
-<div>
-&copy; 2021 <a href=https://blog.kangkang.org>Kxn's eXercise Notes By kxn</a>
-</div>
-<br>
-<div>
-<div class=github-badge>
-<a href=https://gohugo.io/ target=_black rel=nofollow><span class=badge-subject>Powered by</span><span class="badge-value bg-blue">Hugo</span></a>
-</div>
-<div class=github-badge>
-<a href=https://www.flysnow.org/ target=_black><span class=badge-subject>Design by</span><span class="badge-value bg-brightgreen">飞雪无情</span></a>
-</div>
-<div class=github-badge>
-<a href=https://github.com/flysnow-org/maupassant-hugo target=_black><span class=badge-subject>Theme</span><span class="badge-value bg-yellowgreen">Maupassant</span></a>
-</div>
-</div>
-</footer>
-<script type=text/javascript>window.MathJax={tex2jax:{inlineMath:[['$','$']],processEscapes:!0}}</script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML" async></script>
+<span class=meta-category><a href=/categories/Tech-Notes>Tech Notes</a></span></div><div class=post-meta><span id=busuanzi_container_page_pv>|<span id=busuanzi_value_page_pv></span><span>
+阅读</span></span></div><div class=post-content><p>工程里面有时候需要将某些 C 或者 C++编写的模块封装成脚本语言的扩展，以便在脚本语言里面调用，这个工作通常很枯燥，会写出来很多重复代码，人一向都是会偷懒的动物，因此就诞生了一些工具来帮助人们做这件事情，其中比较有名的就是 swig, 此外还有 boost::python 等，不过我觉得还是 swig 最好，因为他可以同时支持很多种脚本语言。<br>　　SWIG 是一种接口编译器，专门用来连接 C/C++ 程序和脚本语言的，它可以直接处理 C/C++ 头文件里面的声明，生成包装代码。和原有代码编译链接以后，生成多种脚本语言的扩展，可以加载进脚本语言解释器中使用。经过不少年的发展，他已经对 C/C++语言支持得非常好了，甚至包括对模版的支持。swig 生成的代码基本都是可以直接用的，不需要再手动填空。他支持的脚本语言更是非常之多，还包括一些编译类型的伪码语言比如 Java。我的 Fedora Core 4 系统带的 swig 1.3.24 支持这些脚本语言：ALLEGROL，CHICKEN，C#，GUILE，Java，Modula3，Mzscheme，Ocaml，Perl，PHP，Pike，Python，Ruby，Lisp，Tcl，XML(???这个怎么都有)。很多都没有听说过，不过常用的 Perl/PHP/Python 都是支持的。<br>　　 swig 接受的输入是类似 C 的头文件一样的一种声明文件，支持很多以 % 开头的宏。同时他可以识别 C/C++语言的声明，从而对应生成包装代码，常见的数据结构都可以建立对应关系，例如 int &lt;-> int, char * &lt;=> string 等等。下面是一个例子：</p><p>fileio.i<br>%module fileio<br>　　%{<br>　　/* 这里放的是后面声明所需要的其他 header ，以及一些私有声明之类，会被 swig 原封抄到生成的代码里面去*/<br>　　#include &lt;stdio.h><br>　　%}<br>　　/* 这后面写需要生成包装代码的方法和对象声明，这个例子是 C 的，因此只有简单的函数声明，虽然 stdio.h 里面声明了很多函数和数据类型，但是我们想要包装的只有 fopen 和 fclose 两个函数 */</p><p>FILE *fopen(const char *filename, char *mode);<br>　　 int fclose(FILE *fp);<br>这就是一个简单的 swig 输入文件, %module 是给这个扩展起名字，将作为这个扩展在脚本语言中的名字，如果在 python 里面，使用时候就要 import fileio。</p><p>用 swig 处理 fileio.i 会得到一个 .c 或者 .cxx 文件，取决于 swig 是否加了 -c++ 参数。如果用 c++ 方式处理，那么 swig 生成代码会有所不同，比如分配内存会用　 new 来作，但总的来说，区别不大。</p><p>[root@kangkang.org ~] swig -python -o fileio_wrap.c fileio.i</p><p>然后<br>　　[root@kangkang.org ~] gcc -shared -o _fileio.so -I/usr/include/python2.4 fileio_wrap.c</p><p>本例里面因为我们没有任何现有代码，封装的是 libc 里面已经有的 fopen 和 fclose ，因此只要单独编译包装代码 fileio_wrap.c 就可以了，如果是封装已有工程的代码，就需要将已有工程代码一起编译链接成动态库。</p><p>在执行 swig 的时候，swig 除了生成 fileio_wrap.c 包装代码之外，还会负责生成脚本语言端需要的声明代码，本例中它会生成 fileio.py，负责声明和加载 _fileio.so ，在 python 运行环境里面，只要 import fileio ，就可以自动载入 _fileio.so 。然后就可以使用 fileio.fopen 和 fileio.fclose 了。</p><p>这只是一个简单的例子，实际 swig 的功能远比这个例子来得强大，需要进一步了解的，可以读他的说明文档</p></div><div class="post-meta meta-tags">没有标签</div></article><div class="post bg-white"><script src=https://utteranc.es/client.js repo=kxn/kxn.github.io issue-term=pathname theme=github-light crossorigin=anonymous async></script></div></div><footer id=footer><div>&copy; 2022 <a href=https://blog.kangkang.org>Kxn's eXercise Notes By kxn</a></div><br><div><div class=github-badge><a href=https://gohugo.io/ target=_black rel=nofollow><span class=badge-subject>Powered by</span><span class="badge-value bg-blue">Hugo</span></a></div><div class=github-badge><a href=https://www.flysnow.org/ target=_black><span class=badge-subject>Design by</span><span class="badge-value bg-brightgreen">飞雪无情</span></a></div><div class=github-badge><a href=https://github.com/flysnow-org/maupassant-hugo target=_black><span class=badge-subject>Theme</span><span class="badge-value bg-yellowgreen">Maupassant</span></a></div></div></footer><script type=text/javascript>window.MathJax={tex2jax:{inlineMath:[["$","$"]],processEscapes:!0}}</script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML" async></script>
 <a id=rocket href=#top></a>
 <script type=text/javascript src="/js/totop.js?v=0.0.0" async></script>
 <script type=text/javascript src=//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js async></script>
-<script src=/js/douban.js></script>
-</div>
-<div id=secondary>
-<section class=widget>
-<form id=search action=https://blog.kangkang.org/search/ method=get accept-charset=utf-8 target=_blank _lpchecked=1>
-<input type=text name=q maxlength=20 placeholder=Search>
+<script src=/js/douban.js></script></div><div id=secondary><section class=widget><form id=search action=https://blog.kangkang.org/search/ method=get accept-charset=utf-8 target=_blank _lpchecked=1><input type=text name=q maxlength=20 placeholder=Search>
 <input type=hidden name=sitesearch value=https://blog.kangkang.org>
-<button type=submit class="submit icon-search"></button>
-</form>
-</section>
-<section class=widget>
-<h3 class=widget-title>最近文章</h3>
-<ul class=widget-list>
-<li>
-<a href=https://blog.kangkang.org/post/559.html title="RouterOS 解决升级到 7.1 以后 IPv6 不通的问题">RouterOS 解决升级到 7.1 以后 IPv6 不通的问题</a>
-</li>
-<li>
-<a href=https://blog.kangkang.org/post/558.html title=迁移到hugo并且流窜到github>迁移到hugo并且流窜到github</a>
-</li>
-<li>
-<a href=https://blog.kangkang.org/post/557.html title="MSI B550 暗黑版跑黑苹果">MSI B550 暗黑版跑黑苹果</a>
-</li>
-<li>
-<a href=https://blog.kangkang.org/post/553.html title="最简单的打造一台能够 RenderDoc 的手机">最简单的打造一台能够 RenderDoc 的手机</a>
-</li>
-<li>
-<a href=https://blog.kangkang.org/post/541.html title="编译 RenderDoc 的安卓 apk(带interceptor-lib)">编译 RenderDoc 的安卓 apk(带interceptor-lib)</a>
-</li>
-<li>
-<a href=https://blog.kangkang.org/post/532.html title=Linux下解决同一硬盘因为连接设备不一样导致扇区大小不一致的问题>Linux下解决同一硬盘因为连接设备不一样导致扇区大小不一致的问题</a>
-</li>
-<li>
-<a href=https://blog.kangkang.org/post/529.html title="RHEL/CentOS/OracleLinux 8  yum 能看到，安装却没有的情况">RHEL/CentOS/OracleLinux 8 yum 能看到，安装却没有的情况</a>
-</li>
-<li>
-<a href=https://blog.kangkang.org/post/521.html title=让服务器响应整个网段中的请求>让服务器响应整个网段中的请求</a>
-</li>
-<li>
-<a href=https://blog.kangkang.org/post/514.html title="不要买技嘉 X570 Gaming X 主板">不要买技嘉 X570 Gaming X 主板</a>
-</li>
-<li>
-<a href=https://blog.kangkang.org/post/509.html title="Golang socket 里面奇怪的 pipe 使用">Golang socket 里面奇怪的 pipe 使用</a>
-</li>
-</ul>
-</section>
-<section class=widget>
-<h3 class=widget-title><a href=/categories/>分类</a></h3>
-<ul class=widget-list>
-<li><a href=https://blog.kangkang.org/categories/Coding/>Coding (12)</a></li>
-<li><a href=https://blog.kangkang.org/categories/Entertainment/>Entertainment (5)</a></li>
-<li><a href=https://blog.kangkang.org/categories/Network/>Network (33)</a></li>
-<li><a href=https://blog.kangkang.org/categories/Pictures/>Pictures (2)</a></li>
-<li><a href=https://blog.kangkang.org/categories/Software/>Software (27)</a></li>
-<li><a href=https://blog.kangkang.org/categories/Tech-Notes/>Tech Notes (176)</a></li>
-<li><a href=https://blog.kangkang.org/categories/Uncategorized/>Uncategorized (30)</a></li>
-</ul>
-</section>
-<section class=widget>
-<h3 class=widget-title><a href=/tags/>标签</a></h3>
-<div class=tagcloud>
-<a href=https://blog.kangkang.org/tags/.xsession-errors/>.xsession-errors</a>
+<button type=submit class="submit icon-search"></button></form></section><section class=widget><h3 class=widget-title>最近文章</h3><ul class=widget-list><li><a href=https://blog.kangkang.org/post/Build-Wine-On-Fedora-35.html title="Build Wine on Fedora 35">Build Wine on Fedora 35</a></li><li><a href=https://blog.kangkang.org/post/559.html title="RouterOS 解决升级到 7.1 以后 IPv6 不通的问题">RouterOS 解决升级到 7.1 以后 IPv6 不通的问题</a></li><li><a href=https://blog.kangkang.org/post/558.html title=迁移到hugo并且流窜到github>迁移到hugo并且流窜到github</a></li><li><a href=https://blog.kangkang.org/post/557.html title="MSI B550 暗黑版跑黑苹果">MSI B550 暗黑版跑黑苹果</a></li><li><a href=https://blog.kangkang.org/post/553.html title="最简单的打造一台能够 RenderDoc 的手机">最简单的打造一台能够 RenderDoc 的手机</a></li><li><a href=https://blog.kangkang.org/post/541.html title="编译 RenderDoc 的安卓 apk(带interceptor-lib)">编译 RenderDoc 的安卓 apk(带interceptor-lib)</a></li><li><a href=https://blog.kangkang.org/post/532.html title=Linux下解决同一硬盘因为连接设备不一样导致扇区大小不一致的问题>Linux下解决同一硬盘因为连接设备不一样导致扇区大小不一致的问题</a></li><li><a href=https://blog.kangkang.org/post/529.html title="RHEL/CentOS/OracleLinux 8  yum 能看到，安装却没有的情况">RHEL/CentOS/OracleLinux 8 yum 能看到，安装却没有的情况</a></li><li><a href=https://blog.kangkang.org/post/521.html title=让服务器响应整个网段中的请求>让服务器响应整个网段中的请求</a></li><li><a href=https://blog.kangkang.org/post/514.html title="不要买技嘉 X570 Gaming X 主板">不要买技嘉 X570 Gaming X 主板</a></li></ul></section><section class=widget><h3 class=widget-title><a href=/categories/>分类</a></h3><ul class=widget-list><li><a href=https://blog.kangkang.org/categories/Coding/>Coding (12)</a></li><li><a href=https://blog.kangkang.org/categories/Entertainment/>Entertainment (5)</a></li><li><a href=https://blog.kangkang.org/categories/Network/>Network (33)</a></li><li><a href=https://blog.kangkang.org/categories/Pictures/>Pictures (2)</a></li><li><a href=https://blog.kangkang.org/categories/Software/>Software (27)</a></li><li><a href=https://blog.kangkang.org/categories/Tech-Notes/>Tech Notes (177)</a></li><li><a href=https://blog.kangkang.org/categories/Uncategorized/>Uncategorized (30)</a></li></ul></section><section class=widget><h3 class=widget-title><a href=/tags/>标签</a></h3><div class=tagcloud><a href=https://blog.kangkang.org/tags/.xsession-errors/>.xsession-errors</a>
 <a href=https://blog.kangkang.org/tags/139/>139</a>
 <a href=https://blog.kangkang.org/tags/720/>720</a>
 <a href=https://blog.kangkang.org/tags/CentOS/>CentOS</a>
@@ -217,26 +54,4 @@ Kxn's eXercise Notes
 <a href=https://blog.kangkang.org/tags/%E5%AE%89%E5%85%A8%E9%97%AE%E9%A2%98/>安全问题</a>
 <a href=https://blog.kangkang.org/tags/%E6%8B%9B%E8%A1%8C/>招行</a>
 <a href=https://blog.kangkang.org/tags/%E6%96%90%E8%AE%AFN1/>斐讯N1</a>
-<a href=https://blog.kangkang.org/tags/%E9%A9%B1%E5%8A%A8/>驱动</a>
-</div>
-</section>
-<section class=widget>
-<h3 class=widget-title>友情链接</h3>
-<ul class=widget-list>
-<li>
-<a target=_blank href=https://blog.kangkang.net/ title=我的非技术blog>我的非技术blog</a>
-</li>
-</ul>
-</section>
-<section class=widget>
-<h3 class=widget-title>其它</h3>
-<ul class=widget-list>
-<li><a href=https://blog.kangkang.org/index.xml>文章 RSS</a></li>
-</ul>
-</section>
-</div>
-</div>
-</div>
-</div>
-</body>
-</html>
+<a href=https://blog.kangkang.org/tags/%E9%A9%B1%E5%8A%A8/>驱动</a></div></section><section class=widget><h3 class=widget-title>友情链接</h3><ul class=widget-list><li><a target=_blank href=https://blog.kangkang.net/ title=我的非技术blog>我的非技术blog</a></li></ul></section><section class=widget><h3 class=widget-title>其它</h3><ul class=widget-list><li><a href=https://blog.kangkang.org/index.xml>文章 RSS</a></li></ul></section></div></div></div></div></body></html>

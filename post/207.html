@@ -1,165 +1,15 @@
-<!doctype html><html lang=zh-cn>
-<head>
-<meta charset=utf-8>
-<meta http-equiv=x-ua-compatible content="IE=edge">
-<meta name=viewport content="width=device-width,initial-scale=1">
-<meta name=referrer content="no-referrer-when-downgrade">
-<title>闲话招行的安全 | Kxn's eXercise Notes</title>
-<meta property="og:title" content="闲话招行的安全 - Kxn's eXercise Notes">
-<meta property="og:type" content="article">
-<meta property="article:published_time" content="2008-09-04T06:27:26+08:00">
-<meta property="article:modified_time" content="2008-09-04T06:27:26+08:00">
-<meta name=Keywords content>
-<meta name=description content="闲话招行的安全">
-<meta name=author content="kxn">
-<meta property="og:url" content="https://blog.kangkang.org/post/207.html">
-<link rel="shortcut icon" href=/favicon.ico type=image/x-icon>
-<link rel=stylesheet href=/css/normalize.css>
-<link rel=stylesheet href=/css/style.css>
-<script type=text/javascript src=//cdn.bootcdn.net/ajax/libs/jquery/3.4.1/jquery.min.js></script>
-<link rel=stylesheet href=/css/douban.css>
-<link rel=stylesheet href=/css/other.css>
-</head>
-<body>
-<header id=header class=clearfix>
-<div class=container>
-<div class=col-group>
-<div class=site-name>
-<a id=logo href=https://blog.kangkang.org>
-Kxn's eXercise Notes
-</a>
-<p class=description>Knowledge Sharing</p>
-</div>
-<div>
-<nav id=nav-menu class=clearfix>
-<a class=current href=https://blog.kangkang.org>首页</a>
+<!doctype html><html lang=zh-cn><head><meta charset=utf-8><meta http-equiv=x-ua-compatible content="IE=edge"><meta name=viewport content="width=device-width,initial-scale=1"><meta name=referrer content="no-referrer-when-downgrade"><title>闲话招行的安全 | Kxn's eXercise Notes</title><meta property="og:title" content="闲话招行的安全 - Kxn's eXercise Notes"><meta property="og:type" content="article"><meta property="article:published_time" content="2008-09-04T06:27:26+08:00"><meta property="article:modified_time" content="2008-09-04T06:27:26+08:00"><meta name=Keywords content><meta name=description content="闲话招行的安全"><meta name=author content="kxn"><meta property="og:url" content="https://blog.kangkang.org/post/207.html"><link rel="shortcut icon" href=/favicon.ico type=image/x-icon><link rel=stylesheet href=/css/normalize.css><link rel=stylesheet href=/css/style.css><script type=text/javascript src=//cdn.bootcdn.net/ajax/libs/jquery/3.4.1/jquery.min.js></script>
+<link rel=stylesheet href=/css/douban.css><link rel=stylesheet href=/css/other.css></head><body><header id=header class=clearfix><div class=container><div class=col-group><div class=site-name><a id=logo href=https://blog.kangkang.org>Kxn's eXercise Notes</a><p class=description>Knowledge Sharing</p></div><div><nav id=nav-menu class=clearfix><a class=current href=https://blog.kangkang.org>首页</a>
 <a href=https://blog.kangkang.org/archives/ title=归档>归档</a>
-<a href=https://blog.kangkang.org/about-me/ title="About Me">About Me</a>
-</nav>
-</div>
-</div>
-</div>
-</header>
-<div id=body>
-<div class=container>
-<div class=col-group>
-<div class=col-8 id=main>
-<div class=res-cons>
-<article class=post>
-<header>
-<h1 class=post-title>闲话招行的安全</h1>
-</header>
-<date class="post-meta meta-date">
-2008年9月4日
-</date>
-<div class=post-meta>
-<span>|</span>
-<span class=meta-category><a href=/categories/Tech-Notes>Tech Notes</a></span>
-</div>
-<div class=post-meta>
-<span id=busuanzi_container_page_pv>|<span id=busuanzi_value_page_pv></span><span>
-阅读</span></span>
-</div>
-<div class=post-content>
-<p>闲话招行的安全本文原发表于 <a href=http://blog.kangkang.org/wordpress/ title=http://blog.kangkang.org/wordpress/>http://blog.kangkang.org/wordpress/</a>{#nhgl} 转载请保留老实说，在我写这篇东西的时候，曾经考虑过要不要用个比较新浪一些的题目，比如“警惕！招商银行专业版留在你电脑中的后门”，或者"招商银行七宗罪" 之类的。毕竟在互联网上，很黄很暴力的文章更加容易传播一点。但是看起来<a href="http://mt.delphij.net/cgi-bin/mt/mt-search.cgi?IncludeBlogs=2&search=%E6%8B%9B%E8%A1%8C" title="以前 delphij 同学和招行打交道的经历">以前 delphij 同学和招行打交道的经历</a>{#hbpu} 并不十分令人愉快，作为拥有中国最大网络媒体(之一)渠道的他尚且如此，我这只小苍蝇还是不要给自己找麻烦来的好。关于招行专业版的的安全或者扰民问题，互联网上面已经有很多讨论的，delphij 同学当年曾经掀起了批斗招行的大潮，在这里我要向他致敬，因为他是第一个把招行专业版的安全问题公开给公众的人。那次也引发了不少很有价值的讨论，可惜互联网上面的事情总是人多嘴杂，就像 bbs 上面发的帖三个回帖之内就会跑题一样，讨论最后也变成了好几个不同立场的声音各自为战。一方面是 delphij 同学和招行的员工在争竞招行专业版的文件签名问题，另一方面很多 *nix 粉们在号召大家向招行请愿要求推出 *nix 版本。还有一些人开始从安全的角度讨论这个安全控件到底有没有必要做。最后 delphij 同学自己也感到厌烦了，这个事情就不了了之，招行专业版在那之后也做了点小改进，比如增加了文件签名，增加了 64 位 windows 支持等等。以前的讨论总结一下，对招行专业版的负面意见可以列出如下。</p>
-<p> 那么招行专业版的这些行为到底是对还是错呢？这并不好说，因为屁股决定脑袋，作为我们对计算机比较有使用经验的用户来说，是很反感强行关闭远程桌面，以及封禁虚拟机这些看起来跟流氓软件没什么差别的行为的；但是在招行开发人员的角度来说，他们的首要目的是保证小白用户的电脑尽量不要出问题，而小白用户的电脑既然流氓软件插得，我堂堂招商银行专业版凭啥插不得？至于电脑油子的电脑被误伤，关我啥事，何况老虎有打盹，电脑油子的电脑一旦真的不小心因为远程桌面被搞，这也是个麻烦。所以我当时就预计到了 delphij 同学和招行开发部门对砍结果不会有啥结果，其主要原因就是这个屁股决定脑袋。对于招行开发人员来说，什么你电脑的稳定性可用性，那都算个毛，我家专业版最大。话虽然这么说，但是有些事情，还是实在不能忍的，这也是我今天写这篇 blog 的原因。招行开发人员总体来说有增强系统安全性的愿望，但是他们的安全知识和系统知识看起来比较不够。我比较愤怒的是，过了这么多年，他们居然还在把提升权限的驱动往 windows 的 system32 下面装。而且这个驱动的代码里面没有对调用者做任何校验。在招行专业版的发行包里面有个叫做 CertClient.dat 的文件，安装完了以后，你可以在 windowssystem32drivers 下面找到它。那么这个文件到底是做什么用的呢？反编译一下就知道了，这个文件的用途其实只有一个，就是招行专业版的可执行文件为了在普通用户权限下面能直接读取系统的硬件端口来读取键盘，会调用这个驱动，然后驱动调用 windows 的接口，使得招行专业版的可执行可以直接读写所有的硬件端口。然后这个驱动里面对调用者没有做任何检查，任何一个程序在普通用户身份下打开这个驱动，就可以把自己的 IO 权限提升，即使是 Vista 也不例外。因为 Windows 的权限检查，是在将驱动加载入 windows 时候进行的，而招行专业版将这个危险的驱动装进了 system32drivers, 在 Windows 开机的时候，这个驱动就会被加载入内存，为招行专业版和其他可能有的恶意程序，打开了一扇大门。写到这里的时候我不禁想，如果当年 CIH 的作者现在在国内，他利用招行专业版这驱动写了一个摧毁主板 BIOS 的病毒，那么这个病毒到底是应该叫 CIH 病毒还是叫 CMB 病毒呢？招行专业版发行包里面还有个 cmbprotector.dat 的驱动，这个驱动反编译看了一下，似乎是个 filter 驱动，用于拦截 usb 键盘的，和 certclient.dat 一样，这个驱动也是被装入 system32 随系统启动而加载的，因为时间关系，我没有仔细看这个驱动对调用者有没有做检查，如果这个驱动也没有检查的话，那么其对系统安全性的危害可能甚至要高于 certclient.dat ，certclient.dat 顶多使得程序有机会破坏你的硬件或者弄死机，这个可是能实实在在拦截你键盘输入的，木马啥的最喜欢这种东西了。当然这个驱动我没有仔细分析，如果分析错了，那前面说的都白说，所以我也就不讨论了。综上所述，招行专业版虽然会很霸道的关你远程桌面，封你虚拟机，但是换位思考，因为屁股决定脑袋，如果我在开发者的位置，说不定会做的比他们还疯狂，所以也就忍了。只不过搞的时候也要有点专业精神，直接把两个能危害系统安全的驱动就装进了 system32, 这个实在是比较说不过去。招行开发者对安全知识的匮乏不仅反映在他们做的专业版上，网银支付也是如此。不知道有多少人用招行给支付宝充钱的时候注意到，最后一步显示的支付宝充值成功页面，浏览器地址栏里面居然是 netpay.cmbchina.com。我一开始还以为这是一个 iframe, 结果有天仔细打开一看，果然就是招行自己的服务器上面显示出来了支付宝的内容。原来招行支付系统会自动去抓取商户网站的页面，显示在自己的域下面。对，我说到这里你可能已经反应过来了，这不就是一个标准的 XSS 么。在这个页面里面可以轻易的取得招行系统的 cookie 或者其他什么玩意。我不知道偷到了招行 cookie 以后能干啥，但总的来说，这种 XSS 出现在银行网站上，本身已经很不正常了。另外我更关注的是他自行抓取商户页面这个行为，这个行为要想利用来搞点什么事情，实在是容易得很。例如将商户回跳 URL 设置为一个钓鱼网站。里面写上"系统繁忙，请您再次输入银行卡号和密码"。招行开发者可能会辩解说，商户提交过来的信息都是经过签名的，商户的资质都是被审核过的，因此是可信的行为。但是问题在于，银行系统为什么要相信一个安全性低于银行网站的商户数据？如果商户网站被人黑了怎么办？毕竟这个钓鱼页面可是出现在你 netpay.cmbchina.com 上面的。或者不用黑掉商户网站，直接利用前段时间的 DNS 污染漏洞，对招行服务器网段内所有机器污染 alipay.com ，只要有一两下中招的就赚到了。写了这么多，这篇 blog 也应该收尾了。最后提示各位电脑油子如何在虚拟机中跑专业版，专业版对虚拟机的检查不会非常变态，因为他也怕误杀，所以通常都不会用不够明显的特征来封杀，想来想去，只有 BIOS 特征字串 以及一些已经公布的端口调用后门 是一定可以确定不误杀的，所以你知道该怎么办了吧。每次登录招行的网站时候都会看到，”招行送安全，立即下载一网通网盾“ 的宣传，对此我只能无奈的笑笑，反钓鱼网站是个好事，不过鉴于招行其他电脑产品的安全意识状况，我确实比较担心这个一网通网盾也是个不靠谱的东西。为了电脑和自己的身心健康，还是远离它可能更明智一些。</p>
-</div>
-<div class="post-meta meta-tags">
-<ul class=clearfix>
-<li><a href=/tags/%E9%A9%B1%E5%8A%A8>驱动</a></li>
-<li><a href=/tags/%E5%AE%89%E5%85%A8%E9%97%AE%E9%A2%98>安全问题</a></li>
-<li><a href=/tags/%E6%8B%9B%E8%A1%8C>招行</a></li>
-<li><a href=/tags/%E4%B8%93%E4%B8%9A%E7%89%88>专业版</a></li>
-</ul>
-</div>
-</article>
-<div class="post bg-white">
-<script src=https://utteranc.es/client.js repo=kxn/kxn.github.io issue-term=pathname theme=github-light crossorigin=anonymous async></script>
-</div>
-</div>
-<footer id=footer>
-<div>
-&copy; 2021 <a href=https://blog.kangkang.org>Kxn's eXercise Notes By kxn</a>
-</div>
-<br>
-<div>
-<div class=github-badge>
-<a href=https://gohugo.io/ target=_black rel=nofollow><span class=badge-subject>Powered by</span><span class="badge-value bg-blue">Hugo</span></a>
-</div>
-<div class=github-badge>
-<a href=https://www.flysnow.org/ target=_black><span class=badge-subject>Design by</span><span class="badge-value bg-brightgreen">飞雪无情</span></a>
-</div>
-<div class=github-badge>
-<a href=https://github.com/flysnow-org/maupassant-hugo target=_black><span class=badge-subject>Theme</span><span class="badge-value bg-yellowgreen">Maupassant</span></a>
-</div>
-</div>
-</footer>
-<script type=text/javascript>window.MathJax={tex2jax:{inlineMath:[['$','$']],processEscapes:!0}}</script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML" async></script>
+<a href=https://blog.kangkang.org/about-me/ title="About Me">About Me</a></nav></div></div></div></header><div id=body><div class=container><div class=col-group><div class=col-8 id=main><div class=res-cons><article class=post><header><h1 class=post-title>闲话招行的安全</h1></header><date class="post-meta meta-date">2008年9月4日</date><div class=post-meta><span>|</span>
+<span class=meta-category><a href=/categories/Tech-Notes>Tech Notes</a></span></div><div class=post-meta><span id=busuanzi_container_page_pv>|<span id=busuanzi_value_page_pv></span><span>
+阅读</span></span></div><div class=post-content><p>闲话招行的安全本文原发表于 <a href=http://blog.kangkang.org/wordpress/ title=http://blog.kangkang.org/wordpress/>http://blog.kangkang.org/wordpress/</a>{#nhgl} 转载请保留老实说，在我写这篇东西的时候，曾经考虑过要不要用个比较新浪一些的题目，比如“警惕！招商银行专业版留在你电脑中的后门”，或者"招商银行七宗罪" 之类的。毕竟在互联网上，很黄很暴力的文章更加容易传播一点。但是看起来<a href="http://mt.delphij.net/cgi-bin/mt/mt-search.cgi?IncludeBlogs=2&search=%E6%8B%9B%E8%A1%8C" title="以前 delphij 同学和招行打交道的经历">以前 delphij 同学和招行打交道的经历</a>{#hbpu} 并不十分令人愉快，作为拥有中国最大网络媒体(之一)渠道的他尚且如此，我这只小苍蝇还是不要给自己找麻烦来的好。关于招行专业版的的安全或者扰民问题，互联网上面已经有很多讨论的，delphij 同学当年曾经掀起了批斗招行的大潮，在这里我要向他致敬，因为他是第一个把招行专业版的安全问题公开给公众的人。那次也引发了不少很有价值的讨论，可惜互联网上面的事情总是人多嘴杂，就像 bbs 上面发的帖三个回帖之内就会跑题一样，讨论最后也变成了好几个不同立场的声音各自为战。一方面是 delphij 同学和招行的员工在争竞招行专业版的文件签名问题，另一方面很多 *nix 粉们在号召大家向招行请愿要求推出 *nix 版本。还有一些人开始从安全的角度讨论这个安全控件到底有没有必要做。最后 delphij 同学自己也感到厌烦了，这个事情就不了了之，招行专业版在那之后也做了点小改进，比如增加了文件签名，增加了 64 位 windows 支持等等。以前的讨论总结一下，对招行专业版的负面意见可以列出如下。</p><p>那么招行专业版的这些行为到底是对还是错呢？这并不好说，因为屁股决定脑袋，作为我们对计算机比较有使用经验的用户来说，是很反感强行关闭远程桌面，以及封禁虚拟机这些看起来跟流氓软件没什么差别的行为的；但是在招行开发人员的角度来说，他们的首要目的是保证小白用户的电脑尽量不要出问题，而小白用户的电脑既然流氓软件插得，我堂堂招商银行专业版凭啥插不得？至于电脑油子的电脑被误伤，关我啥事，何况老虎有打盹，电脑油子的电脑一旦真的不小心因为远程桌面被搞，这也是个麻烦。所以我当时就预计到了 delphij 同学和招行开发部门对砍结果不会有啥结果，其主要原因就是这个屁股决定脑袋。对于招行开发人员来说，什么你电脑的稳定性可用性，那都算个毛，我家专业版最大。话虽然这么说，但是有些事情，还是实在不能忍的，这也是我今天写这篇 blog 的原因。招行开发人员总体来说有增强系统安全性的愿望，但是他们的安全知识和系统知识看起来比较不够。我比较愤怒的是，过了这么多年，他们居然还在把提升权限的驱动往 windows 的 system32 下面装。而且这个驱动的代码里面没有对调用者做任何校验。在招行专业版的发行包里面有个叫做 CertClient.dat 的文件，安装完了以后，你可以在 windowssystem32drivers 下面找到它。那么这个文件到底是做什么用的呢？反编译一下就知道了，这个文件的用途其实只有一个，就是招行专业版的可执行文件为了在普通用户权限下面能直接读取系统的硬件端口来读取键盘，会调用这个驱动，然后驱动调用 windows 的接口，使得招行专业版的可执行可以直接读写所有的硬件端口。然后这个驱动里面对调用者没有做任何检查，任何一个程序在普通用户身份下打开这个驱动，就可以把自己的 IO 权限提升，即使是 Vista 也不例外。因为 Windows 的权限检查，是在将驱动加载入 windows 时候进行的，而招行专业版将这个危险的驱动装进了 system32drivers, 在 Windows 开机的时候，这个驱动就会被加载入内存，为招行专业版和其他可能有的恶意程序，打开了一扇大门。写到这里的时候我不禁想，如果当年 CIH 的作者现在在国内，他利用招行专业版这驱动写了一个摧毁主板 BIOS 的病毒，那么这个病毒到底是应该叫 CIH 病毒还是叫 CMB 病毒呢？招行专业版发行包里面还有个 cmbprotector.dat 的驱动，这个驱动反编译看了一下，似乎是个 filter 驱动，用于拦截 usb 键盘的，和 certclient.dat 一样，这个驱动也是被装入 system32 随系统启动而加载的，因为时间关系，我没有仔细看这个驱动对调用者有没有做检查，如果这个驱动也没有检查的话，那么其对系统安全性的危害可能甚至要高于 certclient.dat ，certclient.dat 顶多使得程序有机会破坏你的硬件或者弄死机，这个可是能实实在在拦截你键盘输入的，木马啥的最喜欢这种东西了。当然这个驱动我没有仔细分析，如果分析错了，那前面说的都白说，所以我也就不讨论了。综上所述，招行专业版虽然会很霸道的关你远程桌面，封你虚拟机，但是换位思考，因为屁股决定脑袋，如果我在开发者的位置，说不定会做的比他们还疯狂，所以也就忍了。只不过搞的时候也要有点专业精神，直接把两个能危害系统安全的驱动就装进了 system32, 这个实在是比较说不过去。招行开发者对安全知识的匮乏不仅反映在他们做的专业版上，网银支付也是如此。不知道有多少人用招行给支付宝充钱的时候注意到，最后一步显示的支付宝充值成功页面，浏览器地址栏里面居然是 netpay.cmbchina.com。我一开始还以为这是一个 iframe, 结果有天仔细打开一看，果然就是招行自己的服务器上面显示出来了支付宝的内容。原来招行支付系统会自动去抓取商户网站的页面，显示在自己的域下面。对，我说到这里你可能已经反应过来了，这不就是一个标准的 XSS 么。在这个页面里面可以轻易的取得招行系统的 cookie 或者其他什么玩意。我不知道偷到了招行 cookie 以后能干啥，但总的来说，这种 XSS 出现在银行网站上，本身已经很不正常了。另外我更关注的是他自行抓取商户页面这个行为，这个行为要想利用来搞点什么事情，实在是容易得很。例如将商户回跳 URL 设置为一个钓鱼网站。里面写上"系统繁忙，请您再次输入银行卡号和密码"。招行开发者可能会辩解说，商户提交过来的信息都是经过签名的，商户的资质都是被审核过的，因此是可信的行为。但是问题在于，银行系统为什么要相信一个安全性低于银行网站的商户数据？如果商户网站被人黑了怎么办？毕竟这个钓鱼页面可是出现在你 netpay.cmbchina.com 上面的。或者不用黑掉商户网站，直接利用前段时间的 DNS 污染漏洞，对招行服务器网段内所有机器污染 alipay.com ，只要有一两下中招的就赚到了。写了这么多，这篇 blog 也应该收尾了。最后提示各位电脑油子如何在虚拟机中跑专业版，专业版对虚拟机的检查不会非常变态，因为他也怕误杀，所以通常都不会用不够明显的特征来封杀，想来想去，只有 BIOS 特征字串 以及一些已经公布的端口调用后门 是一定可以确定不误杀的，所以你知道该怎么办了吧。每次登录招行的网站时候都会看到，”招行送安全，立即下载一网通网盾“ 的宣传，对此我只能无奈的笑笑，反钓鱼网站是个好事，不过鉴于招行其他电脑产品的安全意识状况，我确实比较担心这个一网通网盾也是个不靠谱的东西。为了电脑和自己的身心健康，还是远离它可能更明智一些。</p></div><div class="post-meta meta-tags"><ul class=clearfix><li><a href=/tags/%E9%A9%B1%E5%8A%A8>驱动</a></li><li><a href=/tags/%E5%AE%89%E5%85%A8%E9%97%AE%E9%A2%98>安全问题</a></li><li><a href=/tags/%E6%8B%9B%E8%A1%8C>招行</a></li><li><a href=/tags/%E4%B8%93%E4%B8%9A%E7%89%88>专业版</a></li></ul></div></article><div class="post bg-white"><script src=https://utteranc.es/client.js repo=kxn/kxn.github.io issue-term=pathname theme=github-light crossorigin=anonymous async></script></div></div><footer id=footer><div>&copy; 2022 <a href=https://blog.kangkang.org>Kxn's eXercise Notes By kxn</a></div><br><div><div class=github-badge><a href=https://gohugo.io/ target=_black rel=nofollow><span class=badge-subject>Powered by</span><span class="badge-value bg-blue">Hugo</span></a></div><div class=github-badge><a href=https://www.flysnow.org/ target=_black><span class=badge-subject>Design by</span><span class="badge-value bg-brightgreen">飞雪无情</span></a></div><div class=github-badge><a href=https://github.com/flysnow-org/maupassant-hugo target=_black><span class=badge-subject>Theme</span><span class="badge-value bg-yellowgreen">Maupassant</span></a></div></div></footer><script type=text/javascript>window.MathJax={tex2jax:{inlineMath:[["$","$"]],processEscapes:!0}}</script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML" async></script>
 <a id=rocket href=#top></a>
 <script type=text/javascript src="/js/totop.js?v=0.0.0" async></script>
 <script type=text/javascript src=//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js async></script>
-<script src=/js/douban.js></script>
-</div>
-<div id=secondary>
-<section class=widget>
-<form id=search action=https://blog.kangkang.org/search/ method=get accept-charset=utf-8 target=_blank _lpchecked=1>
-<input type=text name=q maxlength=20 placeholder=Search>
+<script src=/js/douban.js></script></div><div id=secondary><section class=widget><form id=search action=https://blog.kangkang.org/search/ method=get accept-charset=utf-8 target=_blank _lpchecked=1><input type=text name=q maxlength=20 placeholder=Search>
 <input type=hidden name=sitesearch value=https://blog.kangkang.org>
-<button type=submit class="submit icon-search"></button>
-</form>
-</section>
-<section class=widget>
-<h3 class=widget-title>最近文章</h3>
-<ul class=widget-list>
-<li>
-<a href=https://blog.kangkang.org/post/559.html title="RouterOS 解决升级到 7.1 以后 IPv6 不通的问题">RouterOS 解决升级到 7.1 以后 IPv6 不通的问题</a>
-</li>
-<li>
-<a href=https://blog.kangkang.org/post/558.html title=迁移到hugo并且流窜到github>迁移到hugo并且流窜到github</a>
-</li>
-<li>
-<a href=https://blog.kangkang.org/post/557.html title="MSI B550 暗黑版跑黑苹果">MSI B550 暗黑版跑黑苹果</a>
-</li>
-<li>
-<a href=https://blog.kangkang.org/post/553.html title="最简单的打造一台能够 RenderDoc 的手机">最简单的打造一台能够 RenderDoc 的手机</a>
-</li>
-<li>
-<a href=https://blog.kangkang.org/post/541.html title="编译 RenderDoc 的安卓 apk(带interceptor-lib)">编译 RenderDoc 的安卓 apk(带interceptor-lib)</a>
-</li>
-<li>
-<a href=https://blog.kangkang.org/post/532.html title=Linux下解决同一硬盘因为连接设备不一样导致扇区大小不一致的问题>Linux下解决同一硬盘因为连接设备不一样导致扇区大小不一致的问题</a>
-</li>
-<li>
-<a href=https://blog.kangkang.org/post/529.html title="RHEL/CentOS/OracleLinux 8  yum 能看到，安装却没有的情况">RHEL/CentOS/OracleLinux 8 yum 能看到，安装却没有的情况</a>
-</li>
-<li>
-<a href=https://blog.kangkang.org/post/521.html title=让服务器响应整个网段中的请求>让服务器响应整个网段中的请求</a>
-</li>
-<li>
-<a href=https://blog.kangkang.org/post/514.html title="不要买技嘉 X570 Gaming X 主板">不要买技嘉 X570 Gaming X 主板</a>
-</li>
-<li>
-<a href=https://blog.kangkang.org/post/509.html title="Golang socket 里面奇怪的 pipe 使用">Golang socket 里面奇怪的 pipe 使用</a>
-</li>
-</ul>
-</section>
-<section class=widget>
-<h3 class=widget-title><a href=/categories/>分类</a></h3>
-<ul class=widget-list>
-<li><a href=https://blog.kangkang.org/categories/Coding/>Coding (12)</a></li>
-<li><a href=https://blog.kangkang.org/categories/Entertainment/>Entertainment (5)</a></li>
-<li><a href=https://blog.kangkang.org/categories/Network/>Network (33)</a></li>
-<li><a href=https://blog.kangkang.org/categories/Pictures/>Pictures (2)</a></li>
-<li><a href=https://blog.kangkang.org/categories/Software/>Software (27)</a></li>
-<li><a href=https://blog.kangkang.org/categories/Tech-Notes/>Tech Notes (176)</a></li>
-<li><a href=https://blog.kangkang.org/categories/Uncategorized/>Uncategorized (30)</a></li>
-</ul>
-</section>
-<section class=widget>
-<h3 class=widget-title><a href=/tags/>标签</a></h3>
-<div class=tagcloud>
-<a href=https://blog.kangkang.org/tags/.xsession-errors/>.xsession-errors</a>
+<button type=submit class="submit icon-search"></button></form></section><section class=widget><h3 class=widget-title>最近文章</h3><ul class=widget-list><li><a href=https://blog.kangkang.org/post/Build-Wine-On-Fedora-35.html title="Build Wine on Fedora 35">Build Wine on Fedora 35</a></li><li><a href=https://blog.kangkang.org/post/559.html title="RouterOS 解决升级到 7.1 以后 IPv6 不通的问题">RouterOS 解决升级到 7.1 以后 IPv6 不通的问题</a></li><li><a href=https://blog.kangkang.org/post/558.html title=迁移到hugo并且流窜到github>迁移到hugo并且流窜到github</a></li><li><a href=https://blog.kangkang.org/post/557.html title="MSI B550 暗黑版跑黑苹果">MSI B550 暗黑版跑黑苹果</a></li><li><a href=https://blog.kangkang.org/post/553.html title="最简单的打造一台能够 RenderDoc 的手机">最简单的打造一台能够 RenderDoc 的手机</a></li><li><a href=https://blog.kangkang.org/post/541.html title="编译 RenderDoc 的安卓 apk(带interceptor-lib)">编译 RenderDoc 的安卓 apk(带interceptor-lib)</a></li><li><a href=https://blog.kangkang.org/post/532.html title=Linux下解决同一硬盘因为连接设备不一样导致扇区大小不一致的问题>Linux下解决同一硬盘因为连接设备不一样导致扇区大小不一致的问题</a></li><li><a href=https://blog.kangkang.org/post/529.html title="RHEL/CentOS/OracleLinux 8  yum 能看到，安装却没有的情况">RHEL/CentOS/OracleLinux 8 yum 能看到，安装却没有的情况</a></li><li><a href=https://blog.kangkang.org/post/521.html title=让服务器响应整个网段中的请求>让服务器响应整个网段中的请求</a></li><li><a href=https://blog.kangkang.org/post/514.html title="不要买技嘉 X570 Gaming X 主板">不要买技嘉 X570 Gaming X 主板</a></li></ul></section><section class=widget><h3 class=widget-title><a href=/categories/>分类</a></h3><ul class=widget-list><li><a href=https://blog.kangkang.org/categories/Coding/>Coding (12)</a></li><li><a href=https://blog.kangkang.org/categories/Entertainment/>Entertainment (5)</a></li><li><a href=https://blog.kangkang.org/categories/Network/>Network (33)</a></li><li><a href=https://blog.kangkang.org/categories/Pictures/>Pictures (2)</a></li><li><a href=https://blog.kangkang.org/categories/Software/>Software (27)</a></li><li><a href=https://blog.kangkang.org/categories/Tech-Notes/>Tech Notes (177)</a></li><li><a href=https://blog.kangkang.org/categories/Uncategorized/>Uncategorized (30)</a></li></ul></section><section class=widget><h3 class=widget-title><a href=/tags/>标签</a></h3><div class=tagcloud><a href=https://blog.kangkang.org/tags/.xsession-errors/>.xsession-errors</a>
 <a href=https://blog.kangkang.org/tags/139/>139</a>
 <a href=https://blog.kangkang.org/tags/720/>720</a>
 <a href=https://blog.kangkang.org/tags/CentOS/>CentOS</a>
@@ -203,26 +53,4 @@ Kxn's eXercise Notes
 <a href=https://blog.kangkang.org/tags/%E5%AE%89%E5%85%A8%E9%97%AE%E9%A2%98/>安全问题</a>
 <a href=https://blog.kangkang.org/tags/%E6%8B%9B%E8%A1%8C/>招行</a>
 <a href=https://blog.kangkang.org/tags/%E6%96%90%E8%AE%AFN1/>斐讯N1</a>
-<a href=https://blog.kangkang.org/tags/%E9%A9%B1%E5%8A%A8/>驱动</a>
-</div>
-</section>
-<section class=widget>
-<h3 class=widget-title>友情链接</h3>
-<ul class=widget-list>
-<li>
-<a target=_blank href=https://blog.kangkang.net/ title=我的非技术blog>我的非技术blog</a>
-</li>
-</ul>
-</section>
-<section class=widget>
-<h3 class=widget-title>其它</h3>
-<ul class=widget-list>
-<li><a href=https://blog.kangkang.org/index.xml>文章 RSS</a></li>
-</ul>
-</section>
-</div>
-</div>
-</div>
-</div>
-</body>
-</html>
+<a href=https://blog.kangkang.org/tags/%E9%A9%B1%E5%8A%A8/>驱动</a></div></section><section class=widget><h3 class=widget-title>友情链接</h3><ul class=widget-list><li><a target=_blank href=https://blog.kangkang.net/ title=我的非技术blog>我的非技术blog</a></li></ul></section><section class=widget><h3 class=widget-title>其它</h3><ul class=widget-list><li><a href=https://blog.kangkang.org/index.xml>文章 RSS</a></li></ul></section></div></div></div></div></body></html>
