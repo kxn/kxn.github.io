@@ -10,7 +10,7 @@ categories:
 
 最近在 Fedora 上面自己 Build 了一次 Wine，中间掉了好几次坑，在这里记录一下。
 
-Build wine 最困难的点主要还是需要同时 build 一份 64 和 32 位共存的 wine，这要求同时安装一大票库的 64 和 32 位版本，装来装去的非常容易漏，而 Wine 的 configure 脚本并不会对所有事情都警告，有些库没有也不会说什么，然而 wine 的主要用途微信是 32 位的，所以编译出来的 wine 就各种毛病。
+Build wine 最困难的点主要还是需要同时 build 一份 64 和 32 位共存的 wine，这要求同时安装一大票库的 64 和 32 位版本，装来装去的非常容易漏，而 Wine 的 configure 脚本并不会对所有事情都警告，有些库没有也不会说什么，然而 wine 的主要用途（微信）是 32 位的，所以编译出来的 wine 就各种毛病。
 
 需要的依赖如下
 
@@ -24,3 +24,4 @@ Fedora 35 的 libgudev-devel.i686 有个 bug，需要把 /usr/lib/libudev.so.1 �
 
 32位编译的时候如果没有安装 libXext-devel.i686 不会报错，但是编译出来的 wine 不支持剪贴板
 
+如果没有安装 mesa-dri-drivers.i686 的话，编译不会出错，但是运行微信崩溃，所以需要装上
